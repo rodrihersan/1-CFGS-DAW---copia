@@ -1,0 +1,29 @@
+/*
+*{
+    color: aqua;
+}
+SE APLICA A TODO
+*/
+
+h1{
+    color: aqua;
+}
+
+h2,h3{
+    color: brown;
+}
+
+h2 p{
+    color: blueviolet; 
+    /*SELECTOR DESCENCIENTE (I): Un selector de tipo M N sirve para seleccionar todos los elementos N que 
+    son descendientes de M a cualquier nivel*/
+}
+
+/*h4 *p{
+    color: chartreuse; 
+}*/
+
+p>span{
+    font-size: 50px; /*SELECTOR HIJO: todos los elementos a que sean hijos directos de un elemento p:*/
+}
+

@@ -1,0 +1,96 @@
+EJERCICIO ADICCIONALES (II)
+
+EJERCICIO 1:
+
+NOMBRE: SolicitarParcela
+ID: CU001
+ACTORES: Vecino
+DESCRIPCION: El vecino procede a la solicitud de una parcela
+PRE-CONDICIONES: Estar registrado
+PASOS:
+1.INCLUDE CU005 (Estar registrado)
+2.El vecino accede al sistema.
+3.El sistema le muestra las parcelas disponibles.
+4.El vecino visualiza selecciona y solicita la parcela seleccionada.
+5.La solicitud queda registrada enviada y pendiente de asignación.
+6.La solicitud queda pendiente de confirmación o denegación por parte del coordinador.
+POST-CONDICIONES
+__________________________________________________________________________________________________________
+
+EJERCICIO 2:
+
+
+NOMBRE:SolicitarPrestamo
+ID: CU002
+ACTORES: vecino
+DESCRIPCION: El vecino procede a la realización de un préstamo que le solicita el sistema.
+PRE-CONDICIONES: estar dado de alta
+PASOS: 
+1.El sistema pide identificación (SE PONE INCLUDE CU00X (YA QUE EN ESTE CASO ASI LO DICE EL ENUNCIADO)(X=el que sea))(Estar identificado)
+2.El vecino se identifica
+3.SI introduce bien los datos
+	3.1.El sistema le da acceso
+	3.2.El sistema le muestra las opciones
+	3.3.El vecino selecciona "Catálogo"
+	3.4.El sistema le muestra el Catálogo
+	    El vecino navega por el catálogo (NO SE PONE PORQUE ES ALGO VISUAL/MANUAL. NO ES INTERACCION CON EL SISTEMA. SOLAMENTE SE PONE LAS INTERACCIONES LÓGICAS).
+	3.5.El vecino selecciona un objeto
+	3.6.El sistema comprueba y notifica la situación del objeto
+	3.7.SI la notificación es positiva
+		3.7.1.Se solicita la confirmación del préstamo 
+		3.7.2.El vecino confirma la solicitud.
+		3.7.3.El sistema registra la fecha de inicio y muestra el resultado
+		3.7.4.Fin del proceso
+		SI NO
+		3.7.5.El sistema no solicita la confirmación del préstamo.
+		3.7.6.Fin del proceso		
+POST-CONDICIONES:
+__________________________________________________________________________________________________________
+
+EJERCICIO 3:
+
+
+NOMBRE: CrearSimulación
+ID: CU003
+ACTORES: Técnico
+PRE-CONDICIONES: estar registrado
+PASOS: 
+1.INCLUDE CU005
+2.El sistema le muestra las opciones
+3.El técnico selecciona la opción "nueva simulación"
+4.El sistema le muestra los datos generales que debe documentar el técnico.
+5.El técnico introduce los datos
+6.El sistema le solicita los campos para rellenar las salidas y recorridos previstos
+7.El técnico rellena los campos y lo envía.
+8.El sistema lo verifica/valida
+9.SI el sistema lo verifica positivamente
+	9.1.La simulación queda almacenada
+	9.2.Fin del proceso
+	SI NO
+	9.3.El sistema notificará la denegación de la solicitud
+	9.4.Fin del proceso
+POST-CONDICIONES:
+__________________________________________________________________________________________________________
+
+EJERCICIO 4:
+
+NOMBRE: EnviarSolicitud
+ID: CU004
+ACTORES: Técnico
+PRE-CONDICIONES: estar registrado
+PASOS: 
+1.INCLUDE CU005
+2.El sistema le muestra las opciones
+3.El técnico selecciona la opción "nueva simulación"
+4.El sistema le muestra los datos generales que debe documentar el técnico.
+5.El técnico introduce los datos
+6.El sistema le solicita los campos para rellenar las salidas y recorridos previstos
+7.El técnico rellena los campos y lo envía.
+8.El sistema lo verifica/valida
+9.SI el sistema lo verifica positivamente
+	9.1.La simulación queda almacenada
+	9.2.Fin del proceso
+	SI NO
+	9.3.El sistema notificará la denegación de la solicitud
+	9.4.Fin del proceso
+POST-CONDICIONES:
