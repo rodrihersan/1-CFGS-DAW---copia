@@ -1,0 +1,16 @@
+        h1 {
+            color:brown;
+            background-color: aqua;
+        }
+
+        #fondoVerdeTextoAmarillo {
+            color:chocolate;
+            background-color: hotpink;
+        }
+        h3 {
+            color: blue;
+            background-color: chartreuse;
+        }
+        .bordeRojo {
+            border:2px red solid;
+        }

@@ -1,0 +1,37 @@
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#menu {
+    height: 50px;
+    background-color: #B2D6FF;
+}
+
+#contenedorGeneral{
+    border: red 1px solid;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    height: 180px;
+}
+#barraLateral {
+    width: 20%;
+    height: 90px;
+    background-color: #F09A9D;
+    float: left;
+}
+
+#infoPrincipal {
+    height: 180px;
+    background-color: #F5CF8E;
+    width: 70%;
+    float:left;
+}
+
+#piePagina {
+    height: 120px;
+    background-color: #D6E9FE;
+    width: 100%;
+    clear: both;
+}

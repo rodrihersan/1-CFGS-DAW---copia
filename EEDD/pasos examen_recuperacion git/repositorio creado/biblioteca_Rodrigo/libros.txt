@@ -1,0 +1,1 @@
+La biblioteca tiene 40 libros en prestados.

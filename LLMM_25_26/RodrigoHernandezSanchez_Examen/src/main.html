@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estaciones</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>FRUTAS DE TEMPORADA</h1>
+    </header>
+
+    <main>
+        <div class="table">
+            <table>
+                <tr>
+                    <th rowspan="2">FRUTAS</th>
+                    <th colspan="3">Otoño</th>
+                    <th colspan="3">Invierno</th>
+                    <th colspan="3">Primavera</th>
+                    <th colspan="3">Verano</th>
+                </tr>
+                <tr>
+                    <td>Enero</td>
+                    <td>Febrero</td>
+                    <td>Marzo</td>
+                    <td>Abril</td>
+                    <td>Mayo</td>
+                    <td>Junio</td>
+                    <td>Julio</td>
+                    <td>Agosto</td>
+                    <td>Septiembre</td>
+                    <td>Octubre</td>
+                    <td>Noviembre</td>
+                    <td>Diciembre</td>
+                </tr>
+
+                <tr>
+                    <th>Manzana</th>
+                    <td class="amarillo">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="5" class="amarillo">X</td> 
+                </tr>
+
+                <tr>
+                    <th>Peras</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="5" class="amarillo">X</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th>Naranjas</th>
+                    <td colspan="4" class="amarillo">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" class="amarillo">X</td>
+                </tr>
+
+                <tr>
+                    <th>Cerezas</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3" class="amarillo">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th>Kakis</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3" class="amarillo">X</td>
+                </tr>
+
+                <tr>
+                    <th>Fresas</th>
+                    <td></td>
+                    <td colspan="4" class="amarillo">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th>Sandía</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3" class="amarillo">X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th>Granada</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3" class="amarillo">X</td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+            <p>Si quieres información de alguna fruta que no esté en la tabla anterior, rellena el siguiente formulario</p>
+        </div>
+
+        <div class="form">
+            <form action="../src/segunda.html" method="GET">
+                <fieldset class="fieldset1">
+                    <legend class="legend">Datos de contacto</legend>
+
+                    <label class="label1" for="Nombre">Nombre:</label>
+                    <input type="text" name="Nombre" id="Nombre" required><br>
+
+                    <label class="label2" for="teléfono">N° teléfono:</label>
+                    <input type="tel" name="teléfono" id="teléfono" pattern="[0-9]{9,12}" minlength="9" maxlength="12"><br>
+
+                    <label class="label3" for="CorreoE">Correo E.:</label>
+                    <input type="email" name="CorreoE" id="CorreoE" required><br>
+
+                    <label class="label4" for="PreferenciaContacto">Preferencia de contacto</label>
+                    <select name="menu" id="PreferenciaContacto">
+                        <option value="CorreoElectronico">Correo Electronico</option>
+                        <option value="llamada">Llamada de teléfono</option>
+                    </select>
+                
+                </fieldset>
+
+                <fieldset class="fieldset2">
+                    <legend class="legend">Datos de consulta</legend>
+
+                    <label class="label3" for="NombreFruta">Nombre Fruta</label>
+                    <input type="text" name="NombreFruta" id="NombreFruta"><br>
+
+                    <label class="label3" for="Variedad">Variedad</label>
+                    <input type="text" name="Variedad" id="Variedad"><br><br>
+
+                    <button type="submit" id="Send">Enviar</button>
+                    <button type="reset" id="Send">Limpiar</button>
+
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <iframe src="https://soydetemporada.es/" frameborder="0"></iframe>
+    </footer>
+</body>
+</html>

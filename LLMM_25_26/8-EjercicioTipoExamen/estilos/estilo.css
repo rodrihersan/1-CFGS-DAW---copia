@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+}
+
+main{
+    padding: 0px 150px;
+    border: 2px solid black;
+}
+
+.imagen{
+    width: 40%;
+    margin: auto;
+}
+

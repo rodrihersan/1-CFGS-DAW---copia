@@ -1,0 +1,27 @@
+ISO SOLARI PASOS:
+
+PRIMERO IDIOMA: se pone números 20 y luego 10.
+
+SEGUNDO INSTALACION DE SOLARIS:  LE DAMOS AL NUMERO 1.
+
+TERCERO LEEMOS COMO SE USA SOLARIS: (pantalla blanca con el welcome en azul (arriba)).
+
+Le damos f2 para continuar (abajo aparece como continuar).
+
+ELEGIMOS TIPO DISCO (si no sabemos se busca, en este caso local disk)
+
+Seleccionamos disco y continuaos
+
+le damos a partición con GPT y continuar
+
+
+leemos para intentar crear la partición (viene sin partición). F5 aparece desaparece el solaris
+
+
+todo lo tiene ocupado el solaris p rincipal (35gb porque es lo que le he dado). no nos dejara crear una partición porque tiene todo esa partición (principal). tenemos que quitarle memoria (barra borrar y ponemos 20 por ejemplo) luego bajamos a una unused y le damos f5 y le da  cantidad.
+
+marcamos la principal (mas grande) y f2 todo el rato, no ponemos nombre en este caso ni nada y seguimos todo el rato para adelante.
+
+nos pedirá después de varios f2 contraseña. al continuar debemos cumplir los caracteres (6 números y una letra) y f2 y ya instalamos.
+
+luego reboot f8

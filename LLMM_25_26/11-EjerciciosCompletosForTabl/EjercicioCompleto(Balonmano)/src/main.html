@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas mundial 2023</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="headerTotal">
+
+            <div class="titulo">
+                <h1>MUNDIAL DE BALONMANO POLONIA-SUECIA 2023</h1>
+            </div>
+
+            <div class="logo">
+                <img src="https://www.ihf.info/sites/default/files/styles/news_details/public/2021-08/POLSWE2023%20logo_1440x600_0.jpg?itok=QV_jzcuv" alt="logo mundial" width="300px" height="100px">
+            </div>
+
+            <div class="menu">
+                <p>
+                    <a href="">HOME</a>
+                    <a class="a" href="">JUGADORES</a>
+                    <a href="">EQUIPOS</a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+            <div class="ladoIzquierdo">
+                <form action="../src/alta.html" method="GET"> 
+                    <fieldset>
+                        <legend>Nuevo jugador</legend>
+                        
+                        <div class="Nombre">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" pattern="[A-Z][a-z]+\s[A-Z][a-z]+" required>
+                        </div>
+
+                        <div class="Edad">
+                            <label>Edad</label>
+                            <input type="number" name="edad" min="16" max="45"> 
+                        </div>
+
+                        <div class="Equipo">
+                            <label>Equipo</label>
+                            <select name="equipo" required>
+                                <option value="Dinamarca">Dinamarca</option>
+                                <option value="España" selected>España</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Noruega">Noruega</option>
+                                <option value="Polonia">Polonia</option>
+                            </select>
+                        </div>
+
+                        <div class="Color">
+                            <label>Color primera equipación</label>
+                            <input type="color" name="color"><br><br><br>
+                        </div>
+
+                        <div class="boton" >
+                            <button class="ancho" type="submit">Dar de Alta</button><br><br>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="listas">
+                    <h3>Ultimos jugadores añadidos:</h3>
+                    <ul>
+                        <li>Eric Johansson (22 años, Suecia)</li>
+                        <li>Juri Knorr (22 años, Alemania)</li>
+                        <li>Simon Pytlick (22 años, Dinamarca)</li>
+                        <li>Kiko Costa (17 años, Portugal)</li>
+                        <li>Domen Makuc (22 años, Eslovenia)</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        <iframe class="videoSeccion" width="470" height="405" src="https://www.youtube.com/embed/bvQxG9isjiA?si=HbTY6h1cMVOQPeUf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </main>
+
+    <footer>
+        <form>
+            <label for="contacto"><span>Introduce tu correo y nos pondremos en</span><br><span>contacto contigo</span></label>
+            <input type="email" name="correoFinal" id="contacto" required><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </footer>
+</body>
+</html>

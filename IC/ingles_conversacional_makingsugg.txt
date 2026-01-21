@@ -1,0 +1,23 @@
+A: How about creating a website for our class events?
+
+B: That’s a great idea! We could have a calendar of activities.
+
+C: Yes, good idea! Let’s also add a section for student achievements.
+
+D: I’m not sure about including a forum. Maybe that’s too difficult to manage.
+
+A: You’re right. What if we do something simpler, like a photo gallery instead?
+
+B: Sounds perfect! I can design the homepage with the calendar.
+
+C: Great, I’ll work on the student achievements section.
+
+D: I’ll take care of the photo gallery. Maybe we can also include a contact form for teachers.
+
+Rodrigo: A
+
+Oscar: B
+
+Josemi: C
+
+Sergio: D

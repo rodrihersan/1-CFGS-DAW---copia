@@ -1,0 +1,10 @@
+CASOS DE USO:
+usuario no autenficado: autentificarse (será profesor o alumno)
+
+profesor: modificar eliminar (Seleccionar e suna descripción) generar listado por asignatura (punto c)
+
+alumno autenticado: consultar notas por asignatura y consultar todas
+(en el diagrama podemos poner ocnsuultar nota y dos extend para una o todas. Estaria casi bien porque si no se selecciona ninguna quedaría vacio.) Lo mejor seria ponerlo por separado)
+
+
+usuario no autentificado: autentificarse (todas las demás acciones las hará una vez que este identificado).

@@ -1,0 +1,61 @@
+Nombre: Generar listado de notas
+Id: CU001
+Actores: profesor
+Descripción: El profesor generará un listado de las notas del curso y asignatura que seleccione 
+Precondición: Profesor debe estar logearse
+Pasos:
+INCLUDE CU000(____) (EJEMPLO SI HUBIESE UN INCLUDE EN ESTE CASO NO)
+1.	El profesor accede a generar el listado 
+2.	El sistema solicita los datos (curso y asignatura)
+3.	El profesor introduce los datos requeridos (Curso y asignatura)
+4.	El sistema muestra la lista de alumnos
+5.	El sistema solicita confirmación
+6.	El profesor confirma
+6.1	El sistema genera el listado de notas
+SI NO
+6.1 FIN DEL PROCESO
+
+FLUJO ALTERNATIVO: 
+1.	El profesor no confirma (paso 6)
+2.	Fin del proceso (paso 7)
+
+SI NO / FLUJO ALTERNATIVO formas alternativas de lo que nos pide (en este caso el profesor puede no solicitar la confirmación en ese caso el profesor no confirma y finaliza el proceso. 
+En caso de que si, el sistema genera el listad de notas y después finaliza el proceso.
+
+
+
+
+1.	El alumno accede a consultar notas
+2.	El sistema le muestra las opciones
+3.	El alumno selecciona opción
+4.	SI nota por asignatura
+a.	EXTEND CU005 (4.1)
+SI TODAS LAS NOTAS
+4.1 EXTEND CU006	
+NO HARÁ FALTA CREAR LOS EXTEND / INCLUDE. SIMPLEMENTE LOS DECIMOS.
+ 
+Id: CU002
+Actores: Profesores
+Descripción: El profesor generará un listado de notas del curso y asignatura que seleccione
+Precondición: el profesor debe estar logueado en el sistema
+Pasos:
+1.	El profesor accede a generar el listado
+2.	El sistema solicita curso y asignatura
+3.	El profesor introduce los datos indicados
+4.	El sistema muestra la lista de alumnos
+5.	El sistema solicita confirmación
+6.	El profesor confirma
+7.	El sistema genera el listado
+8.	El sistema redirige a la página principal
+Flujo alternativo:
+6. El profesor no confirma
+7. El sistema ofrece guardado en BBDD (paso 7)
+8. SI El profesor selecciona guardar (paso8)
+8.1	El sistema guarda el listado (paso 8.1)
+SI NO
+8.1	Fin del proceso (paso 8.1)
+TENDRÁN EL MISMO NUMERO (8.1) PORQUE SON CONDICIONES DISTINTAS
+9.	Redirige a la página principal. (paso 9)
+
+SI VAMOS A TENER MAS PASOS LO SUYO ES PONER LA OPCION DE SI/SI NO
+En caso de que se vaya a acabar ahí, podemos usar flujo alternativo “O” SI/SI NO.

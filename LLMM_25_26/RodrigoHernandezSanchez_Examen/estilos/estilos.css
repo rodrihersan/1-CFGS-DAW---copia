@@ -1,0 +1,66 @@
+h1{
+    text-align: center;
+}
+
+table{
+    width: 90%;
+    border: 2px solid lightblue;
+    margin: auto;
+}
+td,th{
+    border: 1px solid lightblue;
+    text-align: center;
+}
+
+.amarillo{
+    background-color: lightyellow;
+}
+
+p{
+    width: 90%;
+    padding-left: 100px;
+}
+form{
+    border: 2px dashed lightblue;
+}
+
+.fieldset1{
+    width: 30%;
+}
+.legend{
+    color: lightblue;
+}
+
+.fieldset2{
+    width: 30%;
+}
+ .label1{
+    padding-right: 100px;
+ }
+
+ .label2{
+    padding-right: 78px;
+ }
+
+ .label3{
+    padding-right: 90px;
+ }
+ 
+ .label4{
+    padding-right: 7px;
+ }
+
+ .form{
+    width: 90%;
+    margin: auto;
+ }
+
+ iframe{
+    border: 3px solid lightblue ;
+    width: 70%;
+    height: 300px;
+ }
+
+ .iframe{
+    text-align: center;
+ }

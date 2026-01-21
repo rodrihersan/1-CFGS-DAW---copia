@@ -1,0 +1,105 @@
+header{
+    width: 100%;
+}
+.logo{
+    width: 20%;
+    float: left;
+    background-color: palevioletred;
+    height: 86px;
+}
+
+nav{
+    width: 60%;
+    height: 86px;
+    float: left;
+    background-color: blue;
+    text-align: center;
+}
+
+.izquierdo{
+    width: 30%;
+    float: left;
+    background-color: blue;
+}
+
+.centro{
+    width: 30%;
+    float: left;
+    background-color: blue;
+}
+
+.derecha{
+    width: 30%;
+    float: left;
+    background-color: blue;
+}
+
+.estrellas{
+    width: 10%;
+    float: left;
+    height: 86px;
+    background-color: aqua;
+    text-align: center;
+}
+
+.telefono{
+    width: 10%;
+    float: left;
+    background-color: aqua;
+    height: 86px;
+    text-align: center;
+}
+
+main{
+width: 100%;
+clear: both;
+background-color: yellow ;
+}
+
+/* El bloque contenedor de la barra naranja y su espacio */
+.bloque {
+    /* Ocupa el espacio que queda a la izquierda, dejando espacio para el texto .pe */
+    width: 55%; 
+    float: left;
+    /* Fuerza a que cada bloque se apile debajo del anterior */
+    clear: left; 
+}
+
+/* Modificamos las barras para que ocupen SOLO la parte naranja dentro de su .bloque */
+.primero, .segundo, .tercero, .cuarto {
+width: 90%; /* Deja un 10% para el espacio amarillo */
+float: left; /* Flota a la izquierda de su propio .bloque */
+background-color: orange;
+}
+
+/* Nuevo elemento para el hueco amarillo entre las barras */
+.espacio-amarillo {
+    width: 100%; /* Ocupa el ancho restante para el espaciado (90% + 10% = 100% de .bloque) */
+    height: 25px; /* Altura de tu hueco amarillo */
+    /* NO necesita float ni clear, ya que el .bloque lo maneja */
+}
+
+/* El texto negro */
+.pe{
+    /* Flota a la derecha para subir al lado de todos los .bloque */
+float: right; 
+    /* Le damos un ancho que encaje con el .bloque (55% + 40% = 95% total) */
+    width: 40%;
+    
+    /* El texto debe subir hasta el inicio de main */
+    margin-top: 0; 
+    
+    /* Asegúrate de que no haya saltos de línea si ya lo tenías */
+    clear: none; 
+}
+
+/* El .vacio al final de main debe limpiar todo el flujo */
+.vacio{
+    width: 100%;
+    height: 25px;
+clear: both; /* Este sí debe mantener el clear: both para que el footer baje */
+}
+
+footer{
+    clear: both;
+}

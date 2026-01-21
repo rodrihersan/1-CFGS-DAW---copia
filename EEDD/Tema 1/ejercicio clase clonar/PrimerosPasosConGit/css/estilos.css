@@ -1,0 +1,11 @@
+H1 {
+    text-align: center;
+}
+
+p {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    color: darkblue;
+    background-color: lightblue;
+}

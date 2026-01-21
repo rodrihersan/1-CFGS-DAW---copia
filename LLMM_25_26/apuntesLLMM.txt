@@ -1,0 +1,388 @@
+CONTENIDO CABECERA <head></head>:
+    <title></title> (se cierra misma linea, es el nombre de arriba)
+_______________________________________________________________________________________________________________    
+    
+<base href=""> (no se cierra con </base>, es contenido vacio, se cierra al final con ">").  El elemento <base> es único para todo el documento.
+Tienes:
+
+<base href="imagenes/gato.jpg">
+
+
+❌ Eso apunta directamente a un archivo, pero <base> debe apuntar a una carpeta o ruta, no a un archivo específico.
+✅ Corrige a:
+
+<base href="imagenes/"> solo apunta a la carpeta no hace falta la imagen (va en el body on img)
+
+
+De esa forma, todas las imágenes <img src="gato.jpg"> se cargarán desde esa carpeta.
+
+                    EJEMPLO:
+                    <base href="http://www.imagenesDeGatos.com/imagenes/gatitos">
+                            Y en el cuerpo podremos referenciar a imágenes de ese directorio sin ponerlo entero.
+                            <body>
+                                <img src="gatoBlanco.jpg">
+                                <img src="gatoNaranja.jpg">
+                            </body> 
+                                EJEMPLO:
+                                    LenguajesDeMarcas/
+                                        │
+                                        ├── proyecto1/
+                                        │   ├── index.html
+                                        │   └── imagenes/
+                                        │       ├── gatoBlanco.jpg
+                                        │       └── gatoNaranja.jpg
+                                EJEMPLO HTML:
+                                    <head>
+                                        <base href="imagenes/">
+                                    </head>
+
+                                    <body>
+                                    <img src="gatoBlanco.jpg" alt="Gato blanco"> (El alt define lo que es una imagen si no se puede cargar)
+                                    <img src="gatoNaranja.jpg" alt="Gato naranja">
+                                    </body>
+
+en el HTML pones:
+
+<base href="http://127.0.0.1:5500/src/">
+
+
+EJEMPLO 1: Entonces, si escribes: (VA EN EL VODY EL IMG)
+
+<img src="imagenes/logo.png">
+
+
+El navegador entiende automáticamente que la imagen está en:
+
+http://127.0.0.1:5500/src/imagenes/logo.png
+
+EJEMPLO 2: 
+Rodrigo/
+│
+├── ejercicio3.html
+└── imagen/
+    └── gato.jpg
+la ruta relativa a la imagen es:
+
+<img src="imagen/gato.jpg" alt="Gato">
+
+http://127.0.0.1:5500/Rodrigo/
+Entonces podrías poner:
+
+html
+Copiar código
+<base href="http://127.0.0.1:5500/Rodrigo/">
+Así, todas las rutas relativas se entenderán a partir de esa dirección base.
+Por ejemplo:
+
+html
+Copiar código
+<img src="imagen/gato.jpg" alt="Gato">
+será interpretado como:
+
+arduino
+Copiar código
+http://127.0.0.1:5500/Rodrigo/imagen/gato.jpg
+ _______________________________________________________________________________________________________________
+
+    <meta> (tiene metadatos, no se cierra con </meta>. Se cierra solamente con ">")
+            Con el atributo name. Este atributo provee metadatos a nivel de documento
+            organizados en pares nombre-valor. El valor se incluirá en el atributo content:
+            <meta name="Nombre del elemento" content="Contenido asignado"/> (<meta name="autor" content="Rodrigo"/>)
+                Información general:
+                    •  abstract: Proporciona un resumen muy corto de la etiqueta decription.
+                    • author: Nombre del autor del documento.
+                    • copyright: Para indicar que hay información bajo derechos de autor.
+                    • date: Para incluir la fecha de creación de la página.
+                    • generator: Para incluir la herramienta utilizada para construir el sitio web.
+                
+                    Información específica para buscadores:
+                    • description: Para explicar el contenido y objetivos del sitio web. Se trata de información utilizada por los motores de búsqueda para indexar la página.
+                    • keywords: lista de palabras clave para que nuestro sitio sea localizable. Si se incluyen palabras no relacionadas con el tema del sitio web, se considera spam y 
+                    esto es penalizado por los motores de búsqueda.
+                    • robots: Sirve para controlar los robots de los motores de búsqueda. Algunos de sus posibles valores son: index, follow, nonindex, nofollow, .noarchive 
+_______________________________________________________________________________________________________________
+
+    <link> (se cierra solamente con ">")
+                <link rel="stylesheet" href="nombre donde este los estilos (estilos.css por ejemplo)">
+
+                ejemplo si nos pide: Información de las versiones en otros idiomas de la página en cuestión (la URL se
+puede inventar) y de la versión que se abrirá por defecto.
+<link rel="alternate" hreflang="es" href="https://es.ejemplo.org/internet">
+<link rel="alternate" hreflang="en" href="https://en.ejemplo.org/internet">
+<link rel="alternate" hreflang="x-default" href="https://en.ejemplo.org/internet">
+hreflang="es" → versión en español.
+
+hreflang="en" → versión en inglés.
+
+hreflang="x-default" → versión por defecto (por ejemplo, si el idioma del usuario no coincide con ninguno de los anteriores).
+
+link rel="canonical" href="http://www.ejemplo.es/" -> página por defecto (principal)(debe aparecer en el momento que haya idiomas)
+_______________________________________________________________________________________________________________
+    <style>
+    CSS: interno vs externo
+
+        CSS interno (con <style>)
+
+            Se escribe dentro del mismo documento HTML, normalmente en el <head>.
+
+            Útil para documentos pequeños o pruebas rápidas, o estilos específicos que solo aplican a esa página.
+
+            Ejemplo:
+
+            <head>
+            <style>
+                body { background-color: lightblue; }
+                h1 { color: red; text-align: center; }
+            </style>
+            </head>
+
+
+        CSS externo (archivo .css separado)
+
+            Se crea un archivo aparte, por ejemplo estilos.css.
+
+            Se enlaza al HTML con <link>:
+
+            <head>
+            <link rel="stylesheet" href="estilos.css">
+            </head>
+    
+    </style>    
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+CONTENIDO CUERPO <body> </body>
+
+    Los elemento <h1>, <h2>, <h3>, <h4>,<h5> y <h6></h6> (se abren y cierran en la misma linea)
+_______________________________________________________________________________________________________________
+    <p> </p> 
+    AMBAS FORMAS SON VALIDAS
+    <p>
+
+    </p>        
+_______________________________________________________________________________________________________________    
+    <br> TIENE QUE IR DENTRO DEL <p></p> (no tiene etiqueta de cierre el br)
+        EJEMPLO:
+        <p>
+            Hola mundo<br>
+            Soy Rodrigo<br>
+            Vivo en Madrid
+        </p>
+_______________________________________________________________________________________________________________
+    &nbsp; (va dentro del p)
+        <p>Hola&nbsp;mundo</p>
+        Se verá como: Hola mundo
+        La diferencia es que este espacio no se puede separar en dos líneas si el texto se ajusta.
+        Otro ejemplo:
+        <p>Dr.&nbsp;Rodrigo</p>
+        Esto asegura que “Dr.” y “Rodrigo” siempre estén juntos, nunca separados por un salto de línea. 
+        (Si el texto se ajusta al final de la línea, “hola” y “mundo” siempre se quedarán juntos, no se dividirán.)
+_______________________________________________________________________________________________________________
+    <hr> linea horizontal (no tiene etiqueta de cierre). va fuera del p
+        <p>Primer párrafo</p>
+        <hr>
+        <p>Segundo párrafo</p>
+_______________________________________________________________________________________________________________
+    LISTAS: (DENTRO DEL BODY)
+
+        <ul> </ul> lista con elementos no ordenados. Son elementos con cierre
+            <li></li> Contenido que tiene que ir dentro de la etiqueta ul 
+        
+        <ol> </ol> lista con elementos ordenados. Son elementos con cierre 
+            <li></li> Contenido que tiene que ir dentro de la etiqueta ol
+
+        <li> </li> Se debe cerrar siempre (admite sin cerrarse pero por buenas prácticas)
+
+    LISTAS ANIDADAS: (DENTRO DEL BODY)
+
+        <ul>
+            <li>Frutas
+                 <ol>
+                    <li>Manzana</li>
+                    <li>Plátano</li>
+                    <li>Naranja</li>
+                </ol>
+            </li>
+            <li>Verduras
+                <ol>
+                    <li>Zanahoria</li>
+                    <li>Lechuga</li>
+                </ol>
+            </li>
+        </ul>
+        Cómo se verá en la página:
+        .Frutas
+            1-Manzana
+            2-Plátano
+            3-Naranja
+        .Verduras
+            1-Zanahoria
+            2-Lechuga
+_______________________________________________________________________________________________________________              
+    LISTAS DE DEFINICIONES: (DENTRO DEL BODY)
+
+    Usaremos <dl></dl> <dt></dt> <dd></dd>
+
+        <dl> </dl> Contiene solamente los elementos dt o dd
+        <dt> </dt> En este elemento incluimos el término que se quiere definir
+        <dd> </dd> Aquí se introduce la definición del término anterior (para poner este debe ir antes un dt)
+        EJEMPLO: 
+        <dl>
+            <dt>HTML</dt>
+                <dd>Lenguaje de marcas para crear páginas web.</dd>
+            <dt>CSS</dt>
+                <dd>Lenguaje de estilos para dar formato a páginas web.</dd>
+        </dl>
+
+_______________________________________________________________________________________________________________
+
+    ENLACES: 
+    
+    <a href=" "></a> Son zonas del documento que, al interactuar con ellas, redirigen a otro punto del mismo documento o a otro documento distinto
+    No puede contenerse a sí mismo, pero puede contener otros elementos en línea.
+
+        href = indica la URL 
+            <h3><a href="#">Platos típicos del mundo</a></h3> <!-- el a seguido el href Y SOBRE TODO EL #, hace que al pulsar en el texto platos tipicos del mundo
+                                                           te lleve al principio de la pagina.-->
+
+        target = establece donde se abrirá el documento enlazado. Sus posibles valores son:
+            _blank: Abre el link en una nueva ventana o pestaña
+                <a href="http://www. google.es" target="_blank"> "nombre que al pulsar nos llevara a la URL del href" </a>
+            _self: Valor por defecto. Abre el link en el mismo marco.
+                <a href="http://google.com/" target="_self"> "nombre que al pulsar nos llevara a la URL del href" </a>
+            
+        download = con este atributo se establece que la url de enlace es un archivo para descargar del servidor. Si no se indica el nombre del archivo, se descargará con el 
+                   que tenga en el servidor.
+                <a href="url_del_fichero" download="nombre_archivo">Texto</a> (download = nombre que daremos al archivo cuando se descargue)
+
+
+_______________________________________________________________________________________________________________
+
+🧩 1️⃣ — Favicon (.ico)
+
+Exacto ✅
+El favicon es ese icono pequeño que aparece en la pestaña del navegador (como el logo de YouTube, Gmail, etc.).
+
+Solo necesitas:
+
+Una imagen cuadrada (idealmente 32x32 px o 64x64 px).
+
+Extensión .ico (aunque algunos navegadores también aceptan .png).
+
+👉 Lo más fácil:
+
+Busca una imagen en internet (por ejemplo un logo pequeño).
+
+Entra a https://favicon.io/
+ o https://convertico.com/
+
+— ahí subes cualquier imagen .jpg o .png y te genera un .ico.
+
+Guarda ese archivo en tu carpeta imagenes/ y ponle el nombre logo.ico.
+
+Y en el HTML:
+
+<link rel="icon" type="image/x-icon" href="imagenes/logo.ico">
+
+
+Listo, ya tendrás tu icono personalizado 💡
+
+
+🧠 Resumen rápido
+Extensión	Type correcto	Ejemplo HTML
+.ico	image/x-icon	<link rel="icon" type="image/x-icon" href="imagenes/logo.ico">
+.png	image/png	<link rel="icon" type="image/png" href="imagenes/logo.png">
+.jpg o .jpeg	image/jpeg	<link rel="icon" type="image/jpeg" href="imagenes/logo.jpg">
+.svg	image/svg+xml	<link rel="icon" type="image/svg+xml" href="imagenes/logo.svg">
+
+_______________________________________________________________________________________________________________
+
+ETIQUETA APERTURA Y CIERRE: APAREC EN LA WEB TAL CUAL SE ESCRIBE (tabulaciones etc..)
+<pre>
+            public class HolaMundo {
+                public static void main(String[] args) {
+                    System.out.println("Hola Mundo");
+                }
+            }
+    </pre>
+
+_______________________________________________________________________________________________________________
+
+🎨 1. font-family: Arial, sans-serif;
+
+Define el tipo de letra (la fuente) del texto.
+
+👉 Arial es la primera opción.
+👉 sans-serif es una alternativa si Arial no está disponible.
+
+📌 En pocas palabras:
+Hace que el texto se vea con la letra Arial (o similar).
+
+📦 2. overflow: hidden;
+
+Controla qué pasa con el contenido cuando se sale del tamaño del contenedor.
+
+Con hidden:
+
+👉 Corta todo el contenido que sobresalga.
+👉 No aparecen barras de scroll.
+
+📌 En tu práctica se usa para que el div contenedor encierre correctamente los elementos flotantes (float), porque por defecto el padre no se adapta.
+
+📏 3. padding: 10px;
+
+Es el espacio interno entre el borde del elemento y su contenido.
+
+Ejemplo con padding:
+
+[BORDE]
+  ←--- espacio de padding ---→
+      [TEXTO]
+
+
+📌 Si pones padding: 10px;
+→ Hay 10 píxeles de espacio en TODOS los lados (arriba, abajo, izquierda y derecha).
+
+No pasa nada por usar siempre px.
+Otros valores serían: em, rem, %, etc.
+
+🔍 4. font-weight: bold;
+
+Define el grosor de la letra.
+
+Con bold:
+
+👉 La letra se vuelve negrita.
+
+📌 Equivale a font-weight: 700.
+
+📏 5. margin-bottom: 20px;
+
+Es el espacio exterior, debajo del elemento.
+
+Ejemplo:
+
+[elemento]
+    ↓ margin-bottom: 20px
+[otro elemento]
+
+
+📌 En tu caso sirve para dejar separación entre bloques de código (<pre>).
+
+🧠 RESUMEN RÁPIDO
+Propiedad	Qué hace
+font-family	Cambia la fuente del texto
+overflow: hidden	Oculta lo que sobresale del contenedor y corrige problemas con float
+padding	Espacio INTERNO dentro del elemento
+font-weight: bold	Pone el texto en negrita
+margin-bottom	Espacio EXTERNO debajo del elemento
+
+
+
+
+
+
+
+
+

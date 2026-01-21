@@ -1,0 +1,77 @@
+#nosequeponer1{
+    width: 25%;
+    background-color: red;
+    text-align: center;
+}
+
+#encabezadoPrincipal{
+    width: 55%;
+    background-color: chartreuse;
+}
+
+/*---------------------------------------------*/
+
+#nosequeponer2{
+    width: 25%;
+    background-color: red;
+    text-align: center;
+}
+
+#encabezadoPrincipal2{
+      width: 55%;
+    background-color: chartreuse;
+}
+/*---------------------------------------------*/
+#nosequeponer3{
+    width: 100%;
+    background-color: red;
+    text-align: center;
+    margin: auto;
+}
+
+#encabezadoPrincipal3{
+      width: 80%;
+    background-color: chartreuse;
+}
+
+#subEncabezado7{
+    width: 30%;
+    float: left;
+ 
+}
+#subEncabezado8{
+    width: 30%;
+    float:right;
+    
+}
+#subEncabezado9{
+    width: 30%;
+    clear: both;
+    margin: auto;/*reparte a partes iguales el espacio sobrante*/
+}
+/*---------------------------------------------*/
+#nosequeponer4{
+    width: 100%;
+    background-color: red;
+    text-align: center;
+    margin: auto;
+}
+#encabezadoPrincipal4{
+    width: 80%;
+    background-color: chartreuse;
+}
+#subEncabezado10{
+    width: 30%;
+    float: left;
+    
+}
+#subEncabezado11{
+    width: 30%;
+    float:right;
+    
+}
+#subEncabezado12{
+    width: 30%;
+    clear: both;
+   margin: auto;
+}

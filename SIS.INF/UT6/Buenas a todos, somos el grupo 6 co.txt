@@ -1,0 +1,30 @@
+Buenas a todos, somos el grupo 6 conformado por Alejandro José Miguel y yo rodrigo y vamos a exponer el tema 6 que es todo lo referente a almacenamiento externo.
+------------------------
+
+Los objetivos del trabajo son los siguientes "leo la diapositiva"
+
+--------------
+
+Lo primero de todo vamos a aprender que son para que sirven y cuando se usarán los distintos tipos de almacenamiento externo.
+
+Básicamente son dispositivos informáticos que sirven para guardar datos de forma permanente o temporal, permitiendo su recuperación posterior. Son unos periféricos muy importantes debido a que en la actualidad estamos constantemente creando, descargando, guardando generando fotos, videos, copias de seguridad, documentos etc.
+
+Van a servir como he mencionado antes para guardar copias de seguridad, transportar información entre dispositivos o ampliar la memoria de un sistema.
+
+
+Se van a usar en distintos ámbitos. 
+Estos serán en el profesional para copias de proyectos 
+En el gaming para el almacenamiento de juegos y partidas.
+En el doméstico para el guardado de fotos o videos personales
+Y en el educativo para transportar trabajos o archivos entre ordenadores.
+
+
+CINTA MAGNETICA: hubo una creación un año antes, en 1951 por UNIVAC pero la creación en 1952 por IMB supuso la importancia en ese momento de la historia tecnológica. Se le llamaba cinta magnética de 7 pistas (grababan varios bits del mismo byte (6 bits de data(son valores reales (solo 64 posibles valores) y 1 bit de paridad) total 7 pistas. con varios cientos de KB
+
+seguimos leyendo diapositivas
+
+DVD: el consorcio de empresas en el DVD es una agrupación de empresas para la creación del producto, fueron Panasonic, Mitsubishi, Pioneer, philips Sony entre otras.
+
+USB explico diferencia USB y pendrive
+
+El estado actual de todos estos dispositivos es que a día de hoy siguen conviviendo y cada uno tiene su lugar dependiendo de las necesidades del usuario

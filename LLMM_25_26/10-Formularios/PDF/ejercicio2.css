@@ -1,0 +1,11 @@
+.Caja{
+    width: 20%;
+    margin: auto;
+    text-align: left;
+    border: 3px dotted red;
+    padding: 10px;
+}
+
+.fila{
+        margin-bottom: 15px;
+}

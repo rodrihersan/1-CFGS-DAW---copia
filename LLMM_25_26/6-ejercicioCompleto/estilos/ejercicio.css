@@ -1,0 +1,90 @@
+.rojo{
+color: red;
+}
+
+.azul{
+color: blue;
+}
+
+.verde{
+color: green;
+}
+
+.morado{
+color: purple;
+}
+
+.naranja{
+color: orange;
+}
+
+body{
+    background-color: lightgrey;
+    padding: 0px 150px;
+    /*overflow: hidden;*/
+}
+
+.encabezado{
+    text-align: center;
+}
+
+#recuadro{
+    border: double;
+    width: 50%;
+    margin: auto;
+   text-align: center;
+
+}
+
+.fondo{
+    background-color: palevioletred;
+}
+
+#listasEntero{
+    width: 70%;
+    margin: auto;
+}
+
+#izquierda{
+    float: left;
+}
+
+#derecha{
+    float: right;
+}
+
+main {
+    width: 100%;
+   /* overflow: hidden; /*significa como se comporta el contenedor si el contenido es mayor*/
+}
+
+hr{
+    clear: both;
+}
+
+.definicion{
+width: 60%;
+margin: auto;
+clear: both;
+}
+
+.posicion{
+    width: 100%;
+ 
+    margin: auto;
+}
+h2{
+    text-align: center;
+}
+
+/*#img{
+    width: 100%;
+    margin: auto;
+
+}*/
+
+#nose{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}

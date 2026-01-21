@@ -1,0 +1,88 @@
+* {
+    margin: auto;
+}
+
+#contenedorPrincipal {
+    width: 600px;
+    margin: auto;
+    background-color: honeydew;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 80px;
+    text-align: center;
+}
+
+#divA {
+    width: 100px;
+    height: 100px;
+    border: 10px solid palegreen;
+    color: palegreen;
+}
+
+#divBC {
+    width: 240px;
+    overflow: hidden;
+}
+#divBizquierda{
+    float: left;
+}
+
+#B {
+    width: 100px;         /*Preguntar a sonia si es posible hacer esto*/
+    height: 100px;
+    border: 10px solid palevioletred;
+    color: palevioletred;
+    float: right;
+}
+
+#divCderecha{
+    float: right;
+}
+#C {
+    width: 100px;
+    height: 100px;
+    border: 10px solid palegoldenrod;
+    color: palegoldenrod;
+    float: left;
+}
+
+#divDEF {
+    width: 360px;
+    overflow: hidden;
+}
+
+#divDderecha{
+    float: left;
+}
+
+#divD {
+    width: 100px;
+    height: 100px;
+    border: 10px solid lightpink;
+    color: lightpink;
+    float: right;
+}
+#divEcentro{
+    float: left;
+}
+
+#divE {
+    width: 100px;
+    height: 100px;
+    border: 10px solid palegreen;
+    color: palegreen;
+}
+
+#divFderecha{
+    float: right;
+}
+
+#divF {
+    width: 100px;
+    height: 100px;
+    border: 10px solid paleturquoise;
+    color: paleturquoise;
+    float: left;
+}

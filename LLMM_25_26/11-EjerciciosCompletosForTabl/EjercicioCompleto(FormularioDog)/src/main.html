@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog-Form</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+</head>
+<body>
+    <h1>Dog D.Dog</h1>
+
+    <h2>About</h2>
+        <p>Woof Woof!</p>
+        <p>Hi, I'm Dog. I love <span class="azul">USER INTERFACE DESIGN.</span></p>
+
+    <h2>Courses</h2>
+        <p>Here are some courses I've taken</p>
+
+        <table>
+            <tr>
+                <th>COURSE NUMBER</th>
+                <th>COURSE TITLE</th>
+                <th>SEMESTER TAKEN</th>
+            </tr>
+
+            <tr>
+                <th colspan="3">FOR CREDIT</th>
+            </tr>
+
+            <tr>
+                <td class="azul">6.813</td>
+                <td class="azul">User Interface Design</td>
+                <td class="azul">Spring2014</td>
+            </tr>
+
+            <tr>
+                <td class="azul">6.034</td>
+                <td>Artificial Intelligence</td>
+                <td>Fall2013</td>
+            </tr>
+
+            <tr>
+                <td class="azul">6.006</td>
+                <td>Introduction to Algorithms</td>
+                <td>Fall2013</td>
+            </tr>
+
+            <tr>
+                <th colspan="3">LISTENER</th>
+            </tr>
+
+            <tr>
+                <td class="azul">6867</td>
+                <td>Machine Learning</td>
+                <td>Fall 2013</td>
+            </tr>
+
+            <tr>
+                <td class="azul">6.830</td>
+                <td>DataBase Systems</td>
+                <td>Fall 2012</td>
+            </tr>
+        </table>
+
+        <h2>Interests</h2>
+            <p>I am interesteed HCI, memes, and youtube videos</p>
+
+        <h2>Submit Pet Information</h2>
+            <p>Would love to know what kinds f pets you "own" (you will never own me). Submit below!</p>
+
+        <form action="../src/segundaPagina.html" method="GET" target="_blank">
+            <label for="name">Name:</label>
+            <input type="text" name="N" id="name"><br>
+
+            <label for="Phylum">Phylum</label>
+            <input type="text" name="P" id="Phylum"><br>
+
+            <label for="Gender">Gender</label>
+            <input type="text" name="G" id="Gender"><br><br>
+            
+            <button type="submit" id="Send-button">Submit</button>
+        </form>
+
+        <h2>Job Details</h2>
+        <form action="https://www.linkedin.com/feed/" method="GET" target="_self">
+
+            <label for="Jobtitle">Job Title</label>
+            <input type="text" name="JT" id="Jobtitle">
+
+            <label for="Description">Description</label>
+            <div>
+                <textarea name="texto" rows="4" cols="20"></textarea>
+                <p>Brief Description should have atmost 500 characters</p>
+            </div>
+
+            <label for="CompanyName">Company Name:</label>
+            <input type="text" name="CName" id="CompanyName"><br>
+
+            <label for="ContactNumber">Contact number:</label>
+            <input type="tel" name="CNumber" id="Contactnumber"><br>
+
+            <label for="Contactperson">Contact person:</label>
+            <input type="text" name="CP" id="Contactperson"><br>
+
+            <label for="Email">Email:</label>
+            <input type="email" name="correo" size="40"><br>
+
+            <label for="WorkStatus">Work Status:</label>
+            <input type="checkbox" name="casilla" id="WorkStatus">
+
+            <label for="fulltime">Full Time</label>
+            <input type="checkbox" name="workstatus" value="fulltime" id="fulltime">
+
+            <label for="PartTime">Part Time</label>
+            <input type="checkbox" name="workstatus" value="parttime" id="PartTime">
+
+            <label for="PerDiem">Per Diem</label>
+            <input type="checkbox" name="workstatus" value="perdiem" id="PerDiem">
+
+            <label for="Others">Others</label>
+            <input type="checkbox" name="workstatus" value="others" id="Others"><br>
+
+            <label for="Salary">Salary:</label>
+            <input type="number" name="salary" id="Salary">
+
+            <select name="currency">
+                <option>US Dollar</option>
+                <option>Euro</option>
+            </select>
+            <select name="period">
+                <option>Annual</option>
+                <option>Monthly</option>
+                <option>Weekly</option>
+            </select><br>
+
+            <label for="Experience">Experience(Years):</label>
+            <input type="number" name="numero"><br>
+
+            <label for="Locations">Locations:</label>
+            <input type="text" name="L" id="Locations"><br>
+
+            <label for="Qualifications">Qualifications:</label>
+            <select id="menu1" name="menu[]" size="4" multiple>
+                <option value="1">Any</option>
+                <option value="2">High</option>
+                <option value="3">Associate</option>
+                <option value="4">Pre</option>
+            </select>
+
+            <button type="button">Add &gt;&gt;</button>
+            <button type="submit" id="Send-button">&lt;&lt; Remove</button>
+
+            <select id="menu2" name="menu_selected[]" size="4" multiple></select><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* ======== REGLAS GENERALES ======== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#contenedor {
+    width: 90%;
+    margin: auto;
+    overflow: hidden; /* Pide el PDF */
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* ======== MENÚ LATERAL ======== */
+#menu {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    border-right: 2px solid black; /* Pide el PDF */
+    background-color: #f2f2f2;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    margin-bottom: 15px;
+    font-weight: bold; /* Pide el PDF */
+}
+
+/* ======== CONTENIDO ======== */
+#contenido {
+    float: left;
+    width: 68%;
+    padding: 10px;
+    margin-left: 10px;
+    border-left: 2px solid black; /* Pide el PDF */
+}
+
+h2 {
+    margin: 10px 0;
+    font-weight: bold;
+    color: black;
+    border-top: 2px solid black; /* Pide el PDF */
+}
+
+/* Bloques de código */
+pre {
+    background-color: #e6e6e6;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+/* Imágenes flotantes */
+img {
+    width: 45%;
+    margin: 2%;
+    float: left;
+    border: 1px solid black;
+}
+
+/* Limpiar flotados */
+.clear {
+    clear: both; /* Pide el PDF */
+}
+
+/* ======== PIE ======== */
+#pie {
+    clear: both;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid black; /* Pide el PDF */
+}

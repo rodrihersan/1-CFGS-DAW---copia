@@ -1,0 +1,63 @@
+#divEjer6_1{
+width: 100%;
+background-color: lightblue;
+text-align: center;    
+margin-bottom: 20px;
+
+}
+
+#divSecundEjer6_1{
+width: 100%;
+background-color: lightgreen;
+}
+
+#primerSpanEjer6_1{
+color: orange;
+
+}
+
+#segundoSpanEjer6_1{
+color: red;
+
+}
+
+
+
+
+
+#divPrincipal{
+    width: 100%;
+    background-color: lightblue;
+    text-align: center;
+    border: 2px solid black;
+    float: left;
+    margin-bottom: 20px;
+}
+#divSecundario{
+    width: 52%;
+    background-color: lightgreen;
+    border: 2px solid black;
+    float: left;
+    clear: both;
+}
+#divDerecha{
+    width: 47%;
+    float: right;
+    background-color: lightgreen;
+    border: 2px solid black;
+    
+}
+#divDerechaAbajo{
+    width: 47%;
+    float: right;
+    
+    background-color: lightgreen;
+    border: 2px solid black;
+
+}
+#primerSpan{
+color: orange;
+}
+#segundoSpan{
+color: red;
+}

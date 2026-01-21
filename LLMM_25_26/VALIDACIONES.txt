@@ -1,0 +1,346 @@
+📘 ¿QUÉ ES UNA EXPRESIÓN REGULAR?
+👉 Es una forma de decirle al ordenador cómo debe ser un texto.
+
+Ejemplo:
+“Tiene que tener 3 letras mayúsculas”
+“Tiene que tener 5 números”
+“Puede llevar un guion opcional”
+Eso se escribe con expresiones regulares y se usa mucho en:
+pattern de HTML
+
+TABLA 1: PATRONES BÁSICOS
+Patrón	                        Qué significa	                        Ejemplo
+    .	                        Cualquier carácter	                     a, 1, @
+    \w	                        Letra o número	                            a, Z, 9
+    \d	                        Un número	                                0 a 9
+    \D	                        No es número	                            a, @
+    \s	                        Espacio	                                espacio, tab
+    \S	                        No es espacio	                            a, 3
+    [abc]	                       a o b o c	                            a
+    [A-Z]	                    Letra mayúscula                            	M
+    [a-z]	                    Letra minúscula	                            k
+    [0-9]	                        Número	                                7
+    [^abc]	                    Cualquier cosa menos a,b,c	                d, 1
+
+_______________________________________________________________________________________________________________
+TABLA 2: CANTIDADES (CUANTIFICADORES)
+Símbolo	                        Qué significa	                        Ejemplo
+{3}	                            Exactamente 3 veces	                    \d{3} → 123
+{2,5}	                        De 2 a 5 veces	                        [a-z]{2,5}
+{3,}	                        3 o más veces	                        \d{3,}
+?	                            0 o 1 vez (opcional)	                    ?
+*	                            0 o más veces	                            a*
++	                            1 o más veces	                            a+
+
+_______________________________________________________________________________________________________________
+TABLA 3: SÍMBOLOS IMPORTANTES
+
+[ ] → CONJUNTO
+Sirve para elegir un carácter de varios posibles.
+
+Ejemplo                     	Significado
+[abc]	                        a o b o c
+[A-Z]	                    cualquier mayúscula
+[0-9]	                      cualquier número
+[b-t]	                       letras de b a t
+
+
+
+
+{ } → CANTIDAD
+Sirve para decir cuántas veces se repite lo anterior.
+
+Ejemplo                     	Significado
+\d{5}	                            5 números
+[A-Z]{3}	                    3 mayúsculas
+\d{2,4}                     	de 2 a 4 números
+
+
+
+( ) → GRUPO
+Sirve para:
+    -Agrupar cosas
+    -Aplicar cantidad a todo el grupo
+    -Crear opciones
+
+Ejemplo	                          Significado
+(ab)	                          la cadena ab
+(ab){2}                             abab
+
+
+
+| → Alternativas (significa “o”)
+
+Ejemplo                     	Significado
+(a|b)	                           "a" ó "b"
+(rojo|azul|verde)	           "rojo" o "azul" o "verde"
+(ho|he)la                  	      "hola" o "hela" (la aparecera si o si)
+
+^ → NEGACIÓN (DENTRO DE [])
+⚠️ Solo dentro de []
+
+Ejemplo	            Significado
+[^0-9]          	no números
+[^abc]	            no a, b ni c
+
+
+
+- → RANGO
+Se usa dentro de []
+
+Ejemplo         	Significado
+[a-z]	           letras minúsculas
+[0-9]	                números
+
+
+
+\ → ESCAPE
+Sirve para usar símbolos especiales como texto normal.
+
+Ejemplo	                Significado
+\.	                    punto literal
+\-	                    guion literal
+\:	                    dos puntos
+
+
+
+: → CARÁCTER NORMAL
+No es especial, solo se escapa si hace falta
+
+_______________________________________________________________________________________________________________
+
+EJEMPLOS:
+
+1. MATRÍCULA ESPAÑOLA
+
+    \d{4}[A-Z]{3} 
+    
+    Qué valida: 
+    4 números seguidos de 3 letras mayúsculas
+    ✔ 1234ABC
+    ❌ 123ABC
+    ❌ 1234AbC
+
+_______________________________________________________________________________________________________________
+
+
+2.CÓDIGO CON PREFIJO OPCIONAL
+
+    (PRE-)?\d{6}
+
+    Qué valida: 
+    (PRE-) → grupo
+    ? → opcional
+    \d{6} → 6 números obligatorios
+
+    ✔ PRE-123456
+    ✔ 123456
+    ❌ PRE123456
+
+_______________________________________________________________________________________________________________
+
+
+3.TELÉFONO CON PREFIJO OPCIONAL
+
+    (\+34\s?)?\d{9}
+
+    Qué valida: 
+    (\+34\s?)? → puede aparecer +34 con o sin espacio
+    ✔ +34123456789
+    ✔ +34 123456789
+    ✔ 123456789
+    ❌ +35 123456789
+
+_______________________________________________________________________________________________________________
+
+
+4.CONTRASEÑA “SERIA” (PERO ENTENDIBLE)
+
+    (?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}
+
+    Queremos una contraseña que:
+        -Tenga al menos una mayúscula
+        -Tenga al menos un número
+        -Tenga mínimo 8 caracteres
+        -Solo use letras y números
+
+    Qué valida: 
+
+    (?=.*[A-Z]) → puede aparecer +34 con o sin espacio
+        () → grupo especial
+        ?= → “mira hacia delante” (no consume caracteres)
+        .* → cualquier cosa, cualquier cantidad
+        [A-Z] → una mayúscula
+            ✔ Hola1234
+            ❌ hola1234
+
+    (?=.*\d) → lo mismo, pero para números:
+        \d → un dígito
+            ✔ Clave9abc
+            ❌ Claveabc
+    
+    [A-Za-z\d]{8,} → valida el contenido completo.
+        [A-Za-z\d] → letras y números
+        {8,} → mínimo 8 caracteres
+            ✔ Clave123
+            ❌ Cla1
+
+_______________________________________________________________________________________________________________
+
+
+5. CÓDIGO TIPO EL TUYO (VARIANTE MÁS COMPLETA)
+
+    [A-Z]{2}\d{3}([\-:][a-z]{2})?
+
+    Traducción:
+        2 letras mayúsculas
+        3 números
+        opcional:
+            - o :
+            2 letras minúsculas
+
+    ✔ AB123-ab
+    ✔ AB123:cd
+    ✔ AB123
+    ❌ AB123-a
+
+_______________________________________________________________________________________________________________
+
+
+6.FECHA FORMATO DD/MM/YYYY
+
+    (0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}
+
+    Validar fechas con:
+        Día válido (01–31)
+        Mes válido (01–12)
+        Año de 4 cifras
+    Traducción:
+        1️⃣ (0[1-9]|[12][0-9]|3[01]) → DÍA
+        Opción                              	Qué valida
+        0[1-9]	                                   01 a 09 (01,02,03,04 etc..)
+        [12][0-9]	                               10 a 29 (10,11,12,13... 20,21,22,23 etc...)
+        3[01]	                                   30 o 31 (30,31)
+        
+        2️⃣ /
+        Literalmente el carácter / (ejemplo 01/02)(uno de febrero)
+
+        3️⃣ (0[1-9]|1[0-2]) → MES
+        Opción	            Qué valida
+        0[1-9]	               01–09
+        1[0-2]	               10–12
+
+        4️⃣ /
+        Otro /
+
+        5️⃣ \d{4} → AÑO
+        4 números
+        ✔ 2024
+        ❌ 24
+
+_______________________________________________________________________________________________________________
+
+
+7.NÚMERO DECIMAL CON 1 O 2 DECIMALES OPCIONALES
+
+    \d+(\.\d{1,2})?
+
+    Traducción:
+    uno o más números
+    opcional:
+        punto
+        1 o 2 decimales
+
+    ✔ 10
+    ✔ 10.5
+    ✔ 10.25
+    ❌ 10.256
+
+_______________________________________________________________________________________________________________
+
+
+8.USUARIO CON CONDICIONES COMBINADAS
+
+    [a-z][a-z0-9_]{4,11}
+
+    Traducción:
+    empieza por letra
+    luego:
+        letras, números o _
+        entre 4 y 11 veces
+
+    ✔ juan_92
+    ❌ 92juan
+    ❌ ju
+
+
+_______________________________________________________________________________________________________________
+
+
+9. EJEMPLOS ESPACIOS Y TAB
+
+    1️⃣ \s → ESPACIO EN BLANCO
+        
+        \s significa cualquier carácter de espaciado:
+
+            Incluye:
+            espacio normal " "
+            tabulador \t
+            salto de línea \n
+            retorno de carro \r
+
+            [A-Za-z]+\s[A-Za-z]+ (UNA PALABRA + ESPACIO + OTRA)
+            ✔ Hola Mundo
+            ✔ Hola Mundo (con tab)
+            ❌ HolaMundo
+
+    2️⃣ ESPACIO LITERAL " " (solo espacio, sin tab:)
+        [A-Za-z]+ [A-Za-z]+
+
+
+    3️⃣ \t → TABULADOR
+    Sirve solo para tab, no para espacio.
+
+    [A-Za-z]+\t[A-Za-z]+
+
+    ✔ Hola Mundo (TAB)
+    ❌ Hola Mundo (ESPACIO)
+
+    4️⃣ VARIOS ESPACIOS O TABS ENTRE PALABRAS
+
+    [A-Za-z]+\s+[A-Za-z]+
+
+
+    5️⃣ OPCIONAL: ESPACIO O TAB
+
+    [A-Za-z]+\s?[A-Za-z]+
+    \s? → puede haber uno o ninguno
+
+    6️⃣ NOMBRE Y APELLIDO (UNO O MÁS ESPACIOS)
+
+    [A-Za-z]+(\s+[A-Za-z]+)+
+
+    Qué hace:
+
+        nombre
+
+        al menos un espacio o tab
+
+        uno o más apellidos
+
+        ✔ Juan Pérez
+        ✔ Juan Pérez López
+        ✔ Juan Pérez
+
+    7️⃣ ESPACIOS AL PRINCIPIO O AL FINAL
+
+    \s*[A-Za-z]+\s* (\s* → 0 o más espacios/tabs)
+
+
+
+    Símbolo	                                Qué detecta
+      \s                          	espacio, tab, salto de línea
+         \t                                 	solo tab
+        " "	                                solo espacio
+        \s+	                            uno o más espacios/tabs
+        \s?	                            espacio/tab opcional

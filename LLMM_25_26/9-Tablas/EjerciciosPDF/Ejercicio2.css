@@ -1,0 +1,55 @@
+body{
+    width: 100%;
+}
+
+th,td{
+    border: 3px solid violet;
+}
+.tabla1{
+    width: 40%;
+    float: left;
+    background-color: lightgoldenrodyellow;
+}
+
+.table1{
+    width: 100%;
+    float: left;
+}
+.tabla2{
+    width: 40%;
+    float: left;
+    background-color: lightblue;
+    margin: auto;
+}
+
+.table2{
+    width: 100%;
+    float: right;
+}
+.C2{
+    color: violet;
+}
+
+.tabla3{
+    width: 40%;
+    float: left;
+    margin: auto;
+    clear: both;
+    background-color: lightblue;
+}
+
+.table3{
+    width: 100%;
+    float: left;
+}
+
+.tabla4{
+    width: 48%;
+    float: left;
+    background-color: lightgoldenrodyellow;
+}
+
+.table4{
+    width: 100%;
+    float: right;
+}

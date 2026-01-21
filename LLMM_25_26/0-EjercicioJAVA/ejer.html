@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <!-- ========================================================= -->
+    <!-- ===============   METADATOS DE LA CABECERA   ============ -->
+    <!-- ========================================================= -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Tu Nombre">
+    <meta name="description" content="Página de práctica HTML sobre Java">
+    <meta name="keywords" content="Java, Historia Java, Programación, Hola Mundo">
+    <meta name="creation-date" content="2025-02-01">
+    <!-- <base href="https://www.misitio.com/"> -->
+
+    <title>Práctica HTML - Java</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/226/226777.png">
+
+    <!-- Vincular CSS externo -->
+    <link rel="stylesheet" href="ejer.css">
+</head>
+
+<body>
+    <div id="contenedor">
+
+        <!-- ======================== MENÚ ========================= -->
+        <div id="menu">
+            <h3>Menú</h3>
+            <ul>
+                <li><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">Descargar JDK</a></li>
+                <li><a href="#historia">Un poco de historia</a></li>
+                <li><a href="#primeros_pasos">Primeros pasos</a></li>
+                <li><a href="#inicio">Subir</a></li>
+            </ul>
+        </div>
+
+        <!-- ===================== CONTENIDO ======================= -->
+        <div id="contenido">
+            <a id="inicio"></a>
+
+            <h2 id="historia">Un poco de historia para comenzar…</h2>
+
+            <p>Java es un lenguaje que aparece en 1995. Para hacernos una idea, tiene más o menos el mismo tiempo de vida que otros lenguajes populares como Python o PHP, pero sin embargo Java es totalmente revolucionario. Podemos decir que el motivo de ser tan conocido e innovador es que tiene una filosofía única: "escribe una vez y ejecuta en cualquier lugar" ("write once, run everywhere"). En otras palabras, lo programas una vez y lo ejecutas en cualquier sistema. Esa filosofía es la que hizo a Java un mito, pero además Java tiene algunas características que lo hacen muy útil: es de los lenguajes más fuertes, con mayor cantidad de librerías para hacer cualquier tipo de cosa y con una de las mayores comunidades. Además, Java es un lenguaje de los mejor pagados en la actualidad.</p>
+
+            <p>Java fue desarrollado por Sun Microsystems, pero es a James Arthur Gosling al que se le considera el padre del lenguaje. Actualmente Java es propiedad de Oracle, que compró a Sun y es la responsable de su comercialización y la continuidad del desarrollo del lenguaje. Recientemente, Java ha tenido un nuevo florecimiento gracias a que Google usó el lenguaje como base para el desarrollo del sistema operativo Android y como lenguaje nativo para el desarrollo de aplicaciones para sus smartphones. No obstante, Java es usado en infinidad de entornos y de aplicaciones tradicionalmente.</p>
+
+            <p><a href="https://desarrolloweb.com/articulos/iniciacion-java-caracteristicas-programacion-ideeclipse.html" target="_blank">Para saber más →</a></p>
+
+            <h2 id="primeros_pasos">Primeros pasos</h2>
+
+            <p>La aplicación más pequeña posible es la que simplemente imprime un mensaje en la pantalla. Tradicionalmente, el mensaje suele ser "Hola Mundo!". Esto es justamente lo que hace el siguiente fragmento de código:</p>
+
+            <pre>
+// Aplicación HolaMundo de ejemplo
+class HolaMundoApp {
+    public static void main( String args[] ) {
+        System.out.println( "Hola Mundo!" );
+    }
+}
+            </pre>
+
+            <p>Hay que ver en detalle la aplicación anterior, línea a línea. Esas líneas de código contienen los componentes mínimos para imprimir Hola Mundo! en la pantalla.</p>
+
+            <pre>
+// Aplicación HolaMundo de ejemplo
+// Estas dos primeras líneas son comentarios. Hay tres tipos de comentarios en Java,
+// "//" es un comentario orientado a línea.
+
+class HolaMundoApp { 
+    // Esta línea declara la clase HolaMundoApp. 
+}
+
+public static void main( String args[] ) {  
+   // Método principal que ejecuta Java
+}
+
+System.out.println( "Hola Mundo! " );  
+// Es la funcionalidad que imprime el mensaje.
+            </pre>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java logo">
+            <img src="https://1000marcas.net/wp-content/uploads/2020/11/Java-logo.png" alt="Java logo 2">
+
+            <div class="clear"></div>
+        </div>
+
+        <!-- ======================== PIE ============================ -->
+        <div id="pie">
+            <a href="#inicio">Subir</a>
+        </div>
+
+    </div>
+</body>
+</html>

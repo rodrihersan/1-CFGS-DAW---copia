@@ -1,0 +1,59 @@
+.verde{
+    color: green;
+}
+
+.naranja{
+    color: orange;
+}
+
+.rosa{
+    color: pink;
+}
+
+.marron{
+    color: peru;
+}
+
+.morado{
+    color: purple;
+}
+
+body{
+    width: 99%;
+}
+.borde{
+  text-align: center;
+  border: 8px dotted sandybrown;
+}
+
+.izquierda{
+    width: 55%;
+    float: left;
+    border: 8px double palevioletred;
+}
+
+.derecha{
+    width: 40%;
+    float: right;
+    border: 8px double palevioletred;
+
+}
+
+h4{
+    border: 3px solid blue;
+    text-align: center;
+}
+
+.texto{
+    width: 99%;
+}
+
+footer{
+    clear: both;
+}
+
+h1{
+    text-align: center;
+    border: 4px solid red;
+    background-color: yellow;
+}

@@ -1,0 +1,9 @@
+Rodrigo Hernandez Sanchez 12:17Carpeta para incluir los documentos particulares de todos los participantes en el proyecto
+<<<<<<< HEAD
+
+Rodrigo Hernandez Sanchez 12:17
+=======
+Javier Sánchez Rey 22/10/2025 12:08
+Jose Miguel Rubio Aleman,miércoles, ‎22‎ de ‎octubre‎ de ‎2025, ‏‎11:51:16
+Rodrigo Hernandez Sanchez 12:28
+>>>>>>> 68d6c3957427826339ee37f793316c07c82261d8

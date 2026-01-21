@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+    width: 100%;
+}
+
+#listaIzquierda{
+    float: left;
+    width: 20%;
+}
+
+#textoCentral{
+    float: left;
+    background-color: lightyellow;
+    width: 60%;
+}
+
+    #titulo{
+        width: 100%;
+    }
+    #Aquitania{
+        width: 50%;
+        float: left;
+    }
+    #lasTinieblas{
+        width: 50%;
+        float: right;
+    }
+    #Patria{
+        width: 100%;
+        float: inline-end;
+    }
+
+#listaDerecha{
+    float: right;
+    width: 20%;
+}
+
+#abajo{
+    float: left;
+    background-color: lightseagreen;
+    width: 100%;
+}

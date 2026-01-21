@@ -1,0 +1,29 @@
+UBUNTU PASOS Instalación
+
+Primera opción con click izquierdo
+Nos pedirá capturar, aceptamos
+Y con el enter aceptamos
+
+
+IDIOMA CONFIGURACION GENERAL INSTALACION INTERACTIVA SELECCION PREDETERMINADA
+
+INSTALACION MANUAL
+
+SDA ES EL NOMBRE QUE DA UBUNTU AL DISCO DURO
+
+Se selecciona espacio libre, luego abajo izquierda al mas (+)
+
+damos tamaño (será donde se instale el so, asi que debemos buscar las especificaciones)
+
+damos una raíz. Al principal le daremos /
+
+creamos otra partición con la memoria restante (8GB aprox)y le damos /home (punto de montaje)
+Continuamos
+
+nos pide registrarnos (ponemos un nombre y una contraseña cualquiera)
+
+Nos pide ubicación y frecuencia horaria
+
+Le damos a instalar
+
+FINALIZAMOS INSTALACIÓN

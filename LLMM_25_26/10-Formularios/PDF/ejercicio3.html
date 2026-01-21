@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio3</title>
+    <link rel="stylesheet" href="ejercicio3.css">
+</head>
+
+<body>
+    <h1>El señor de los anillos</h1>
+
+        <form method="POST">
+
+            <div class="caja1">
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="usuario">
+
+                <label for="telefono">Telefono:</label>
+                <input type="tel" name="telefono" id="telefono">
+            </div>
+
+            <div class="caja2">
+                <div class="subcaja1">
+                    <span>Con cual de los personajes de la pelicula te identificas:</span>
+                </div>
+
+                <div class="subcaja2">
+                    <label for="fb">Frodo Bolsón</label>
+                    <input type="checkbox" id="fb">
+
+                    <label for="Ar">Aragorn</label>
+                    <input type="checkbox" id="Ar">
+
+                    <label for="Sam">Samsagaz</label>
+                    <input type="checkbox" id="Sam">
+
+                    <label for="Gollum">Gollum</label>
+                    <input type="checkbox" id="Gollum">
+                </div>
+                
+                <div class="subcaja3">
+                    <span>La pelicula te ha parecido:</span>
+                </div>
+
+                <div class="subcaja4">
+                    <label for="ex">Excelente</label>
+                    <input id="ex" type="radio" name="valoracion" required>
+
+                    <label for="Bue">Buena</label>
+                    <input id="Bue" type="radio" name="valoracion" required>
+
+                    <label for="Nom">Normalilla</label>
+                    <input id="Nom" type="radio" name="valoracion" required>
+
+                    <label for="Mala">Mala</label>
+                    <input id="Mala" type="radio" name="valoracion" required>
+
+                    <label for="Pesima">Pesima</label>
+                    <input id="Pesima" type="radio" name="valoracion" required>
+                </div> 
+                  
+            </div>
+
+            <div class="caja3">
+                <button type="submit" id="Send-button">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
+</html>

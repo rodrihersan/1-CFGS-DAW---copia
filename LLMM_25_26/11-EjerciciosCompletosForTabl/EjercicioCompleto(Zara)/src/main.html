@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zara</title>
+    <link rel="stylesheet" href="../estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="headerTotal">
+
+            <div class="logoZara">
+                <img src="../multimedia/logoZara.svg" alt="logoZara">
+            </div>
+
+            <div class="headerDerecha">
+                <div class="marginRebajas">
+                    <h2>REBAJAS</h2>
+                </div>
+
+                <div class="display">
+                    <p class="separacion">Nuevo producto</p>  <!-- <p class="separacion"><a href="#">Nuevo producto</a></p> -->
+                    <p class="anchura">Modificar producto</p>
+                    <p>Eliminar producto</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="mainTotal">
+            <div class="mainIzquierda">
+                <video class="video" autoplay loop muted>
+                    <source src="../multimedia/vertical.mp4" type="video/mp4" >
+                    <source src="../multimedia/vertical.webm" type="video/ogg">
+                </video>
+            </div>
+
+            <div class="mainDerecha">
+                <form class="formulario" action="alta_ok.html" method="GET">
+                    <fieldset class="fieldset">
+                        <legend>Nuevo Producto</legend>
+
+                        <div>
+                            <label class="CategoriaP" for="Categoria">Categoria</label>
+                            <select name="menu" id="Categoria" required>
+                                <option value="O0">Seleccione</option>
+                                <option value="O1">Vestido/Mono</option>
+                                <option value="O2">Blazer</option>
+                                <option value="O3">Abrigo</option>
+                                <option value="O4">Pantalón</option>
+                                <option value="O5">Falda</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="CodigoP" for="Codigo">Codigo del producto</label>
+                            <input type="text" name="CP" id="Codigo" pattern="[A-z]{3}[0-9]{5}([\-:][b-t])?" required>
+                        </div>
+                        
+                        <div>
+                            <label class="Nombre" for="Nombre">Nombre</label>
+                            <input type="text" name="Nombre" id="Nombre" maxlength="15">
+                        </div>
+
+                        <div>
+                            <label class="Estilo" for="estilo">Estilo</label>
+                            <input list="estilos" id="estilo" name="E" required>
+                            <datalist id="estilos">
+                                <option value="casual">
+                                <option value="sporty">
+                                <option value="clásico">
+                                <option value="boho">
+                            </datalist>
+                        </div>
+
+                        <div>
+                            <label class="Precio" for="precio">Precio</label>
+                            <input type="number" name="numero" id="precio" step="0.01" max="999.99" required>
+                        </div>
+
+                        <div>
+                            <label class="Color" for="color">Color</label>
+                            <input type="color" name="colorElegido" id="color">
+                        </div>
+
+                        <div>
+                            <label class="Foto" for="foto">Foto</label>
+                            <input type="file" name="archivo" id="foto" required>
+                        </div>
+
+                        <div class="boton">
+                            <button type="submit" id="Send-button">Dar de alta</button>
+                        </div>
+
+                    </fieldset>
+                </form>
+
+                <div>
+                    <video class="videoAbajo" src="../multimedia/modelo.mp4" autoplay loop></video>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="pFooter">
+            <p>Póngase en contacto con nosotros en la dirección atencionTienda@inditex.es</p>
+        </div>
+    </footer>
+
+</body>
+</html>

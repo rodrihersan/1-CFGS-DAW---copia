@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+    <link rel="stylesheet" href="ejercicio6.css">
+</head>
+<body>
+
+    <form method="GET">
+        <h1>El señor de los anillos</h1>
+
+        <fieldset>
+            <legend>Encuesta postvisionado de la película</legend>
+
+            <div class="primeraCaja">
+
+                <fieldset class="primerFieldset">
+
+                    <legend class="primerLegend">Datos Personales</legend>
+
+                        <div class="subcaja0">
+                            <label for="elemento1">Nombre:</label>
+                            <input type="text" name="nombre" id="elemento1">
+
+                            <label for="elemento2">Teléfono:</label>
+                            <input type="tel" name="telefono" id="elemento2">
+                        </div>
+
+                </fieldset>
+
+                <fieldset class="segundoFieldset">
+
+                    <legend class="segundoLegend">Información sobre la película</legend>
+
+                        <div class="subcaja1">
+                            <span>Con cual de los personajes de la pelicula te identificas:</span>
+                        </div>
+
+                        <div class="subcaja2">
+                            <label for="fb">Frodo Bolsón</label>
+                            <input type="checkbox" value="FrodoBolson" id="fb">
+
+                            <label for="Ar">Aragorn</label>
+                            <input type="checkbox" value="Aragorn" id="Ar">
+
+                            <label for="Sam">Samsagaz</label>
+                            <input type="checkbox" value="Samsagaz" id="Sam">
+
+                            <label for="Gollum">Gollum</label>
+                            <input type="checkbox" value="Gollum" id="Gollum">
+                        </div>
+                
+                        <div class="subcaja3">
+                            <span>La pelicula te ha parecido:</span>
+                        </div>
+
+                        <div class="subcaja4">
+                            <label for="ex">Excelente</label>
+                            <input id="ex" type="radio" name="valoracion" value="Excelente" required>
+
+                            <label for="Bue">Buena</label>
+                            <input id="Bue" type="radio" name="valoracion" value="Buena" required>
+
+                            <label for="Nom">Normalilla</label>
+                            <input id="Nom" type="radio" name="valoracion" value="Normalilla" required>
+
+                            <label for="Mala">Mala</label>
+                            <input id="Mala" type="radio" name="valoracion" value="Mala" required>
+
+                            <label for="Pesima">Pesima</label>
+                            <input id="Pesima" type="radio" name="valoracion" value="Pesima" required>
+                        </div> 
+
+                </fieldset>
+
+                <div class="enviar">
+                    <button type="submit" id="Send-button">Enviar</button>
+                </div>
+                
+            </div>
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+header{
+    overflow: hidden;
+}
+
+.logoZara{
+    width: 40%;
+    float: left;
+}
+
+.headerDerecha{
+    float: right;
+    width: 60%;
+    text-align: center;
+    background-color: yellow;
+}
+
+.display p{
+    display: inline;
+}
+
+.anchura{
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+.marginRebajas{
+    margin-bottom:  105px;
+}
+
+.mainTotal{
+    width: 100%;
+    overflow: hidden;
+}
+
+.mainIzquierda{
+    width: 40%;
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.video{
+    height: 600px;
+    text-align: center;
+}
+
+.mainDerecha{
+    width: 60%;
+    text-align: center;
+    float: left;
+}
+
+.formulario{
+    display: inline-block;
+}
+
+.fieldset{
+    width:550px;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.CategoriaP{
+    margin-right: 75px;
+}
+.CodigoP{
+    margin-right: 5px;
+}
+.Nombre{
+    margin-right: 84px;
+}
+.Estilo{
+    margin-right: 99px;
+}
+.Precio{
+    margin-right: 96px;
+}
+.Color{
+    margin-right: 100px;
+}
+.Foto{
+    margin-right: 107px;
+}
+.boton{
+    text-align: center;
+    margin-top: 5px;
+}
+#Send-button{
+    padding-left: 90px;
+    padding-right: 90px;
+}
+input:not([type="file"], [type="color"]){
+    padding-right: 229px;
+}
+#color{
+    padding-right: 400px;
+}
+input{
+    margin-top: 3px;
+}
+select{
+    padding-right: 300px;
+}
+
+.videoAbajo{
+    width: 500px;
+    display: inline-block;
+}
+
+footer{
+    overflow: hidden;
+}
+.pFooter{
+    text-align: center;
+    margin-top: 40px;
+}
