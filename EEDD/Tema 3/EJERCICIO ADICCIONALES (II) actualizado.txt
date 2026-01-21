@@ -76,21 +76,23 @@ EJERCICIO 4:
 
 NOMBRE: EnviarSolicitud
 ID: CU004
-ACTORES: Técnico
-PRE-CONDICIONES: estar registrado
+ACTORES: Artista
+PRE-CONDICIONES: El artista accede al sistema
 PASOS: 
-1.INCLUDE CU005
-2.El sistema le muestra las opciones
-3.El técnico selecciona la opción "nueva simulación"
-4.El sistema le muestra los datos generales que debe documentar el técnico.
-5.El técnico introduce los datos
-6.El sistema le solicita los campos para rellenar las salidas y recorridos previstos
-7.El técnico rellena los campos y lo envía.
-8.El sistema lo verifica/valida
-9.SI el sistema lo verifica positivamente
-	9.1.La simulación queda almacenada
-	9.2.Fin del proceso
-	SI NO
-	9.3.El sistema notificará la denegación de la solicitud
-	9.4.Fin del proceso
+1.El sistema le muestra el formulario
+2.El artista accede al formulario
+3.El sistema solicita los datos del proyecto artístico
+4.El artista introduce los datos solicitados
+5.El sistema solicita la posibilidad de introducir documentación complementaria
+6.SI el artista la introduce y envía el formulario
+	6.1.El sistema revisa que la información mínima este completa
+	6.2.SI la información mínima esta completa y correcta
+		6.2.1.El sistema registra la solicitud y queda pendiente de revisión
+		6.2.2.Fin del proceso.
+		SI NO
+		6.2.3.El sistema no registra la solicitud
+		6.2.4.Fin del proceso
+	SI NO la introduce y envía el formulario
+	6.3.Se repiten pasos 6.1/6.2/6.2.1/6.2.2/6.2.3/6.2.4
+	6.4.Fin del proceso
 POST-CONDICIONES:
