@@ -79,20 +79,20 @@ ID: CU004
 ACTORES: Artista
 PRE-CONDICIONES: El artista accede al sistema
 PASOS: 
-1.El sistema le muestra el formulario
+1.El sistema le muestra el formulario /SOBRA
 2.El artista accede al formulario
 3.El sistema solicita los datos del proyecto artístico
 4.El artista introduce los datos solicitados
 5.El sistema solicita la posibilidad de introducir documentación complementaria
-6.SI el artista la introduce y envía el formulario
-	6.1.El sistema revisa que la información mínima este completa
-	6.2.SI la información mínima esta completa y correcta
-		6.2.1.El sistema registra la solicitud y queda pendiente de revisión
-		6.2.2.Fin del proceso.
-		SI NO
-		6.2.3.El sistema no registra la solicitud
-		6.2.4.Fin del proceso
-	SI NO la introduce y envía el formulario
-	6.3.Se repiten pasos 6.1/6.2/6.2.1/6.2.2/6.2.3/6.2.4
-	6.4.Fin del proceso
+6.SI el artista la introduce	
+	6.1.El sistema revisa que la información mínima este completa y la guarda
+	SI NO
+	6.2.Continua el proceso
+7.El sistema revisa la mínima
+8.SI la información mínima esta completa y correcta
+	8.1.El sistema registra la solicitud y queda pendiente de revisión
+	8.2.Fin del proceso.
+	SI NO
+	8.3.El sistema no registra la solicitud
+	8.4.Fin del proceso
 POST-CONDICIONES:
