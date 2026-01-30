@@ -1,0 +1,92 @@
+* {
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+}
+html {
+    border: 4px solid hotpink;
+}
+body {
+    border: dotted darkturquoise;
+}
+h1,h2 {
+    border: 2px solid;
+    background-color: pink;
+}
+p.piePagina {
+    border: 2px solid;
+    background-color:gainsboro;
+    position: fixed;
+    bottom: 0px;
+    width: 80%;
+    height: 40px;
+    margin: 0px;
+    left: 10%;
+}
+p.conBorde {
+    border: 2px solid;
+}
+p.noFloat {
+    clear: both;
+}
+div {
+    border: 4px double dodgerblue;
+}
+.divInterno {
+    border: 2px solid black;
+}
+
+div.relative {
+    position: relative;
+    border: 2px dashed yellowgreen;
+}
+div.divFloat {
+    overflow: hidden;
+}
+div.divFloat2 {
+    width: 30%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    background-color: yellow;
+    border: 2px solid;
+}
+a.abajo {
+    position: relative;
+    top: 1em;
+}
+a.masAbajo {
+    position: relative;
+    top: 2em;
+}
+a.absoluto {
+    background-color: orange;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+a.absoluto2 {
+    background-color: darkorchid;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+a.enlaceFloatLeft {
+    background-color: salmon;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+a.enlaceFloatRight {
+    background-color: salmon;
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+img {
+    width: 70px;
+    height: 70px;
+    float: left;
+}

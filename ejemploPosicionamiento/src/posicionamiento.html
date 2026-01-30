@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Pruebas Posicionamiento de Cajas </title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <h1>Vamos a probar el posicionamiento de cajas</h1>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento estático</h2>
+        <p class="conBorde">PÁRRAFO 1:
+            <a href="#"> Enlace 1</a>
+            <a href="#"> Enlace 2</a>
+            <a href="#"> Enlace 3</a>
+        </p>
+        <p class="conBorde">PÁRRAFO 2:
+            <a href="#"> Enlace 1</a>
+            <a href="#"> Enlace 2</a>
+            <a href="#"> Enlace 3</a>
+        </p>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento relativo</h2>
+        <p class="conBorde">PÁRRAFO 1:
+            <a href="#"> Enlace 1</a>
+            <a href="#"> Enlace 2</a>
+            <a href="#"> Enlace 3</a>
+        </p>
+        <p class="conBorde">PÁRRAFO 2:
+            <a href="#"> Enlace 1</a>
+            <a href="#" class="abajo"> Enlace 2</a>
+            <a href="#" class="masAbajo"> Enlace 3</a>
+        </p>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento absoluto 1</h2>
+        <div class="divInterno">
+            <p>Esta caja tiene posición normal o estática</p>
+            <!-- Enlace 1 se desplaza 30px partiendo desde la esquina superior izquierda de la página 
+        porque div tiene posición normal y el siguiente contenedor es body (no empieza justo en la esquina porque
+        hay 20px de margen)-->
+            <a href="#" class="absoluto"> Enlace 1</a>
+            <!-- Las cajas de Enlace 2 y Enlace 3 ocuparán el espacio dejado por Enlace 1-->
+            <a href="#"> Enlace 2</a>
+            <a href="#"> Enlace 3</a>
+        </div>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento absoluto 2</h2>
+        <div class="relative">
+            <p>Esta caja tiene posición relativa</p>
+            <!-- Al contrario que en la situaciñon anterior, en este caso Enlace 1 se desplaza 30px pero partiendo 
+            desde su caja contenedora, <div>, ya que es la primera caja con posicionamiento no estático-->
+            <a href="#" class="absoluto2"> Enlace 1</a>
+            <a href="#"> Enlace 2</a>
+            <a href="#"> Enlace 3</a>
+        </div>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento float:right</h2>
+        <div class="divFloat divInterno">
+            <a href="#" class="enlaceFloatRight"> Enlace 1</a>
+            <a href="#" class="enlaceFloatRight"> Enlace 2</a>
+            <a href="#" class="enlaceFloatRight"> Enlace 3</a>
+        </div>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento float:left</h2>
+        <div class="divFloat divInterno">
+            <a href="#" class="enlaceFloatLeft"> Enlace 1</a>
+            <a href="#" class="enlaceFloatLeft"> Enlace 2</a>
+            <a href="#" class="enlaceFloatLeft"> Enlace 3</a>
+        </div>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Posicionamiento float:left 2</h2>
+        <!-- Los elementos situados alrededor de la caja flotante se adaptan a la posición de la caja-->
+        <div class="divFloat2 divInterno">
+            <img src="../img/flor.jpg">
+            <p>La flor de lis es, en heráldica, una representación de la flor del lirio. 
+                En la heráldica francesa es un mueble heráldico muy difundido. Es una de las cuatro figuras 
+                más populares de la heráldica, junto con la cruz, el águila y el león.
+                Se suele representar en color amarillo sobre un fondo azul. Tradicionalmente, 
+                se ha representado un campo de flores de lis, dispuestas de forma ordenada. 
+                Desde la Edad Media es considerada un símbolo de la realeza francesa.
+            </p>
+        </div>
+    </div>
+    <!-- *******************************************************-->
+    <div>
+        <h2>Propiedad clear</h2>
+        <!-- Al utilizar la propiedad clear, el texto se colocará inmediatamente debajo de la imagen en
+        vez de rodearla-->
+        <div class="divFloat2 divInterno">
+            <img src="../img/flor.jpg">
+            <p class="noFloat">La flor de lis es, en heráldica, una representación de la flor del lirio. 
+                En la heráldica francesa es un mueble heráldico muy difundido. Es una de las cuatro figuras 
+                más populares de la heráldica, junto con la cruz, el águila y el león.
+                Se suele representar en color amarillo sobre un fondo azul. Tradicionalmente, 
+                se ha representado un campo de flores de lis, dispuestas de forma ordenada. 
+                Desde la Edad Media es considerada un símbolo de la realeza francesa.
+            </p>
+        </div>
+    </div>
+    <!-- *******************************************************-->
+    <p class="piePagina">Pie de página que permanece inalterable</p>
+</body>
+
+</html>
