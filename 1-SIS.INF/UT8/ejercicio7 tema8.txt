@@ -1,0 +1,107 @@
+1. Diferencia entre permisos básicos y permisos especiales
+🔹 Permisos básicos
+
+Son combinaciones predefinidas de permisos especiales.
+Están pensados para que el administrador no tenga que configurar permiso por permiso.
+
+👉 Son los que ves directamente en la pestaña Seguridad:
+
+Control total
+
+Modificar
+
+Lectura y ejecución
+
+Lectura
+
+Escritura
+
+🔹 Permisos especiales
+
+Son los permisos individuales y detallados que realmente actúan sobre el sistema de archivos.
+Los permisos básicos se construyen a partir de estos.
+
+👉 Se ven entrando en:
+Propiedades → Seguridad → Opciones avanzadas
+
+
+
+
+
+
+
+
+
+2. Permisos básicos: significado, permitir/denegar y efecto
+Permiso básico			Permitir			Denegar						Diferencias archivo / carpeta
+Control total			Todas las acciones posibles	Bloquea completamente el acceso			En carpetas incluye cambiar permisos y propietario
+Modificar			Leer, escribir, eliminar	No permite modificar ni borrar			En carpetas permite borrar archivos dentro
+Lectura y ejecución		Ver y ejecutar			No se pueden ejecutar programas			En carpetas permite entrar y recorrer
+Lectura				Ver contenido y atributos	No se puede ver ni abrir			En carpetas permite listar archivos
+Escritura			Crear y modificar		No permite guardar cambios			En carpetas permite crear archivos
+
+⚠️ Denegar siempre tiene prioridad sobre permitir.
+
+3. Permisos especiales: significado detallado
+📁 Permisos sobre carpetas
+Permiso especial			Permitir			Denegar
+------------------------------------------------------------------------------------------------------
+Recorrer carpeta / Ejecutar archivo	Entrar en la carpeta		No permite acceder
+Enumerar carpeta / Leer datos		Ver archivos			No muestra contenido
+Leer atributos				Ver atributos			No permite ver propiedades
+Leer atributos extendidos		Ver info extra			Bloquea esa info
+Crear archivos / Escribir datos		Crear archivos			No permite crear
+Crear carpetas / Anexar datos		Crear subcarpetas		No permite crear
+Escribir atributos			Cambiar atributos		Bloquea cambios
+Escribir atributos extendidos		Modificar info extendida	Bloquea
+Eliminar subcarpetas y archivos		Borrar contenido		No permite borrar
+Eliminar				Eliminar la carpeta		No permite eliminar
+Leer permisos				Ver permisos			No permite ver
+Cambiar permisos			Modificar permisos		No permite cambiar
+Tomar posesión				Cambiar propietario		No permite tomar control
+
+
+📄 Permisos sobre archivos
+------------------------------------------------------------------------------------------------------
+Permiso especial			Permitir			Denegar
+Ejecutar archivo			Ejecutar el archivo		No se ejecuta
+Leer datos				Abrir y leer			No se puede abrir
+Leer atributos				Ver propiedades			Bloquea
+Leer atributos extendidos		Ver info extra			Bloquea
+Escribir datos				Modificar archivo		No se puede guardar
+Anexar datos				Añadir contenido		No se puede añadir
+Escribir atributos			Cambiar atributos		Bloquea
+Escribir atributos extendidos		Modificar metadatos		Bloquea
+Eliminar				Borrar archivo			No se puede borrar
+Leer permisos				Ver permisos			Bloquea
+Cambiar permisos			Modificar permisos		Bloquea
+Tomar posesión				Cambiar propietario		Bloquea
+
+
+4. Diferencias clave entre archivo y carpeta (resumen rápido)
+
+📄 Archivo
+
+Se puede leer, escribir, ejecutar o borrar
+
+No se puede “enumerar”
+
+📁 Carpeta
+
+Se puede recorrer
+
+Se puede listar contenido
+
+Permite herencia de permisos a archivos y subcarpetas
+
+
+
+5. Detalle importante para exámenes ⭐
+
+Permitir concede la acción.
+
+Denegar bloquea la acción incluso si otro grupo la permite.
+
+Los permisos pueden heredarse desde la carpeta superior.
+
+Control total ≠ ser propietario (aunque suele coincidir).

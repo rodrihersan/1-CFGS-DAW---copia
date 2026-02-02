@@ -1,0 +1,104 @@
+Perfecto, vamos a desglosar todo paso a paso para que tengas una guía clara y completa sobre cuentas de usuario en Windows. Me aseguraré de explicarlo con precisión y sin dejar dudas.
+
+1. Crear una cuenta de usuario estándar en Windows
+Pasos para crearla (Windows 10/11)
+
+Abrir Configuración:
+
+Presiona Windows + I o haz clic en el menú Inicio → Configuración.
+
+Ir a Cuentas → Familia y otros usuarios (o Otros usuarios en algunas versiones).
+
+Hacer clic en Agregar a otra persona a este equipo.
+
+Elegir la opción:
+
+Si quieres crear una cuenta local, selecciona No tengo la información de inicio de sesión de esta persona → Agregar un usuario sin cuenta Microsoft.
+
+Completar los datos:
+
+Nombre de usuario: Obligatorio.
+
+Contraseña: Opcional, pero recomendable.
+
+Pista de contraseña: Para recordar la contraseña en caso de olvido.
+
+La cuenta se crea como usuario estándar por defecto.
+
+Preguntas asociadas
+
+a. ¿Es obligatorio asociar la cuenta local a una cuenta de Microsoft?
+
+No. Puedes crear cuentas locales sin asociarlas a Microsoft.
+
+b. Ventajas de asociarla a una cuenta Microsoft y diferencias
+
+Característica	Cuenta local	Cuenta Microsoft
+Inicios de sesión	Solo en ese equipo	En cualquier equipo Windows con Internet
+Sincronización	Ninguna	Configuración, escritorio, contraseñas, aplicaciones, OneDrive
+Recuperación	Solo pista de contraseña	Recuperación por correo o teléfono
+Tienda y apps	Limitado	Acceso completo a Microsoft Store y servicios en la nube
+
+c. Cómo cambiar una cuenta estándar a administrador
+
+Abrir Configuración → Cuentas → Familia y otros usuarios.
+
+Seleccionar la cuenta → Cambiar tipo de cuenta.
+
+Elegir Administrador → Guardar los cambios.
+
+d. Condiciones de una contraseña segura
+Una contraseña se considera segura si:
+
+Tiene mínimo 8 caracteres (recomendable más de 12).
+
+Contiene mayúsculas, minúsculas, números y símbolos.
+
+No es un palabra común ni datos personales fáciles de adivinar.
+
+No se repite con otras contraseñas que uses en diferentes cuentas.
+
+e. Carpeta creada automáticamente para cada usuario
+
+Carpeta: C:\Usuarios\NombreUsuario (en inglés C:\Users\Username)
+
+Contenido: Documentos, Imágenes, Música, Descargas, Escritorio, etc.
+
+Finalidad: Guardar datos personales y configuraciones del usuario, aisladas de otros usuarios.
+
+2. Cuenta de administrador integrada
+a. Activación y acceso
+
+Abrir Símbolo del sistema como administrador:
+
+Escribe cmd en Inicio → Clic derecho → Ejecutar como administrador.
+
+Escribir el comando:
+
+net user administrador /active:yes
+
+
+(En inglés: net user administrator /active:yes)
+
+Para establecer una contraseña:
+
+net user administrador * 
+
+
+→ Te pedirá escribir la contraseña dos veces.
+
+Para iniciar sesión con ella, cierra sesión y selecciona la cuenta Administrador en la pantalla de inicio.
+
+b. Por qué está deshabilitada por defecto
+
+Por seguridad, para evitar que malware o usuarios no autorizados tengan privilegios totales desde el inicio.
+
+c. ¿Es recomendable activarla permanentemente?
+
+No, porque:
+
+Tener siempre un usuario con privilegios totales incrementa el riesgo de ataques y errores graves.
+
+Es mejor usar cuentas estándar y elevar privilegios solo cuando sea necesario usando UAC (Control de cuentas de usuario).
+
+Se recomienda activarla temporalmente solo para administración o recuperación.
