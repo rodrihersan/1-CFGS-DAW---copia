@@ -1,5 +1,5 @@
 header{
-    background-color: lightcoral;
+    background-color: lightgray;
     height: 150px;
 }
 
@@ -40,7 +40,20 @@ header{
     left: 1605px;
 }
 
+.h1Header{
+    height: 50px;
+    width: 50px;
+    display: inline;
+    margin-left: 300px;
+    margin-right: 500px;
+}
+
 .imagenLogo{
     margin-top: 50px;
-    margin-left: 10px;
+}
+
+.imagenSesion{
+    height: 50px;
+    width: 50px;
+
 }
