@@ -1,0 +1,26 @@
+Your Digital Identity is Under Attack: How to Recognize and Stop Phishing
+In the modern digital era, a silent war is being fought every second. While many users believe their personal information is safe, the reality is much more concerning. Every single day, thousands of private accounts are compromised and sensitive data is stolen by cybercriminals through sophisticated deception techniques. This problem is known as Phishing, and it remains one of the greatest threats to online security.
+
+
+The Nature of the Threat
+Phishing is defined as a fraudulent attempt to obtain sensitive information such as usernames, passwords, and credit card details. Usually, a trustworthy entity is disguised by the attacker in an electronic communication. These deceptive messages are often sent via email, although SMS and social media platforms are also frequently used for these malicious purposes.
+
+
+How to Protect Your Data
+To remain safe, specific measures must be implemented in your daily routine. Here are the essential prevention tips:
+
+	Suspicious emails must not be opened. If an unexpected message is received from a 	bank or a service provider asking for immediate action, it should be treated with 	extreme caution.
+
+	The sender’s address must be carefully verified. Often, subtle misspellings are used 	by hackers to mimic official domains.
+
+	Links should not be clicked directly. Instead, the official website of the 	institution should be visited by typing the URL manually into the browser.
+
+	Two-factor authentication (2FA) is strongly recommended. By adding this extra layer 	of security, your account is protected even if your password is stolen by an 	attacker.
+
+	Personal information should never be shared over insecure channels.
+
+
+Take Control Today
+Your digital life is precious, but it is also vulnerable. If these guidelines are followed, the risk of becoming a victim is significantly reduced. Do not wait until your privacy is breached.
+
+Stay safe online – Your security is in your hands!
