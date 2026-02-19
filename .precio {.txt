@@ -1,0 +1,26 @@
+.precio {
+    position: absolute;
+    bottom: 10%;              
+  left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 15px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    white-space: nowrap;  }
+
+.contenedorFoto:hover .precio {
+    opacity: 1;
+}
+
+.contenedorFoto:hover .ropaPadding {
+    filter: brightness(50%);
+}
+
+
+<div class="contenedorFoto">
+                        <img class="ropaPadding" src="../imagenes/ropaPrincipal/adidas/camisetas/camiseta adidas1.jfif" alt="camisetaAdidas1" width="200px">
+                        <span class="precio">29.99€</span>
+                        </div>
