@@ -1,0 +1,220 @@
+NEON
+
+
+Con text-shadow encadenando varias sombras de colores:
+
+h1 {
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #ff00ff,
+        0 0 40px #ff00ff,
+        0 0 80px #ff00ff;
+}
+
+
+La clave del efecto neón es usar varias sombras sin desplazamiento (0 0) 
+aumentando el blur progresivamente. Cuanto mayor el blur, más se expande el brillo.
+Puedes cambiar el color para diferentes colores de neón:
+
+
+/* neón rosa/morado */
+text-shadow:
+    0 0 5px #fff,
+    0 0 20px #ff00ff,
+    0 0 60px #ff00ff;
+
+/* neón azul */
+text-shadow:
+    0 0 5px #fff,
+    0 0 20px #00f,
+    0 0 60px #00f;
+
+/* neón verde */
+text-shadow:
+    0 0 5px #fff,
+    0 0 20px #0f0,
+    0 0 60px #0f0;
+
+/* neón rojo */
+text-shadow:
+    0 0 5px #fff,
+    0 0 20px #f00,
+    0 0 60px #f00;
+
+
+Y si quieres que parpadee como un neón de verdad, le añades una animación:
+
+
+@keyframes parpadeo {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 20px #ff00ff,
+            0 0 60px #ff00ff;
+    }
+    50% {
+        text-shadow: none; /* se apaga a la mitad */
+    }
+}
+
+h1 {
+    color: #fff;
+    animation: parpadeo 2s infinite;
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+Centrar cualquier cosa perfectamente (horizontal y vertical)
+
+
+div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra en ambos ejes a la vez */
+}
+
+------------------------------------------------------------------------------------------------------
+
+Círculo perfecto
+
+div {
+    width: 100px;
+    height: 100px;       /* mismo ancho y alto */
+    border-radius: 50%;  /* círculo perfecto */
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+Texto que no se puede seleccionar
+
+p {
+    user-select: none; /* el usuario no puede copiar el texto */
+}
+
+
+------------------------------------------------------------------------------------------------------
+Cursor personalizado
+
+div { cursor: pointer; }  /* manita */
+div { cursor: crosshair; } /* cruz */
+div { cursor: not-allowed; } /* prohibido */
+div { cursor: url('micursor.png'), auto; } /* imagen personalizada */
+
+------------------------------------------------------------------------------------------------------
+
+Degradado en el texto (no en el fondo, en las letras)
+
+h1 {
+    background: linear-gradient(45deg, red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+De formularios:
+css/* input que cambia de color según si está bien o mal */
+input:valid   { border: 2px solid green; }
+input:invalid { border: 2px solid red; }
+
+/* placeholder con estilo */
+input::placeholder { color: #aaa; font-style: italic; }
+
+/* input con foco destacado */
+input:focus {
+    outline: none;
+    border: 2px solid blue;
+    box-shadow: 0 0 8px rgba(0,0,255,0.3);
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+De selectores:
+css/* zebra en tablas sin JavaScript */
+tr:nth-child(even) { background: #f2f2f2; }
+tr:nth-child(odd)  { background: white; }
+
+/* primer párrafo diferente al resto */
+p:first-child { font-size: 1.2em; font-weight: bold; }
+
+/* estilo solo al último elemento */
+li:last-child { border-bottom: none; }
+
+/* letra capital como los libros */
+p::first-letter {
+    font-size: 3em;
+    font-family: "Georgia";
+    float: left;
+    margin-right: 5px;
+}
+
+------------------------------------------------------------------------------------------------------
+
+Sombra en una caja estilo tarjeta
+
+.tarjeta {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* sin desplazamiento horizontal, 4px abajo, 15px blur, negro suave */
+}
+
+.tarjeta:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* sombra más grande al hover */
+    transform: translateY(-5px); /* sube un poco como si flotara */
+    transition: all 0.3s ease;
+}
+
+------------------------------------------------------------------------------------------------------
+
+Imagen en blanco y negro que recupera color al hacer hover
+img {
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+img:hover {
+    filter: grayscale(0%);
+}
+
+------------------------------------------------------------------------------------------------------
+
+
+De animaciones:
+css/* spinner de carga solo con CSS */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #eee;
+    border-top: 4px solid blue;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+}
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* efecto latido (heartbeat) */
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.2); }
+}
+.corazon { animation: latido 1s ease infinite; }
+
+------------------------------------------------------------------------------------------------------
+
+De transformaciones con transición:
+
+/* tarjeta que se voltea al hacer hover (efecto 3D) */
+.tarjeta {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.tarjeta:hover {
+    transform: rotateY(180deg);
+}

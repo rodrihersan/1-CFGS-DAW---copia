@@ -1,0 +1,284 @@
+------------------------------------------------------------------------------------------------------
+POSITION
+------------------------------------------------------------------------------------------------------
+
+
+position: static — por defecto, sin posicionamiento especial
+
+/* Los bloques van uno debajo del otro */
+div { position: static; } /* ignora top, left, right, bottom */
+
+/*
+┌──────────┐
+│  div 1   │
+├──────────┤
+│  div 2   │
+├──────────┤
+│  div 3   │
+└──────────┘
+*/
+
+------------------------------------------------------------------------------------------------------
+
+position: relative — se desplaza desde donde estaría normalmente
+
+
+div {
+    position: relative;
+    top: 20px;   /* baja 20px desde su posición normal */
+    left: 30px;  /* se mueve 30px a la derecha */
+}
+
+/*
+┌──────────┐
+│  div 1   │  ← posición normal
+└──────────┘
+      ┌──────────┐
+      │  div 2   │  ← se ha movido pero deja su hueco original
+      └──────────┘
+*/
+
+
+------------------------------------------------------------------------------------------------------
+
+position: absolute — se desplaza respecto a su contenedor padre (que no sea static)
+
+
+.padre {
+    position: relative; /* sirve de referencia */
+}
+.hijo {
+    position: absolute;
+    top: 0;
+    right: 0; /* esquina superior derecha del padre */
+}
+
+/*
+┌────────────────────┐
+│ padre              │
+│              ┌─────┤
+│              │hijo │  ← pegado arriba-derecha del padre
+│              └─────┤
+└────────────────────┘
+El hijo sale del flujo, los demás elementos ocupan su hueco
+*/
+
+
+------------------------------------------------------------------------------------------------------
+
+position: fixed — igual que absolute pero se queda fijo al hacer scroll
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/*
+┌──────────────────┐
+│ menú fijo arriba │  ← siempre visible aunque hagas scroll
+├──────────────────┤
+│                  │
+│  contenido que   │
+│  se desplaza     │
+│                  │
+*/
+
+------------------------------------------------------------------------------------------------------
+
+position: sticky 
+mezcla entre relative y fixed. El elemento se comporta como relative mientras está en pantalla, 
+pero cuando llegas a él haciendo scroll se queda pegado en la posición que le indiques.
+
+
+div {
+    position: sticky;
+    top: 0; /* se pega arriba cuando llega a ese punto */
+}
+```
+
+Visualmente:
+```
+ANTES de llegar al elemento (actúa como relative):
+┌──────────────────┐
+│  contenido       │
+│  contenido       │
+│  contenido       │
+├──────────────────┤
+│  div sticky      │  ← todavía en su posición normal
+├──────────────────┤
+│  contenido       │
+
+CUANDO llegas a él con el scroll (actúa como fixed):
+├──────────────────┤
+│  div sticky      │  ← se queda pegado arriba
+├──────────────────┤
+│  contenido       │
+│  contenido       │
+│  contenido       │
+
+fixed  → se queda fijo en pantalla SIEMPRE, sin importar dónde esté
+sticky → se queda fijo solo DENTRO de su contenedor padre,
+         cuando el padre desaparece del scroll, el sticky también desaparece
+------------------------------------------------------------------------------------------------------
+
+float — desplaza la caja a la izquierda o derecha y el resto del contenido la rodea
+
+img {
+    float: left;  /* la imagen va a la izquierda, el texto la rodea */
+}
+
+/*
+┌───────┐  texto texto texto
+│ imagen│  texto texto texto
+│       │  texto texto texto
+└───────┘  texto texto texto
+*/
+
+------------------------------------------------------------------------------------------------------
+
+
+clear — cancela el efecto float, impide que un elemento se coloque al lado de uno flotante
+
+
+div { clear: both; } /* este div empieza por debajo de cualquier flotante */
+
+/*
+SIN clear:              CON clear:
+┌───────┐ texto         ┌───────┐
+│ float │ texto         │ float │
+└───────┘               └───────┘
+┌──────────────┐        ┌──────────────┐
+│ div siguiente│        │ div siguiente│ ← baja por debajo del float
+└──────────────┘        └──────────────┘
+*/
+```
+
+---
+
+Resumen rápido:
+```
+static   → posición normal, sin control
+relative → se mueve desde donde estaría
+absolute → se mueve respecto al padre
+fixed    → se queda fijo en pantalla al hacer scroll
+float    → se va a un lado y el contenido lo rodea
+clear    → evita que algo se coloque al lado de un float
+
+------------------------------------------------------------------------------------------------------
+VISUALIZACION
+------------------------------------------------------------------------------------------------------
+
+
+display — cómo se comporta y muestra el elemento
+
+display: block;  /* ocupa todo el ancho disponible, elemento en bloque */
+/*
+┌──────────────────────┐
+│        div           │  ← ocupa toda la línea
+└──────────────────────┘
+┌──────────────────────┐
+│        div           │
+└──────────────────────┘
+*/
+
+display: inline; /* ocupa solo lo que necesita, en línea */
+/*
+[span1] [span2] [span3]  ← van uno al lado del otro
+*/
+
+display: none;  /* desaparece completamente, los demás ocupan su hueco */
+/*
+┌──────────┐
+│  div 1   │
+└──────────┘
+            ← div 2 ha desaparecido, div 3 sube
+┌──────────┐
+│  div 3   │
+└──────────┘
+*/
+
+------------------------------------------------------------------------------------------------------
+
+visibility — muestra u oculta el elemento pero conservando su hueco
+
+visibility: visible; /* se ve (por defecto) */
+visibility: hidden;  /* desaparece pero deja su hueco */
+
+/*
+display:none vs visibility:hidden:
+
+display:none          visibility:hidden
+┌──────────┐          ┌──────────┐
+│  div 1   │          │  div 1   │
+└──────────┘          └──────────┘
+            ← hueco   │  (hueco) │  ← el espacio se conserva
+┌──────────┐          └──────────┘
+│  div 3   │          ┌──────────┐
+└──────────┘          │  div 3   │
+                      └──────────┘
+*/
+
+------------------------------------------------------------------------------------------------------
+
+z-index — qué elemento va por delante cuando se solapan
+
+.caja1 { z-index: 1; }  /* detrás */
+.caja2 { z-index: 2; }  /* delante */
+.caja3 { z-index: 3; }  /* más delante de todos */
+
+/*
+vista desde arriba:
+┌───────────────┐
+│  caja3 (z:3)  │  ← la más de delante
+│  ┌────────────┤
+│  │  caja2(z:2)│
+│  │  ┌─────────┤
+│  │  │ caja1   │  ← la más de atrás
+└──┴──┴─────────┘
+
+vista lateral (eje z):
+pantalla → caja1 → caja2 → caja3 → usuario
+*/
+
+------------------------------------------------------------------------------------------------------
+
+overflow — qué pasa cuando el contenido es más grande que la caja
+
+overflow: visible; /* el contenido se sale de la caja (por defecto) */
+/*
+┌──────────┐
+│  caja    │el texto
+│          │se sale
+└──────────┘por aquí
+*/
+
+overflow: hidden;  /* lo que se sale se recorta y no se ve */
+/*
+┌──────────┐
+│  caja    │
+│  texto re│← el resto se corta
+└──────────┘
+*/
+
+overflow: scroll;  /* añade barras de scroll siempre */
+/*
+┌──────────┬┐
+│  caja    ││
+│  texto   ││← barra vertical
+└──────────┴┘
+ ══════════   ← barra horizontal
+*/
+
+overflow: auto;    /* añade barras solo si las necesita */
+```
+
+---
+
+Resumen rápido:
+```
+display:none        → desaparece y los demás ocupan su sitio
+visibility:hidden   → desaparece pero deja su hueco
+z-index             → controla quién va por delante al solaparse
+overflow            → controla qué pasa cuando el contenido no cabe

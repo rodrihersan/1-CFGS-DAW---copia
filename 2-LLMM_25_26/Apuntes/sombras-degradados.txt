@@ -1,0 +1,68 @@
+text-shadow y box-shadow — sombra en texto y elementos
+
+/* mínimo: desplazamiento horizontal, vertical y color */
+h1 {
+    text-shadow: 3px 4px green;
+    /*            ↑   ↑    ↑
+               horiz vert color  */
+}
+
+div {
+    box-shadow: 1px 3px blue;
+}
+
+/* añadiendo difuminado */
+h1 {
+    text-shadow: 3px 4px 2px green;
+    /*            ↑   ↑   ↑    ↑
+               horiz vert blur color */
+}
+
+/* encadenando varias sombras */
+h1 {
+    text-shadow: 2px 2px red, 4px 4px blue, 6px 6px green;
+}
+
+------------------------------------------------------------------------------------------------------
+
+linear-gradient() — degradado lineal
+
+
+/* de abajo hacia arriba entre dos colores */
+background: linear-gradient(bottom, green, yellow);
+
+/* en diagonal 65 grados con tres colores */
+background: linear-gradient(65deg, green, yellow, pink);
+
+/*
+linear:
+┌──────────────┐
+│   green      │
+│   ↓↓↓↓↓↓↓   │
+│   yellow     │
+└──────────────┘
+*/
+
+------------------------------------------------------------------------------------------------------
+
+radial-gradient() — degradado radial (círculos concéntricos)
+
+
+background: radial-gradient(ellipse, green, yellow, white);
+
+/*
+radial:
+┌──────────────┐
+│  white       │
+│  ┌────────┐  │
+│  │ yellow │  │
+│  │ ┌────┐ │  │
+│  │ │grn │ │  │  ← parte desde el centro
+│  │ └────┘ │  │
+│  └────────┘  │
+└──────────────┘
+*/
+
+
+
+

@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../imagenes/coronavirus.jpg);
+  background-size: cover;
+}
+
+/* HEADER */
+#header {
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px solid #c0392b;
+  border-radius: 25px;
+  margin: 20px;
+  text-align: center;
+}
+
+#header h2 {
+  text-shadow: 2px 2px 4px #c0392b;
+}
+
+/* INFO BOXES */
+#info-section {
+  margin: 10px;
+}
+
+.info-box {
+  width: 40%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #ad5d11;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+  transition: transform 0.6s;
+}
+
+.Izquierda{
+  float: left;
+  margin-left: 50px;
+}
+
+.Derecha{
+  float: right;
+  margin-right: 50px;
+}
+
+.info-box:first-child:hover {
+  transform: rotate(-2deg);
+}
+
+.info-box:last-child:hover {
+  transform: rotate(2deg);
+}
+
+/* FORM SECTION */
+form#form-section {
+  background: rgba(255, 255, 255, 0.65);
+  border: 2px solid #000000;
+  margin: 10px;
+  padding: 14px 20px;
+  clear: both;
+}
+
+
+#form-section p {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+#checkboxes {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#checkboxes label {
+  margin-right: 16px;
+  font-size: 15px;
+}
+
+#checkboxes input[type="checkbox"] {
+  margin-right: 4px;
+}
+
+#sintomas {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  padding: 6px;
+  border: 1px solid #e07a1a;
+  background: rgba(255, 200, 200, 0.4);
+  resize: none;
+}
+
+.vacio{
+  width: 100%;
+  border: #ad5d11;
+}
+
+/* BOTTOM SECTION */
+#bottom-section {
+  position: relative;
+}
+
+#aviso {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  top: -300px;
+  animation: salto 1.8s forwards;
+}
+
+/* ANIMACIÓN 3 REBOTES */
+@keyframes salto {
+  0%   { top: -400px; }
+  40%  { top: 60px; }
+  55%  { top: 20px; }
+  70%  { top: 60px; }
+  80%  { top: 35px; }
+  90%  { top: 60px; }
+  95%  { top: 48px; }
+  100% { top: 55px; }
+}

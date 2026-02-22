@@ -1,0 +1,167 @@
+color — color del texto
+
+
+color: red;
+color: #003366;
+color: rgba(0,0,0,0.5);
+
+------------------------------------------------------------------------------------------------------
+
+
+font-family — tipo de fuente
+
+ont-family: Arial;
+font-family: "Times New Roman";
+font-family: Arial, Helvetica, sans-serif;
+
+------------------------------------------------------------------------------------------------------
+
+font-size — tamaño de la letra
+
+font-size: 16px;
+font-size: 1.2em;   /* relativo al padre */
+font-size: 1.2rem;  /* relativo al root (html) */
+font-size: large;
+
+------------------------------------------------------------------------------------------------------
+
+font-weight — grosor de la letra
+
+font-weight: normal;  /* normal (por defecto) */
+font-weight: bold;    /* negrita */
+font-weight: 100;     /* muy fina */
+font-weight: 900;     /* muy gruesa */
+
+------------------------------------------------------------------------------------------------------
+
+font-style — estilo de letra
+
+font-style: normal;   /* normal (por defecto) */
+font-style: italic;   /* cursiva */
+font-style: oblique;  /* inclinada, similar a italic */
+
+------------------------------------------------------------------------------------------------------
+
+font-variant — mayúsculas pequeñas
+
+font-variant: normal;     /* normal (por defecto) */
+font-variant: small-caps; /* TEXTO ASÍ pero más pequeño que mayúsculas normales */
+
+------------------------------------------------------------------------------------------------------
+
+font — shorthand de todas las anteriores
+
+
+/* orden: font-style font-variant font-weight font-size/line-height font-family */
+font: italic bold 16px/1.5 Arial;
+font: small-caps bold 1.2em "Times New Roman";
+/* font-size y font-family son obligatorios, el resto opcional */
+
+------------------------------------------------------------------------------------------------------
+
+text-align — alineación horizontal
+
+text-align: left;    /* izquierda (por defecto) */
+text-align: right;   /* derecha */
+text-align: center;  /* centrado */
+text-align: justify; /* justificado */
+
+------------------------------------------------------------------------------------------------------
+
+
+line-height — interlineado
+
+line-height: normal;  /* por defecto */
+line-height: 1.5;     /* 1.5 veces el tamaño de la fuente */
+line-height: 24px;
+/*
+sin line-height:    con line-height: 2:
+línea 1             línea 1
+línea 2
+                    línea 2
+línea 3
+                    línea 3
+*/
+
+------------------------------------------------------------------------------------------------------
+
+text-decoration — decoración del texto
+
+text-decoration: none;         /* sin decoración */
+text-decoration: underline;    /* subrayado */
+text-decoration: overline;     /* línea encima */
+text-decoration: line-through; /* tachado */
+
+------------------------------------------------------------------------------------------------------
+
+
+text-transform — transformar mayúsculas/minúsculas
+
+text-transform: none;        /* sin cambios */
+text-transform: uppercase;   /* TODO EN MAYÚSCULAS */
+text-transform: lowercase;   /* todo en minúsculas */
+text-transform: capitalize;  /* Primera Letra De Cada Palabra */
+
+
+------------------------------------------------------------------------------------------------------
+
+text-shadow — sombra del texto
+
+text-shadow: 2px 2px 4px red;
+/*            ↑   ↑   ↑   ↑
+          horiz vert blur color */
+------------------------------------------------------------------------------------------------------
+
+text-indent — sangría de la primera línea
+
+text-indent: 20px; /* la primera línea empieza 20px más adentro */
+/*
+    Primera línea con sangría aquí
+Segunda línea normal
+Tercera línea normal
+*/
+
+------------------------------------------------------------------------------------------------------
+
+letter-spacing — espacio entre letras
+
+letter-spacing: normal;
+letter-spacing: 3px;  /* m á s  s e p a r a d a s */
+letter-spacing: -1px; /* másapretadas */
+
+------------------------------------------------------------------------------------------------------
+
+word-spacing — espacio entre palabras
+
+word-spacing: normal;
+word-spacing: 10px; /* más    espacio    entre    palabras */
+
+------------------------------------------------------------------------------------------------------
+
+white-space — cómo tratar los espacios en blanco
+
+white-space: normal;   /* ignora espacios extra (por defecto) */
+white-space: nowrap;   /* no hace saltos de línea aunque no quepa */
+white-space: pre;      /* respeta espacios y saltos como en <pre> */
+
+------------------------------------------------------------------------------------------------------
+
+vertical-align — alineación vertical dentro de una celda de tabla
+
+vertical-align: top;     /* arriba */
+vertical-align: middle;  /* centro */
+vertical-align: bottom;  /* abajo */
+
+------------------------------------------------------------------------------------------------------
+
+@font-face — usar fuentes externas
+
+@font-face {
+    font-family: "MiFuente";       /* nombre que le doy yo */
+    src: url('mifuente.ttf');      /* ruta al archivo de fuente */
+}
+
+/* luego la uso así */
+p {
+    font-family: "MiFuente";
+}

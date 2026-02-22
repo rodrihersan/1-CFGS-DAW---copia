@@ -1,0 +1,116 @@
+Pseudoclases para formularios
+
+
+/* invalid - el campo no cumple la validación */
+input:invalid {
+    border: 2px solid red;
+}
+
+/* valid - el campo es válido */
+input:valid {
+    border: 2px solid green;
+}
+
+/* required - el campo tiene atributo required */
+input:required {
+    background: rgba(255,0,0,0.1);
+}
+
+/* optional - el campo NO tiene required */
+input:optional {
+    background: rgba(0,255,0,0.1);
+}
+
+/* in-range - el valor está dentro del rango min/max */
+input:in-range {
+    border: 2px solid green;
+}
+
+/* out-of-range - el valor está fuera del rango */
+input:out-of-range {
+    border: 2px solid red;
+}
+
+/* read-only - el campo tiene atributo readonly */
+input:read-only {
+    background: #eee;
+    color: #999;
+}
+
+/* read-write - el campo NO tiene readonly */
+input:read-write {
+    background: white;
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+box-sizing — cómo se calcula el ancho y alto del elemento
+
+
+/* content-box (por defecto) */
+box-sizing: content-box;
+/*
+width: 200px + padding: 20px + border: 5px
+= el elemento ocupa en pantalla 250px en total
+
+┌─────────────────────────────┐
+│  border(5)                  │
+│  ┌───────────────────────┐  │
+│  │  padding(20)          │  │
+│  │  ┌─────────────────┐  │  │
+│  │  │  content(200px) │  │  │
+│  │  └─────────────────┘  │  │
+│  └───────────────────────┘  │
+└─────────────────────────────┘
+         250px total
+*/
+
+/* border-box */
+box-sizing: border-box;
+/*
+width: 200px ya incluye padding y border
+= el elemento ocupa exactamente 200px en total
+
+┌──────────────────────────┐
+│  border(5)               │
+│  ┌────────────────────┐  │
+│  │  padding(20)       │  │
+│  │  ┌──────────────┐  │  │
+│  │  │ content(150) │  │  │  ← el contenido se reduce
+│  │  └──────────────┘  │  │
+│  └────────────────────┘  │
+└──────────────────────────┘
+        200px total
+*/
+
+
+------------------------------------------------------------------------------------------------------
+
+* {
+    box-sizing: border-box;
+}
+```
+
+---
+
+**Qué elementos admiten CSS y cuáles no:**
+```
+SIN PROBLEMAS:
+✔ input type="text"
+✔ textarea
+✔ select (básico)
+✔ button
+✔ fieldset / legend
+
+SOLO CON TÉCNICAS AVANZADAS:
+⚠ checkbox
+⚠ radio button
+
+NO ADMITEN CSS:
+✘ input type="color"
+✘ input type="date"
+✘ input type="file"
+✘ option / datalist
+
+

@@ -1,0 +1,113 @@
+------------------------------------------------------------------------------------------------------
+LISTAS
+------------------------------------------------------------------------------------------------------
+
+list-style-type — tipo de viñeta
+
+/* listas no ordenadas (ul) */
+list-style-type: disc;    /* ● punto relleno (por defecto) */
+list-style-type: circle;  /* ○ círculo vacío */
+list-style-type: square;  /* ■ cuadrado */
+list-style-type: none;    /* sin viñeta */
+
+/* listas ordenadas (ol) */
+list-style-type: decimal;     /* 1, 2, 3... */
+list-style-type: lower-roman; /* i, ii, iii... */
+list-style-type: upper-roman; /* I, II, III... */
+list-style-type: lower-alpha; /* a, b, c... */
+list-style-type: upper-alpha; /* A, B, C... */
+
+------------------------------------------------------------------------------------------------------
+
+list-style-position — posición de la viñeta
+
+list-style-position: outside; /* viñeta fuera del texto (por defecto) */
+/*
+● texto texto texto
+  texto texto texto  ← el texto no pasa por debajo de la viñeta
+*/
+
+list-style-position: inside;  /* viñeta dentro del texto */
+/*
+● texto texto texto
+texto texto texto    ← el texto sí pasa por debajo de la viñeta
+*/
+
+------------------------------------------------------------------------------------------------------
+
+list-style-image — imagen como viñeta
+
+
+list-style-image: url('flecha.png');
+list-style-image: none; /* sin imagen */
+
+
+
+------------------------------------------------------------------------------------------------------
+TABLAS
+------------------------------------------------------------------------------------------------------
+
+caption-side — posición del título de la tabla
+
+caption-side: top;    /* título encima (por defecto) */
+caption-side: bottom; /* título debajo */
+
+------------------------------------------------------------------------------------------------------
+
+empty-cells — mostrar o no bordes en celdas vacías
+
+empty-cells: show; /* muestra el borde aunque la celda esté vacía */
+empty-cells: hide; /* oculta el borde en celdas vacías */
+
+------------------------------------------------------------------------------------------------------
+
+border-collapse — fusionar bordes de celdas
+
+border-collapse: separate; /* cada celda tiene su propio borde (por defecto) */
+/*
+┌──┬──┬──┐
+│  ║  ║  │  ← doble borde entre celdas
+└──╩──╩──┘
+*/
+
+border-collapse: collapse; /* los bordes se fusionan en uno solo */
+/*
+┌──┬──┬──┐
+│  │  │  │  ← un solo borde entre celdas
+└──┴──┴──┘
+*/
+
+
+------------------------------------------------------------------------------------------------------
+
+
+border-spacing — espacio entre celdas (solo funciona con separate)
+
+border-spacing: 10px;      /* mismo espacio horizontal y vertical */
+border-spacing: 10px 20px; /* horizontal vertical */
+/*
+┌──┐  ┌──┐  ┌──┐
+│  │  │  │  │  │  ← espacio entre celdas
+└──┘  └──┘  └──┘
+*/
+
+
+------------------------------------------------------------------------------------------------------
+
+
+table-layout — algoritmo para calcular el ancho de la tabla
+
+
+table-layout: auto;  /* el ancho depende del contenido (por defecto) */
+/*
+│ texto corto │ texto muy muy largo │
+     ↑                  ↑
+  columna pequeña   columna grande según contenido
+*/
+
+table-layout: fixed; /* el ancho lo controlas tú con width */
+/*
+│    col 1    │    col 2    │
+     ↑                ↑
+  mismo ancho independientemente del contenido
+*/

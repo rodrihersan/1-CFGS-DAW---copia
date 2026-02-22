@@ -1,0 +1,305 @@
+body {
+  background-color: lightgray;
+}
+
+.padre {
+  background-color: lightblue;
+  padding: 40px;
+}
+
+.hijo {
+  width: 200px;              /* ancho */
+  height: 100px;             /* alto */
+  background-color: yellow;  /* fondo */
+  padding: 20px;             /* espacio interior */
+  border: 5px solid black;   /* borde */
+  margin: 30px;              /* espacio exterior */
+}
+
+/* ============================= */
+/* EJEMPLO MARGIN POR LADOS     */
+/* ============================= */
+
+.caja-margin-lados {
+  width: 200px;
+  height: 100px;
+  background-color: pink;
+  border: 4px solid black;
+
+  margin-top: 60px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  margin-left: 150px;
+}
+
+/* ============================= */
+/* EJEMPLO PADDING POR LADOS    */
+/* ============================= */
+
+.caja-padding-lados {
+  width: 200px;
+  height: 100px;
+  background-color: lightgreen;
+  border: 4px solid black;
+
+  padding-top: 30px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+}
+
+/* ============================= */
+/* EJEMPLO MARGIN AUTO          */
+/* ============================= */
+
+.caja-auto {
+  width: 200px;
+  height: 100px;
+  background-color: orange;
+  border: 4px solid black;
+
+  margin: 40px auto;
+}
+
+/* ================================= */
+/*            BORDES                 */
+/* ================================= */
+
+.borde-completo {
+  width: 200px;
+  height: 80px;
+  margin: 20px;
+  border: 5px solid red;
+}
+
+.borde-lados {
+  width: 200px;
+  height: 80px;
+  margin: 20px;
+
+  border-top: 5px solid blue;
+  border-right: 8px dashed green;
+  border-bottom: 3px dotted orange;
+  border-left: 10px double purple;
+}
+
+.borde-radius {
+  width: 200px;
+  height: 80px;
+  margin: 20px;
+  border: 5px solid black;
+
+  border-radius: 20px; /* redondeado */
+}
+
+
+/* ================================= */
+/*            COLORES                */
+/* ================================= */
+
+.color-nombre {
+  color: blue;
+}
+
+.color-hex {
+  color: #ff0000;
+}
+
+.color-rgb {
+  color: rgb(0, 200, 0);
+}
+
+.color-rgba {
+  color: rgba(255, 0, 0, 0.5);
+}
+
+.color-hsl {
+  color: hsl(240, 100%, 50%);
+}
+
+.color-hsla {
+  color: hsla(300, 100%, 50%, 0.4);
+}
+
+
+/* ================================= */
+/*            FONDOS                 */
+/* ================================= */
+
+.fondo-color {
+  width: 200px;
+  height: 80px;
+  margin: 20px;
+  background-color: yellow;
+}
+
+.fondo-imagen {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+
+  background-image: url("https://picsum.photos/200");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.fondo-opacity {
+  width: 200px;
+  height: 80px;
+  margin: 20px;
+  background-color: red;
+  opacity: 0.5;
+}
+
+/* ================================= */
+/* 4.5 POSICIONAMIENTO */
+/* ================================= */
+
+.posicion-relativa {
+  position: relative;
+  left: 30px;
+  top: 10px;
+  background: lightcoral;
+  margin: 20px;
+}
+
+.posicion-contenedor {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  background: lightblue;
+  margin: 20px;
+}
+
+.posicion-absoluta {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: yellow;
+}
+
+.posicion-fija {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  padding: 5px;
+}
+
+.float-left {
+  float: left;
+  width: 100px;
+  background: pink;
+}
+
+.float-right {
+  float: right;
+  width: 100px;
+  background: lightgreen;
+}
+
+.clear-both {
+  clear: both;
+  background: gray;
+}
+
+
+/* ================================= */
+/* 4.6 VISUALIZACIÓN */
+/* ================================= */
+
+.display-inline {
+  display: inline;
+  background: orange;
+}
+
+.display-none {
+  display: none;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.zindex-contenedor {
+  position: relative;
+  height: 100px;
+}
+
+.caja1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: red;
+  z-index: 1;
+}
+
+.caja2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: blue;
+  left: 40px;
+  top: 20px;
+  z-index: 2;
+}
+
+.overflow-caja {
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  overflow: auto;
+  margin: 20px;
+}
+
+
+/* ================================= */
+/* 5 TEXTO */
+/* ================================= */
+
+.texto-ejemplo {
+  color: blue;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  text-shadow: 2px 2px 3px gray;
+}
+
+
+/* ================================= */
+/* 6 LISTAS */
+/* ================================= */
+
+.lista-ejemplo {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+
+/* ================================= */
+/* 7 TABLAS */
+/* ================================= */
+
+.tabla-ejemplo {
+  border-collapse: collapse;
+  width: 300px;
+  margin: 20px;
+}
+
+.tabla-ejemplo th,
+.tabla-ejemplo td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.tabla-ejemplo caption {
+  caption-side: bottom;
+}

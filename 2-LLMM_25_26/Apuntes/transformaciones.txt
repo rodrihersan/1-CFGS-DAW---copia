@@ -1,0 +1,116 @@
+------------------------------------------------------------------------------------------------------
+9.2. Transformaciones
+------------------------------------------------------------------------------------------------------
+
+
+transform — mover, rotar, escalar y deformar elementos
+
+/* translate - mover */
+transform: translate(100px, 50px);  /* mueve 100px derecha y 50px abajo */
+transform: translateX(100px);       /* solo horizontal */
+transform: translateY(50px);        /* solo vertical */
+
+/* rotate - rotar */
+transform: rotate(45deg);           /* gira 45 grados */
+transform: rotateX(45deg);          /* gira sobre eje X (efecto 3D) */
+transform: rotateY(45deg);          /* gira sobre eje Y (efecto 3D) */
+
+/* scale - escalar */
+transform: scale(2);                /* doble de tamaño */
+transform: scale(1.5, 0.5);        /* 1.5 ancho, mitad alto */
+transform: scaleX(2);              /* solo ancho */
+
+/* skew - deformar/inclinar */
+transform: skewX(20deg);           /* inclina en eje X */
+transform: skewY(20deg);           /* inclina en eje Y */
+
+/* combinando varias transformaciones */
+transform: translate(100px, 0) rotate(45deg) scale(1.5);
+
+------------------------------------------------------------------------------------------------------
+9.3. Transiciones
+------------------------------------------------------------------------------------------------------
+
+Permiten que un cambio de estilo ocurra de forma suave y gradual en lugar de instantánea.
+
+
+/* propiedades por separado */
+div {
+    transition-property: color;       /* qué propiedad transiciona */
+    transition-duration: 2s;          /* cuánto dura */
+    transition-timing-function: linear; /* velocidad constante */
+    transition-delay: 1s;             /* espera 1s antes de empezar */
+}
+
+/* shorthand: propiedad duración timing delay */
+div {
+    transition: color 2s linear 1s;
+}
+
+/* transicionar varias propiedades */
+div {
+    transition: color 2s, background 1s, transform 0.5s;
+}
+
+/* ejemplo típico con hover */
+div {
+    background: blue;
+    transition: background 0.3s ease;
+}
+div:hover {
+    background: red; /* cambia suavemente al pasar el ratón */
+}
+
+------------------------------------------------------------------------------------------------------
+
+Valores de timing-function:
+
+transition-timing-function: linear;      /* velocidad constante */
+transition-timing-function: ease;        /* empieza rápido, termina despacio */
+transition-timing-function: ease-in;     /* empieza despacio */
+transition-timing-function: ease-out;    /* termina despacio */
+transition-timing-function: ease-in-out; /* empieza y termina despacio */
+
+
+------------------------------------------------------------------------------------------------------
+9.4. Animaciones
+------------------------------------------------------------------------------------------------------
+
+
+/* definir la animación con @keyframes */
+@keyframes mianmacion {
+    0%   { background: red; }    /* estado inicial */
+    50%  { background: yellow; } /* estado intermedio */
+    100% { background: green; }  /* estado final */
+}
+
+/* también se puede usar from y to si solo hay dos estados */
+@keyframes mianmacion {
+    from { background: red; }
+    to   { background: green; }
+}
+
+/* aplicar la animación al elemento */
+div {
+    animation-name: mianmacion;          /* nombre del keyframe */
+    animation-duration: 3s;              /* duración obligatoria */
+    animation-delay: 1s;                 /* espera antes de empezar */
+    animation-iteration-count: infinite; /* repeticiones (infinite = siempre) */
+    animation-direction: alternate;      /* normal, reverse, alternate */
+    animation-timing-function: ease;     /* velocidad */
+    animation-fill-mode: forwards;       /* mantiene el estilo final al acabar */
+    animation-play-state: running;       /* running o paused */
+}
+
+/* shorthand */
+div {
+    animation: mianmacion 3s ease 1s infinite alternate forwards;
+}
+```
+
+---
+
+Diferencia clave entre **transición y animación**:
+```
+transición → cambio de A a B de forma suave, necesita un disparador (hover, click...)
+animación  → puede tener múltiples estados, se ejecuta sola, más compleja y potente

@@ -1,0 +1,191 @@
+------------------------------------------------------------------------------------------------------
+            BORDER
+------------------------------------------------------------------------------------------------------
+
+border-width — el grosor del borde
+
+border-width: 5px;        /* todos igual */
+border-top-width: 10px;   /* solo arriba */
+border-right-width: 2px;  /* solo derecha */
+border-bottom-width: 8px; /* solo abajo */
+border-left-width: 2px;   /* solo izquierda */
+
+/* valores especiales */
+border-width: thin;    /* fino */
+border-width: medium;  /* medio (por defecto) */
+border-width: thick;   /* grueso */
+
+
+
+------------------------------------------------------------------------------------------------------
+
+border-color — el color del borde
+
+
+border-color: red;
+border-color: #003366;
+border-color: rgba(0,0,0,0.5); el 0.5 es la opacidad. 1 sera totalmente solido y 0 translucido
+border-top-color: blue;
+border-bottom-color: transparent; /* borde invisible pero ocupa espacio */
+```
+
+---
+
+**border-style** — el estilo/forma del borde. Este es el más visual:
+```
+none    →  (sin borde)
+hidden  →  (sin borde, igual que none pero afecta a tablas)
+dotted  →  · · · · · · · ·
+dashed  →  - - - - - - - -
+solid   →  _______________
+double  →  ═══════════════
+groove  →  parece hundido en la página
+ridge   →  parece que sobresale
+inset   →  el elemento entero parece hundido
+outset  →  el elemento entero parece que sobresale
+
+------------------------------------------------------------------------------------------------------
+
+border (shorthand) — las tres propiedades juntas en una línea
+
+
+border: 2px dotted green;
+/* equivale a: */
+border-width: 2px;
+border-style: dotted;
+border-color: green;
+
+/* también puedes hacerlo por lado */
+border-bottom: 1px solid red;
+border-top: 3px dashed blue;
+
+------------------------------------------------------------------------------------------------------
+
+border-radius — redondea las esquinas
+
+
+Con círculo (un solo valor = radio del círculo):
+border-radius: 10px;   /* todas las esquinas igual */
+border-radius: 50%;    /* si el elemento es cuadrado → círculo perfecto */
+
+
+antes:          después:
+┌────────┐      ╭────────╮
+│        │      │        │
+└────────┘      ╰────────╯
+
+
+Esquinas distintas (en el orden: arriba-izq, arriba-der, abajo-der, abajo-izq):
+border-radius: 10px 20px 30px 40px;
+/*
+╭──────────╮  ← arriba-izq=10px, arriba-der=20px
+│          │
+╰──────────╯  ← abajo-izq=40px, abajo-der=30px
+*/
+Con elipse (valor horizontal / valor vertical):
+cssborder-radius: 50px / 20px;
+
+
+
+------------------------------------------------------------------------------------------------------
+            BACKGROUND
+------------------------------------------------------------------------------------------------------
+
+
+background-color — color de fondo sólido
+
+
+cssbackground-color: red;
+background-color: #003366;
+background-color: rgba(0,0,0,0.5); /* con transparencia */
+background-color: transparent;     /* sin fondo (por defecto) */
+
+
+------------------------------------------------------------------------------------------------------
+
+
+background-image — imagen de fondo
+
+
+background-image: url('foto.jpg');
+background-image: none; /* sin imagen (por defecto) */
+
+------------------------------------------------------------------------------------------------------
+
+background-repeat — si la imagen se repite para rellenar el espacio
+
+background-repeat: repeat;    /* se repite en X e Y (por defecto) */
+background-repeat: repeat-x;  /* solo se repite horizontalmente → */
+background-repeat: repeat-y;  /* solo se repite verticalmente ↓ */
+background-repeat: no-repeat; /* no se repite, aparece una sola vez */
+
+------------------------------------------------------------------------------------------------------
+
+
+background-position — dónde se coloca la imagen dentro del elemento
+
+/* con palabras clave */
+background-position: center center;  /* centrada */
+background-position: top left;       /* esquina superior izquierda */
+background-position: bottom right;   /* esquina inferior derecha */
+
+/* con medidas */
+background-position: 4cm 25%;   /* 4cm desde izq, 25% desde arriba */
+background-position: center 3cm;/* centrada horizontal, 3cm desde arriba */
+
+/* si omites un valor, el otro vale 50% automáticamente */
+background-position: center;    /* equivale a center 50% */
+
+------------------------------------------------------------------------------------------------------
+
+background-attachment — si la imagen se mueve al hacer scroll o se queda fija
+
+background-attachment: scroll; /* la imagen se mueve con la página (por defecto) */
+background-attachment: fixed;  /* la imagen se queda fija, el contenido pasa por encima */
+
+/*
+scroll → la imagen es parte de la página, sube y baja con ella
+fixed  → la imagen es como una ventana, siempre en el mismo sitio
+         (efecto parallax típico de fondos de body)
+*/
+
+
+------------------------------------------------------------------------------------------------------
+
+opacity — transparencia de un elemento completo
+
+opacity: 0;    /* totalmente transparente, invisible */
+opacity: 0.5;  /* 50% transparente */
+opacity: 1;    /* totalmente sólido (por defecto) */
+
+------------------------------------------------------------------------------------------------------
+
+background-size
+
+/* Una sola palabra clave */
+background-size: cover;    /* cubre todo, recorta si hace falta */
+background-size: contain;  /* se ve entera, pueden quedar huecos */
+background-size: auto;     /* tamaño original de la imagen (por defecto) */
+
+/* Medidas concretas (ancho alto) */
+background-size: 300px 200px;  /* ancho 300px, alto 200px */
+background-size: 300px;        /* ancho 300px, alto auto */
+
+/* Porcentajes (respecto al elemento) */
+background-size: 100% 100%;  /* ocupa todo el elemento, puede deformar */
+background-size: 50% auto;   /* mitad de ancho, alto proporcional */
+
+/* Auto */
+background-size: auto auto;  /* tamaño original en ambas dimensiones */
+background-size: auto 200px; /* alto fijo, ancho proporcional */
+```
+
+Visualmente la diferencia entre los más usados:
+```
+imagen original: 400x200px
+elemento:        800x600px
+
+cover →    imagen se amplía hasta cubrir todo, se recorta lo que sobra
+contain →  imagen se amplía hasta que un lado toca el borde, quedan huecos
+100% 100%→ imagen se estira para llenar exacto, se deforma
+auto →     imagen en su tamaño original, se repite si es pequeña
