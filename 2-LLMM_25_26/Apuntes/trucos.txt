@@ -218,3 +218,9 @@ De transformaciones con transición:
 .tarjeta:hover {
     transform: rotateY(180deg);
 }
+
+------------------------------------------------------------------------------------------------------
+
+
+Porque :first-child y :last-child son atajos convenientes para el primero y último
+pero no existe :second-child en CSS — para cualquier posición intermedia se usa :nth-child(n).
