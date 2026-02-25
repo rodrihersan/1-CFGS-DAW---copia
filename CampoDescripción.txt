@@ -1,0 +1,35 @@
+Campo	Descripción
+Nombre	Buscar
+Actor(es)	Lector
+Descripción	Permite al lector buscar libros en el catálogo del sistema.
+Precondición	El sistema está operativo.
+Postcondición	Se muestra una lista de libros que coinciden con el criterio ingresado.
+Flujo principal	
+		1. El lector selecciona la opción “Buscar”.
+		2. El sistema muestra el formulario de búsqueda.
+		3. El sistema solicita el criterio de búsqueda.
+		4. El lector ingresa el criterio (título, autor, ISBN, etc.).
+		5. El sistema procesa la consulta.
+		6. El sistema muestra los resultados encontrados.
+Flujo alternativo	6a. No se encuentran resultados → El sistema muestra mensaje “No se encontraron libros”.
+
+
+Campo	Descripción
+Nombre	Reservar
+Actor(es)	Lector
+Descripción	Permite al lector realizar la reserva de un libro disponible en el sistema.
+Precondición	
+	- El lector está registrado en el sistema.
+	- El lector ha iniciado sesión.
+	- El libro existe en el catálogo.
+Postcondición	El libro queda asociado como reservado al lector.
+Flujo principal	
+1. El lector selecciona la opción “Reservar”.
+2. El sistema muestra el catálogo o los resultados de búsqueda.
+3. E	l lector selecciona el libro que desea reservar.
+4. El sistema verifica la disponibilidad del libro.
+5. El sistema solicita confirmación de la reserva.
+6. El lector confirma la reserva.
+7. El sistema registra la reserva y muestra mensaje de confirmación.
+Flujos alternativos	4a. El libro no está disponible → El sistema informa que no puede reservarse.
+6a. El lector cancela la operación → El sistema no registra la reserva y finaliza el caso de uso.
