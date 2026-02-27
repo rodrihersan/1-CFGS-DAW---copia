@@ -1,0 +1,35 @@
+------------------------------------------------------------------------
+1. typeof() con distintos valores
+------------------------------------
+typeof(3)        // "number"
+typeof("3")      // "string"
+typeof(tres)     // "undefined"  → la variable no existe
+typeof(3.6)      // "number"
+
+
+------------------------------------------------------------------------
+2. Conversiones con parseInt, parseFloat y Number
+------------------------------------------------------------------------
+parseInt("345.87")       // 345       → elimina decimales
+parseFloat("345.87")     // 345.87    → respeta decimales
+parseInt('8 manzanas')   // 8         → lee hasta donde puede
+Number('8 manzanas')     // NaN       → no puede convertir el texto
+
+
+------------------------------------------------------------------------
+3. typeof() del resultado de las conversiones
+------------------------------------------------------------------------
+typeof(parseInt("345.87"))       // "number"
+typeof(parseFloat("345.87"))     // "number"
+typeof(parseInt('8 manzanas'))   // "number"
+typeof(Number('8 manzanas'))     // "number"  → NaN es de tipo number
+
+
+------------------------------------------------------------------------
+4. Conversión a booleano con Boolean()
+------------------------------------------------------------------------
+Boolean("hola")     // true  → cualquier cadena no vacía es true
+Boolean("")         // false → cadena vacía es false
+Boolean(1)          // true  → cualquier número distinto de 0 es true
+Boolean(0)          // false → el 0 siempre es false
+Boolean(-5)         // true  → los negativos también son true
