@@ -1,0 +1,23 @@
+# Eclipse metadata
+.project
+.classpath
+.settings/
+bin/
+.metadata/
+
+# Build dirs
+target/
+out/
+build/
+
+# OS stuff
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
