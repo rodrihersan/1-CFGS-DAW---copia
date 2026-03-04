@@ -83,13 +83,26 @@ function comprobarOperadores() {
 
 function gestionarArray() {
 
-    var array = [];
-    
+    let array = [];
+    let continuar = true;
+    /*while(continuar){
+        let numero = parseInt(prompt("Introduce un número (positivo, negativo o 0). Escribe una cadena de texto para terminar:"));
+        let nombre = prompt("Introduza su nombre");
+
+        if (!Number.isNaN(numero) || numero === null) {
+            console.log("Ejecución terminada. Contenido final del array:");
+            console.log(array);
+            alert("Programa terminado. Revisa la consola para ver el array.");
+            break;
+        }else{
+            
+        }
+    }*/
     while (true) {
 
-        var numero = prompt("Introduce un número (positivo, negativo o 0).\nEscribe una cadena de texto para terminar:");
+        let numero = parseInt(prompt("Introduce un número (positivo, negativo o 0). Escribe una cadena de texto para terminar:"));
         
-        if (isNaN(numero) || numero === null) {
+        if (!Number.isNaN(numero) || numero === null) {
             console.log("Ejecución terminada. Contenido final del array:");
             console.log(array);
             alert("Programa terminado. Revisa la consola para ver el array.");
@@ -100,8 +113,7 @@ function gestionarArray() {
 
         var nombre = prompt("Introduce un nombre de persona:");
 
-        var confirmacion = confirm("¿Deseas AÑADIR el valor?\n" +
-            "Número: " + numero + "\nNombre: " + nombre);
+        var confirmacion = confirm("¿Deseas AÑADIR el valor?" + "Número: " + numero + "Nombre: " + nombre);
 
         if (confirmacion) {
 
