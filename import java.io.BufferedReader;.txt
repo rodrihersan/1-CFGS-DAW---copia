@@ -1,0 +1,454 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+
+public class Actividad {
+
+    private int id;
+    private String nombre;
+    private String seccion;
+    private int plazasDisponibles;
+    private double precio;
+
+    public void pedirDatos() {
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+        boolean todoOk = false;
+        do {
+            try {
+                boolean idUnico = false;
+                do {
+                    System.out.print("ID: ");
+                    this.id = Integer.parseInt(leer.readLine());
+                    if (this.id <= 0) {
+                        System.out.println("El id debe ser un número positivo.");
+                    } else if (idExiste(this.id)) {
+                        System.out.println("ID Repetido");
+                    } else {
+                        idUnico = true;
+                    }
+                } while (!idUnico);
+
+                System.out.print("Introduce el nombre de la actividad: ");
+                this.nombre = leer.readLine();
+
+                do {
+                    System.out.print("Introduce la sección (Chiqui, Preas, Centro): ");
+                    this.seccion = leer.readLine();
+                    if (!this.seccion.equalsIgnoreCase("Chiqui") &&
+                        !this.seccion.equalsIgnoreCase("Preas") &&
+                        !this.seccion.equalsIgnoreCase("Centro")) {
+                        System.out.println("No has introducido una sección correcta");
+                    }
+                } while (!this.seccion.equalsIgnoreCase("Chiqui") &&
+                         !this.seccion.equalsIgnoreCase("Preas") &&
+                         !this.seccion.equalsIgnoreCase("Centro"));
+
+                do {
+                    System.out.print("Introduce el número de plazas disponibles: ");
+                    this.plazasDisponibles = Integer.parseInt(leer.readLine());
+                    if (this.plazasDisponibles <= 0) {
+                        System.out.println("Las plazas deben ser un valor positivo.");
+                    }
+                } while (this.plazasDisponibles <= 0);
+
+                do {
+                    System.out.print("Introduce el precio de la actividad: ");
+                    this.precio = Double.parseDouble(leer.readLine());
+                    if (this.precio <= 0) {
+                        System.out.println("El precio debe ser un valor positivo.");
+                    }
+                } while (this.precio <= 0);
+
+                todoOk = true;
+            } catch (Exception e) {
+                System.err.println("Ha habido un error al registrar los datos. Intentelo de nuevo.");
+            }
+        } while (!todoOk);
+    }
+
+    public void guardarActividad() {
+        try {
+            File f = new File("./actividades.txt");
+            FileWriter fw = new FileWriter(f, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(this.id + ";" + this.nombre + ";" + this.seccion + ";" + this.plazasDisponibles + ";" + this.precio);
+            pw.flush();
+            pw.close();
+            fw.close();
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el fichero de actividades.");
+        }
+    }
+
+    public void leerActividad(String linea) {
+        String[] datos = linea.split(";");
+        this.id = Integer.parseInt(datos[0]);
+        this.nombre = datos[1];
+        this.seccion = datos[2];
+        this.plazasDisponibles = Integer.parseInt(datos[3]);
+        this.precio = Double.parseDouble(datos[4]);
+    }
+
+    public boolean idExiste(int idBuscado) {
+        File f = new File("./actividades.txt");
+        if (!f.exists()) return false;
+        try {
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            String linea = br.readLine();
+            while (linea != null) {
+                String[] datos = linea.split(";");
+                if (Integer.parseInt(datos[0]) == idBuscado) {
+                    br.close();
+                    fr.close();
+                    return true;
+                }
+                linea = br.readLine();
+            }
+            br.close();
+            fr.close();
+        } catch (IOException e) {
+            System.err.println("Error al leer actividades.txt");
+        }
+        return false;
+    }
+
+    public static Actividad buscarPorId(int idBuscado) {
+        File f = new File("./actividades.txt");
+        if (!f.exists()) return null;
+        try {
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            String linea = br.readLine();
+            while (linea != null) {
+                Actividad a = new Actividad();
+                a.leerActividad(linea);
+                if (a.getId() == idBuscado) {
+                    br.close();
+                    fr.close();
+                    return a;
+                }
+                linea = br.readLine();
+            }
+            br.close();
+            fr.close();
+        } catch (IOException e) {
+            System.err.println("Error al leer actividades.txt");
+        }
+        return null;
+    }
+
+    public static void actualizarPlazas(int idActividad) throws IOException {
+        File fOriginal = new File("./actividades.txt");
+        File fTemporal = new File("./actividades_tmp.txt");
+
+        FileReader fr = new FileReader(fOriginal);
+        BufferedReader br = new BufferedReader(fr);
+        FileWriter fw = new FileWriter(fTemporal, false);
+        PrintWriter pw = new PrintWriter(fw);
+
+        String linea = br.readLine();
+        while (linea != null) {
+            Actividad a = new Actividad();
+            a.leerActividad(linea);
+            if (a.getId() == idActividad) {
+                a.setPlazasDisponibles(a.getPlazasDisponibles() - 1);
+            }
+            pw.println(a.getId() + ";" + a.getNombre() + ";" + a.getSeccion() + ";" + a.getPlazasDisponibles() + ";" + a.getPrecio());
+            linea = br.readLine();
+        }
+
+        br.close();
+        fr.close();
+        pw.flush();
+        pw.close();
+        fw.close();
+
+        if (fOriginal.delete()) {
+            fTemporal.renameTo(fOriginal);
+        } else {
+            System.out.println("Error al actualizar el fichero de actividades.");
+        }
+    }
+
+    public boolean edadCorrecta(int edad) {
+        if (this.seccion.equalsIgnoreCase("Chiqui") && edad >= 8 && edad <= 11) return true;
+        if (this.seccion.equalsIgnoreCase("Preas") && edad >= 12 && edad <= 14) return true;
+        if (this.seccion.equalsIgnoreCase("Centro") && edad >= 15 && edad <= 17) return true;
+        return false;
+    }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public String getSeccion() { return seccion; }
+    public void setSeccion(String seccion) { this.seccion = seccion; }
+    public int getPlazasDisponibles() { return plazasDisponibles; }
+    public void setPlazasDisponibles(int plazasDisponibles) { this.plazasDisponibles = plazasDisponibles; }
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
+}
+
+
+----------------------------------------------------------------------------------------
+
+
+
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+
+public class Inscripcion {
+
+    private String nombreParticipante;
+    private int edad;
+    private String telefono;
+    private int idActividad;
+
+    public void pedirDatos() {
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+        boolean todoOk = false;
+        do {
+            try {
+                System.out.println("Introduce los datos de tu inscripción");
+
+                System.out.print("Introduce el nombre: ");
+                this.nombreParticipante = leer.readLine();
+
+                do {
+                    System.out.print("Introduce la edad (8-17): ");
+                    this.edad = Integer.parseInt(leer.readLine());
+                    if (this.edad < 8 || this.edad > 17) {
+                        System.out.println("La edad debe estar entre 8 y 17.");
+                    }
+                } while (this.edad < 8 || this.edad > 17);
+
+                System.out.print("Introduce teléfono de contacto: ");
+                this.telefono = leer.readLine();
+
+                todoOk = true;
+            } catch (Exception e) {
+                System.err.println("Ha habido un error al registrar los datos. Intentelo de nuevo.");
+            }
+        } while (!todoOk);
+    }
+
+    public void guardarInscripcion() {
+        try {
+            File f = new File("./inscripciones.txt");
+            FileWriter fw = new FileWriter(f, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(this.nombreParticipante + ";" + this.edad + ";" + this.telefono + ";" + this.idActividad);
+            pw.flush();
+            pw.close();
+            fw.close();
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el fichero de inscripciones.");
+        }
+    }
+
+    public String getNombreParticipante() { return nombreParticipante; }
+    public void setNombreParticipante(String nombreParticipante) { this.nombreParticipante = nombreParticipante; }
+    public int getEdad() { return edad; }
+    public void setEdad(int edad) { this.edad = edad; }
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public int getIdActividad() { return idActividad; }
+    public void setIdActividad(int idActividad) { this.idActividad = idActividad; }
+}
+
+----------------------------------------------------------------------------------------
+
+
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Principal {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+
+        boolean salir = false;
+        do {
+            System.out.println("\n=== CENTRO JUVENIL ===");
+            System.out.println("1. Añadir una nueva actividad");
+            System.out.println("2. Buscar actividades por sección");
+            System.out.println("3. Realizar una inscripción");
+            System.out.println("4. Exportar participantes de una actividad");
+            System.out.println("5. Salir");
+            System.out.print("Introduce una opción: ");
+
+            int opcion = -1;
+            boolean datosOK = false;
+            while (!datosOK) {
+                try {
+                    opcion = Integer.parseInt(leer.readLine());
+                    datosOK = true;
+                } catch (IOException e) {
+                    System.err.println("Solo puedes introducir números");
+                }
+            }
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("=== AÑADIR ACTIVIDAD ===");
+                    añadirActividad();
+                    break;
+                case 2:
+                    System.out.println("=== BUSCAR POR SECCIÓN ===");
+                    buscarPorSeccion();
+                    break;
+                case 3:
+                    System.out.println("=== REALIZAR INSCRIPCIÓN ===");
+                    realizarInscripcion();
+                    break;
+                case 4:
+                    System.out.println("=== EXPORTAR PARTICIPANTES ===");
+                    exportarParticipantes();
+                    break;
+                case 5:
+                    System.out.println("Salir");
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida");
+            }
+
+        } while (!salir);
+    }
+
+    private static void añadirActividad() {
+        Actividad actividad = new Actividad();
+        actividad.pedirDatos();
+        actividad.guardarActividad();
+        System.out.println("Actividad guardada correctamente.");
+    }
+
+    private static void buscarPorSeccion() throws IOException {
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+        String seccion = "";
+
+        do {
+            System.out.print("Introduce la sección a buscar (Chiqui, Preas, Centro): ");
+            seccion = leer.readLine();
+            if (!seccion.equalsIgnoreCase("Chiqui") &&
+                !seccion.equalsIgnoreCase("Preas") &&
+                !seccion.equalsIgnoreCase("Centro")) {
+                System.out.println("No has introducido una sección correcta");
+            }
+        } while (!seccion.equalsIgnoreCase("Chiqui") &&
+                 !seccion.equalsIgnoreCase("Preas") &&
+                 !seccion.equalsIgnoreCase("Centro"));
+
+        File f = new File("./actividades.txt");
+        if (!f.exists()) {
+            System.out.println("No existe el fichero actividades.txt");
+            return;
+        }
+
+        FileReader fr = new FileReader(f);
+        BufferedReader br = new BufferedReader(fr);
+
+        String linea = br.readLine();
+        double precioTotal = 0;
+        boolean hayActividades = false;
+
+        System.out.println("SECCIÓN: " + seccion);
+
+        while (linea != null) {
+            Actividad actividad = new Actividad();
+            actividad.leerActividad(linea);
+
+            if (actividad.getSeccion().equalsIgnoreCase(seccion)) {
+                hayActividades = true;
+                System.out.println("ACTIVIDAD: " + actividad.getNombre());
+                System.out.println("\t\tPrecio: " + actividad.getPrecio() + "€");
+                System.out.println("\t\tPlazas disponibles: " + actividad.getPlazasDisponibles());
+                precioTotal += actividad.getPrecio();
+            }
+
+            linea = br.readLine();
+        }
+
+        br.close();
+        fr.close();
+
+        if (!hayActividades) {
+            System.out.println("No hay actividades para esa sección.");
+        } else {
+            System.out.println("\t\tTotal: " + precioTotal + "€");
+        }
+    }
+
+    private static void realizarInscripcion() throws IOException {
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+
+        File fActividades = new File("./actividades.txt");
+        if (!fActividades.exists()) {
+            System.out.println("No existe el fichero actividades.txt");
+            return;
+        }
+
+        System.out.print("Introduce el id de la actividad a la que te quieres inscribir: ");
+        int idActividad = Integer.parseInt(leer.readLine());
+
+        Actividad actividadElegida = Actividad.buscarPorId(idActividad);
+        if (actividadElegida == null) {
+            System.out.println("No existe ninguna actividad con ese id.");
+            return;
+        }
+
+        if (actividadElegida.getPlazasDisponibles() <= 0) {
+            System.out.println("No quedan plazas disponibles para esa actividad.");
+            return;
+        }
+
+        System.out.print("Introduce la edad (8-17): ");
+        int edad = Integer.parseInt(leer.readLine());
+
+        if (!actividadElegida.edadCorrecta(edad)) {
+            System.out.println("No tienes la edad adecuada para inscribirte en esta actividad.");
+            return;
+        }
+
+        Inscripcion inscripcion = new Inscripcion();
+        inscripcion.pedirDatos();
+        inscripcion.setEdad(edad);
+        inscripcion.setIdActividad(idActividad);
+        inscripcion.guardarInscripcion();
+
+        Actividad.actualizarPlazas(idActividad);
+
+        System.out.println("Inscripción realizada correctamente.");
+    }
+
+    private static void exportarParticipantes() throws IOException {
+        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Introduce el id de la actividad que quieres exportar: ");
+        int idActividad = Integer.parseInt(leer.readLine());
+
+        Actividad actividadElegida = Actividad.buscarPorId(idActividad);
+        if (actividadElegida == null) {
+            System.out.println("No existe ninguna actividad con ese id.");
+            return;
+        }
+
+        System.out.println("Actividad encontrada: " + actividadElegida.getNombre());
+    }
+}

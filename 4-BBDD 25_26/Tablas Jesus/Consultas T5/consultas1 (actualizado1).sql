@@ -46,7 +46,7 @@ from edu_heroes h
 CROSS JOIN edu_misiones m;
 
 
-#heroes que viven en la misma ciudad que otros heroes
+#heroes que viven en la misma ciudad que otros heroes PREGUNTAR JESUS
 select h1.nombre as heroe1, h2.nombre as heroe2, h1.ciudad
 from edu_heroes h1
 JOIN edu_heroes h2

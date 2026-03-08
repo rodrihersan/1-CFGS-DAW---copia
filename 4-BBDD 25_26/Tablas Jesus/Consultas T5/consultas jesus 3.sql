@@ -95,7 +95,7 @@ INSERT INTO rrss_seguidores (seguidor_id, seguido_id) VALUES
 select * from rrss_publicaciones;
 
 
--- Usuarios cuyo nombre empiece por letra
+-- Usuarios cuyo nombre empiece por letra A
 select nombre from rrss_usuarios where nombre like 'A%';
 
 
@@ -249,4 +249,4 @@ select * from rrss_usuarios where id not in
 (
 	select p.usuario_id
     from rrss_publicaciones p
-);
+);														
