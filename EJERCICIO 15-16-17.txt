@@ -1,0 +1,69 @@
+EJERCICIO 15
+
+1. Entrar en la carpeta y visualizar el contenido de todos los ficheros:
+cd restaurantes
+cat *
+
+2. Ordenar el archivo "restaurantes" por ciudad:
+sort -t: +2 restaurantes
+
+3. Mostrar cuántos restaurantes hay en Salamanca:
+grep 'Salamanca' restaurantes | wc -l
+
+4. Listado de restaurantes ordenado por id:
+sort -t: +0 -n restaurantes
+
+5. Guardar en "ficheroids" ordenado por id (una sola línea):
+sort -t: +0 -n restaurantes > ficheroids
+
+6. Guardar en "mejor" el restaurante con mayor puntuación:
+sort -t: +3 -n -r restaurantes | head -1 > mejor
+
+7. Listado con nombre y ciudad (solo esos dos campos):
+cut -d: -f2,3 restaurantes
+
+8. Generar fichero "ciudades" sin repetir:
+cut -d: -f3 restaurantes | sort | uniq > ciudades
+
+
+EJERCICIO 16
+
+Listado de todos los restaurantes con todas las letras en mayúscula:
+cat restaurantes | tr 'a-z' 'A-Z' (aquí cambia todo los campos)
+
+cat restaurantes | cut -d: -f2 | tr 'a-z' 'A-Z' (aquí cambia todo los campos)
+
+Generar fichero CIUDADES con nombres de ciudades en mayúscula (sin repetir):
+cat restaurantes | cut -d':' -f3 | sort (opcional (va a ordenar)) | uniq | tr 'a-z' 'A-Z' > CIUDADES
+(-d para indicar por donde separa y -f para extraer el campo que queremos)
+
+Listado de todos los restaurantes sin que aparezca la letra "a":
+cat restaurantes | tr -d 'a'
+
+
+EJERCICIO 17
+
+Muestra la localización de todos los archivos del sistema que comiencen por
+“alsa”.
+find /home/rodrigo -name "*alsa*"
+Da igual la ubicación desde donde lo hagamos 
+El * signifiaca que ignora lo que hay por delante y por detrás
+
+Modifica la instrucción anterior para que no salgan mensajes de error.
+????
+
+Muestra todos los archivos de /usr que tengan extensión .png sin que salgan
+mensajes de error.
+find /usr -name "*.png"
+* se pone para "ocultar lo que hay por delante"
+
+Muestra todos los archivos de /usr que tengan la extensión .png y que ocupen
+más de un MegaByte sin que salgan mensajes de error.
+find /usr -name "*.png" -a -size +1M
+
+Guarda en un fichero “imágenes.txt” el nombre del fichero y el tamaño de los
+archivos de /usr que tengan la extensión .png y que ocupen más de un MegaByte
+sin que salgan mensajes de error.
+touch "imagenes.txt" | 
+
+
