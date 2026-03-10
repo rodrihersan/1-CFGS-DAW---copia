@@ -67,3 +67,43 @@ sin que salgan mensajes de error.
 touch "imagenes.txt" | 
 
 
+
+EJERCICIO 21
+
+Prueba los comandos su y sudo.
+sudo apt update (Actualiza la lista de paquetes del sistema, esencial en Debian/Ubuntu). 
+(Si ponemos apt update solamente, nos mostrará errores y warnings. Si lo ponemos con con sudo, nos pedirá la contraseña y actualizara los paquetes)sudo 
+sudo (super user do), hace que ciertos usuarios no root puedan ejecutar ciertos comandos que requieren privilegios, pero sin acceder al sistema como root. 
+
+
+Busca como visualizar el contenido del archivo sudoers.
+Habrá dos opciones:
+	sudo visudo -c 	(-c (Check) --> lo que hace es verificar la sintaxis del archivo de configuración de sudo 				(normalmente /etc/sudoers) sin abrir el editor).
+			(NO PERMITE VISUALIZAR EL CONTENIDO)
+
+	sudo cat /etc/sudoers (o cd a /etc y luego sudo cat sudoers)
+
+Busca la funcionalidad de visudo y pruébalo.
+Se usa normalmente para:
+	Validar cambios antes o después de editar sudoers
+	Scripts o automatización para asegurarse de que la configuración es válida
+	Diagnosticar problemas con sudo
+sudo visudo -c sudoers
+
+Modifica el archivo sudoers para añadir tu usuario con privilegios de root.
+Se añadiría nombre usuario (Rodrigo) ALL(ALL:ALL) ALL 
+
+Rodrigo ALL=(ALL:ALL) ALL
+
+Primer ALL: desde cualquier host
+(ALL:ALL): puede ejecutar como cualquier usuario y grupo
+Ultimo ALL: puede ejecutar cualquier comando
+
+Comprueba si cambia o no el prompt cuando ejecutas el comando sudo su. 
+Si cambia. Pasa de: rodrigo@rodrigo-VirtualBox a root@rodrigo-VirtualBox cambia también el símbolo del dólar $ a #
+
+
+EJERCICIO 22
+
+
+
