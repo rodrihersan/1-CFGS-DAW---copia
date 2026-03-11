@@ -113,7 +113,7 @@ function gestionarArray() {
 
         var nombre = prompt("Introduce un nombre de persona:");
 
-        var confirmacion = confirm("¿Deseas AÑADIR el valor?" + "Número: " + numero + "Nombre: " + nombre);
+        var confirmacion = confirm("¿Deseas añadir el valor?" + "Número: " + numero + "Nombre: " + nombre);
 
         if (confirmacion) {
 

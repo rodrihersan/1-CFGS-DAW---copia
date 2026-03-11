@@ -67,7 +67,29 @@ sin que salgan mensajes de error.
 touch "imagenes.txt" | 
 
 
+EJERCICIO 18
 
+Crea un usuario por comandos con los valores por defecto, sin asignar contraseña.
+sudo adduser "nombre" (hay que hacerlo con permisos de administrador).
+
+Asigna contraseña al usuario creado anteriormente.
+sudo passwd "nombre"
+
+Ve al archivo passwd del directorio etc para ver cómo se ha creado el usuario, como se
+cat /etc/passwd | grep usuario1
+
+muestra toda su información y como se visualiza la contraseña asignada.
+sudo cat /etc/shadow | grep usuario1
+
+Realiza la misma comprobación respecto al archivo shadow de etc.
+
+Comprueba que se ha creado el directorio personal del usuario. Cámbialo por otro
+utilizando el comando usermod.
+ls /home
+
+sudo usermod -d /home/nuevo_dir -m usuario1
+	d → nuevo directorio home
+	m → mueve el contenido del directorio anterior al nuevo
 EJERCICIO 21
 
 Prueba los comandos su y sudo.
