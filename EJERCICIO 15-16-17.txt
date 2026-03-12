@@ -1,5 +1,4 @@
 EJERCICIO 15
-
 1. Entrar en la carpeta y visualizar el contenido de todos los ficheros:
 cd restaurantes
 cat *
@@ -27,7 +26,6 @@ cut -d: -f3 restaurantes | sort | uniq > ciudades
 
 
 EJERCICIO 16
-
 Listado de todos los restaurantes con todas las letras en mayúscula:
 cat restaurantes | tr 'a-z' 'A-Z' (aquí cambia todo los campos)
 
@@ -42,7 +40,6 @@ cat restaurantes | tr -d 'a'
 
 
 EJERCICIO 17
-
 Muestra la localización de todos los archivos del sistema que comiencen por
 “alsa”.
 find /home/rodrigo -name "*alsa*"
@@ -68,7 +65,6 @@ touch "imagenes.txt" |
 
 
 EJERCICIO 18
-
 Crea un usuario por comandos con los valores por defecto, sin asignar contraseña.
 sudo adduser "nombre" (hay que hacerlo con permisos de administrador).
 
@@ -90,8 +86,28 @@ ls /home
 sudo usermod -d /home/nuevo_dir -m usuario1
 	d → nuevo directorio home
 	m → mueve el contenido del directorio anterior al nuevo
-EJERCICIO 21
 
+
+EJERCICIO 19 
+1. Crear el grupo alumnos
+groupadd alumnos
+
+2. Añadir tu usuario al grupo
+
+
+
+EJERCICIO 20
+1. Crear el fichero datos.txt con contenido
+echo "mis datos de prueba" > ~/datos.txt
+
+
+2. Comprobar permisos, propietario y grupo
+
+
+3. Cambiar el grupo propietario a alumnos
+
+
+EJERCICIO 21
 Prueba los comandos su y sudo.
 sudo apt update (Actualiza la lista de paquetes del sistema, esencial en Debian/Ubuntu). 
 (Si ponemos apt update solamente, nos mostrará errores y warnings. Si lo ponemos con con sudo, nos pedirá la contraseña y actualizara los paquetes)sudo 
@@ -126,6 +142,42 @@ Si cambia. Pasa de: rodrigo@rodrigo-VirtualBox a root@rodrigo-VirtualBox cambia 
 
 
 EJERCICIO 22
+1. Prueba del comando touch
+# Ver que el fichero NO existe
+ls -la fichero_prueba.txt
+
+# Crear el fichero con touch (cuando no existe)
+touch fichero_prueba.txt
+ls -la fichero_prueba.txt
+
+# Ver que el fichero NO existe
+ls -la fichero_prueba.txt
 
 
+2. Crear el directorio Pruebas
+mkdir ~/Pruebas (nos posicionamos donde pide crearlo)
 
+
+3. Crear PruebaPractica/Prueba1 de una sola vez (con -p)
+mkdir -p ~/Pruebas/PruebaPractica/Prueba1
+
+La opción -p crea todos los directorios intermedios que no existan.
+
+4. Crear Directorios con 3 subdirectorios y un fichero en cada uno
+mkdir -p ~/Directorios/sub1 ~/Directorios/sub2 ~/Directorios/sub3
+touch ~/Directorios/sub1/fichero1.txt
+touch ~/Directorios/sub2/fichero2.txt
+touch ~/Directorios/sub3/fichero3.txt
+
+5. Instalar y ejecutar tree
+apt install tree
+tree ~ ( se podría poner /home/carpetapersonal y etc etc) 
+
+
+6. Eliminar Directorios y todo su contenido
+rm -r ~/Directorios
+
+
+7. Crear un fichero vacío en HOME y moverlo a PruebaPractica	
+touch ~/fichero_vacio.txt
+mv ~/fichero_vacio.txt ~/Pruebas/PruebaPractica/
