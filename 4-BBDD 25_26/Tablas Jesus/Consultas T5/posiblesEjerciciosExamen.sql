@@ -83,3 +83,19 @@ select * from netflix_visualizaciones where porcentaje_visto >
 (
 	select AVG(porcentaje_visto) from netflix_visualizaciones
 );
+
+
+
+select u.nombre, c.id from vg_usuarios u left join vg_compras c
+on u.id = c.usuario_id
+where c.id is null;
+
+select j.titulo, r.texto from vg_juegos j left join vg_resenas r
+on j.id = r.juego_id
+where r.texto is null;
+
+select u.nombre, a.amigo_id from vg_usuarios u left join vg_amigos a
+on u.id = a.usuario_id
+where a.amigo_id is null;
+
+select u.nombre, j.precio from vg_usuarios u inner join vg_juegos 
