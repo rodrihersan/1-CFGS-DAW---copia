@@ -1,0 +1,96 @@
+Interacción con el usuario
+
+alert() — Muestra un mensaje emergente al usuario.
+prompt() — Muestra una ventana para que el usuario introduzca texto. Devuelve la cadena escrita o null si cancela.
+confirm() — Muestra un mensaje de confirmación. Devuelve true si acepta y false si cancela.
+console.log/info/warn/error/clear() — Imprime mensajes en la consola del navegador.
+
+
+
+Variables
+
+var — Ámbito de función, se hereda a bloques hijos.
+let — Ámbito de bloque, no visible fuera de él.
+const — Igual que let pero no se puede reasignar.
+
+
+
+Conversión de tipos
+
+Number() — Convierte cadena a número.
+parseInt() — Convierte a número entero.
+parseFloat() — Convierte a número decimal.
+Boolean() — Convierte a true/false. Solo es false con: 0, NaN, null, undefined o cadena vacía.
+
+
+
+Eventos
+
+onclick — Al hacer clic.
+onload — Al terminar de cargar la página.
+onfocus / onblur — Al ganar o perder el foco.
+onmouseover / onmouseout — Al pasar o salir el ratón.
+onchange — Al modificar un elemento.
+onsubmit / onreset — Al enviar o resetear un formulario.
+
+
+
+Arrays
+
+array[i] — Accede a la posición i.
+array.length — Número de elementos.
+array.push() — Añade un elemento al final.
+array.pop() — Elimina y devuelve el último elemento.
+array.sort() — Ordena alfabéticamente.
+array.slice() — Devuelve una copia de una parte del array sin modificar el original.
+array.splice() — Elimina o inserta elementos modificando el array original.
+array.forEach() — Recorre el array ejecutando una función por cada elemento.
+
+
+
+Estructuras de control
+
+if / else — Ejecuta código según una condición.
+switch — Compara una variable con varios casos usando ===.
+for — Bucle con contador.
+for...in — Recorre las propiedades de un objeto o índices de un array.
+while — Bucle que evalúa la condición antes de ejecutar.
+do...while — Igual que while pero ejecuta al menos una vez.
+break — Sale del bucle inmediatamente.
+continue — Salta a la siguiente iteración del bucle.
+
+
+
+Funciones
+
+function nombre(params) — Define una función reutilizable.
+return — Devuelve un valor al terminar la función.
+Función anónima — Función sin nombre asignada a una variable.
+
+
+
+DOM
+
+document.getElementById() — Obtiene un elemento por su id.
+document.getElementsByTagName() — Obtiene elementos por etiqueta HTML.
+document.getElementsByClassName() — Obtiene elementos por clase CSS.
+elemento.innerHTML — Lee o modifica el contenido HTML de un elemento.
+elemento.setAttribute() — Crea o modifica un atributo.
+elemento.getAttribute() — Lee el valor de un atributo.
+elemento.removeAttribute() — Elimina un atributo.
+document.createElement() — Crea un nuevo elemento HTML.
+elemento.appendChild() — Añade un hijo al final.
+elemento.insertBefore() — Inserta un elemento antes de otro.
+elemento.removeChild() — Elimina un elemento hijo.
+elemento.replaceChild() — Sustituye un elemento por otro.
+elemento.style.propiedad — Cambia el estilo directamente.
+elemento.classList.add/remove() — Añade o quita clases CSS.
+document.createTextNode() — Crea un nodo de texto.
+
+
+Navegación por el DOM
+
+parentNode — Nodo padre.
+childNodes[] — Nodos hijos.
+firstChild / lastChild — Primer y último hijo.
+nextSibling / previousSibling — Hermano siguiente y anterior.

@@ -1,0 +1,460 @@
+EJERCICIO1
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('Hola Mundo1');
+    </script>
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <h1 onclick="holaMundo()">EJEMPLO JavaScript</h1>
+</body>
+</html>
+-------------------------------------------------------
+function holaMundo(){
+    alert("¡Hola Mundo 2!");
+}
+
+
+
+EJEERCICIO2
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('Hola Mundo1');
+    </script>
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <h1 onclick="holaMundo()">EJEMPLO JavaScript</h1>
+</body>
+</html>
+
+-------------------------------------------------------
+function holaMundo() {
+
+    let dato = prompt("Introduzca su nombre por favor");
+
+    if (dato === null || dato.trim() === "") {
+
+        console.error("No se ha introducido valor");
+        alert("No se ha introducido valor");
+
+    } else {
+
+        let confirmacion = confirm("¿Tu nombre es " + dato + "?");
+
+        if (confirmacion === true) {
+            console.log("El nombre es correcto");
+            alert("Bienvenido");
+        } else {
+            console.warn("No se sabe su nombre");
+        }
+    }
+}
+
+
+
+EJEERCICIO3
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('Hola Mundo1');
+    </script>
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <h1 onclick="mostrarVariables()">EJEMPLO JavaScript</h1>
+</body>
+</html>
+-------------------------------------------------------
+
+function holaMundo() {
+
+    let dato = prompt("Introduzca su nombre por favor");
+
+    if (dato == null || dato == "") {
+
+        console.error("No se ha introducido valor");
+        alert("No se ha introducido valor");
+
+    } else {
+
+        let confirmacion = confirm("¿Tu nombre es " + dato + "?");
+
+        if (confirmacion === true) {
+            console.log("El nombre es correcto");
+            alert("Bienvenido");
+        } else {
+            console.warn("No se sabe su nombre");
+        }
+    }
+}
+
+function mostrarVariables() {
+
+    alert('Variable1: ' + variable1);
+
+    variable2 = null;
+    alert('Variable2: ' + variable2);
+
+    var variable1 = 34;
+    alert('Variable1: ' + variable1);
+
+    variable3 = 15.9;
+    alert('variable1 * variable3: ' + (variable1 * variable3));
+
+    variable3 = "ahora soy un texto";
+    alert('Variable3: ' + variable3);
+
+}
+
+
+
+EJEERCICIO4
+
+------------------------------------------------------------------------
+1. typeof() con distintos valores
+------------------------------------
+typeof(3)        // "number"
+typeof("3")      // "string"
+typeof(tres)     // "undefined"  → la variable no existe
+typeof(3.6)      // "number"
+
+
+------------------------------------------------------------------------
+2. Conversiones con parseInt, parseFloat y Number
+------------------------------------------------------------------------
+parseInt("345.87")       // 345       → elimina decimales
+parseFloat("345.87")     // 345.87    → respeta decimales
+parseInt('8 manzanas')   // 8         → lee hasta donde puede
+Number('8 manzanas')     // NaN       → no puede convertir el texto
+
+
+------------------------------------------------------------------------
+3. typeof() del resultado de las conversiones
+------------------------------------------------------------------------
+typeof(parseInt("345.87"))       // "number"
+typeof(parseFloat("345.87"))     // "number"
+typeof(parseInt('8 manzanas'))   // "number"
+typeof(Number('8 manzanas'))     // "number"  → NaN es de tipo number
+
+
+------------------------------------------------------------------------
+4. Conversión a booleano con Boolean()
+------------------------------------------------------------------------
+Boolean("hola")     // true  → cualquier cadena no vacía es true
+Boolean("")         // false → cadena vacía es false
+Boolean(1)          // true  → cualquier número distinto de 0 es true
+Boolean(0)          // false → el 0 siempre es false
+Boolean(-5)         // true  → los negativos también son true
+
+
+
+
+EJEERCICIO5
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('Hola Mundo1');
+    </script>
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <h1 onclick="holaMundo()"> HOLA MUNDO</h1>
+    <hr>
+    <h1 onclick="mostrarVariables()">EJEMPLO JavaScript</h1>
+    <h2 onclick="comprobarOperadores()"> ejemploComprobarOperadores</h2>
+</body>
+</html>
+------------------------------------------------------------------------
+function holaMundo() {
+
+    let dato = prompt("Introduzca su nombre por favor");
+
+    if (dato == null || dato == "") {
+
+        console.error("No se ha introducido valor");
+        alert("No se ha introducido valor");
+
+    } else {
+
+        let confirmacion = confirm("¿Tu nombre es " + dato + "?");
+
+        if (confirmacion === true) {
+            console.log("El nombre es correcto");
+            alert("Bienvenido");
+        } else {
+            console.warn("No se sabe su nombre");
+        }
+    }
+}
+
+function mostrarVariables() {
+
+    alert('Variable1: ' + variable1);
+
+    variable2 = null;
+    alert('Variable2: ' + variable2);
+
+    var variable1 = 34;
+    alert('Variable1: ' + variable1);
+
+    variable3 = 15.9;
+    alert('variable1 * variable3: ' + (variable1 * variable3));
+
+    variable3 = "ahora soy un texto";
+    alert('Variable3: ' + variable3);
+
+}
+
+function comprobarOperadores() {
+
+    // --- BLOQUE 1: var1 y var2 como cadenas de texto ---
+    var var1 = "hola";
+    var var2 = "adios";
+
+    alert(
+        'var1 = "hola", var2 = "adios"\n\n' +
+        'var1 == var2: '  + (var1 == var2)  + '\n' +
+        'var1 != var2: '  + (var1 != var2)  + '\n' +
+        'var1 < var2: '   + (var1 < var2)   + '\n' +
+        'var1 > var2: '   + (var1 > var2)   + '\n' +
+        'var1 <= var2: '  + (var1 <= var2)  + '\n' +
+        'var1 >= var2: '  + (var1 >= var2)
+    );
+    // Nota: las cadenas se comparan alfabéticamente
+    // "hola" > "adios" porque "h" va después de "a"
+
+    // --- BLOQUE 2: var3 numérico vs var4 cadena de números ---
+    var var3 = 5;
+    var var4 = "5";
+
+    alert(
+        'var3 = 5 (number), var4 = "5" (string)\n\n' +
+        'var3 == var4: '  + (var3 == var4)  + '\n' +
+        // == convierte tipos antes de comparar → true
+        'var3 === var4: ' + (var3 === var4)
+        // === compara también el tipo → false
+    );
+
+    // --- BLOQUE 3: var5, var6 y var7 valores numéricos ---
+    var var5 = 10;
+    var var6 = 3;
+    var var7 = 8;
+
+    alert(
+        'var5 = 10, var6 = 3, var7 = 8\n\n' +
+        'var5 < var6: '   + (var5 < var6)   + '\n' +
+        'var5 > var6: '   + (var5 > var6)   + '\n' +
+        'var5 <= var7: '  + (var5 <= var7)  + '\n' +
+        'var5 >= var7: '  + (var5 >= var7)
+    );
+
+    // Asignar a var7 !true y mostrarlo
+    var7 = !true;
+    alert('var7 = !true → var7: ' + var7); // false
+
+}
+
+EJEERCICIO6
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert('Hola Mundo1');
+    </script>
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <h1 onclick="holaMundo()"> HOLA MUNDO</h1>
+    <hr>
+    <h1 onclick="mostrarVariables()">EJEMPLO JavaScript</h1>
+    <hr>
+    <h2 onclick="comprobarOperadores()"> ejemploComprobarOperadores</h2>
+    <hr>
+    <h2 onclick="gestionarArray()"> ARRAY</h2>
+</body>
+</html>
+------------------------------------------------------------------------
+function holaMundo() {
+
+    let dato = prompt("Introduzca su nombre por favor");
+
+    if (dato == null || dato == "") {
+
+        console.error("No se ha introducido valor");
+        alert("No se ha introducido valor");
+
+    } else {
+
+        let confirmacion = confirm("¿Tu nombre es " + dato + "?");
+
+        if (confirmacion === true) {
+            console.log("El nombre es correcto");
+            alert("Bienvenido");
+        } else {
+            console.warn("No se sabe su nombre");
+        }
+    }
+}
+
+function mostrarVariables() {
+
+    alert('Variable1: ' + variable1);
+
+    variable2 = null;
+    alert('Variable2: ' + variable2);
+
+    var variable1 = 34;
+    alert('Variable1: ' + variable1);
+
+    variable3 = 15.9;
+    alert('variable1 * variable3: ' + (variable1 * variable3));
+
+    variable3 = "ahora soy un texto";
+    alert('Variable3: ' + variable3);
+
+}
+
+function comprobarOperadores() {
+
+    var var1 = "hola";
+    var var2 = "adios";
+
+    alert(
+        'var1 = "hola", var2 = "adios"\n\n' +
+        'var1 == var2: '  + (var1 == var2)  + '\n' +
+        'var1 != var2: '  + (var1 != var2)  + '\n' +
+        'var1 < var2: '   + (var1 < var2)   + '\n' +
+        'var1 > var2: '   + (var1 > var2)   + '\n' +
+        'var1 <= var2: '  + (var1 <= var2)  + '\n' +
+        'var1 >= var2: '  + (var1 >= var2)
+    );
+    // Las cadenas se comparan alfabéticamente
+    // "hola" > "adios" porque "h" va después de "a"
+
+    var var3 = 5;
+    var var4 = "5";
+
+    alert(
+        'var3 = 5 (number), var4 = "5" (string)\n\n' +
+        'var3 == var4: '  + (var3 == var4)  + '\n' +
+        'var3 === var4: ' + (var3 === var4)
+    );
+
+    var var5 = 10;
+    var var6 = 3;
+    var var7 = 8;
+
+    alert(
+        'var5 = 10, var6 = 3, var7 = 8\n\n' +
+        'var5 < var6: '   + (var5 < var6)   + '\n' +
+        'var5 > var6: '   + (var5 > var6)   + '\n' +
+        'var5 <= var7: '  + (var5 <= var7)  + '\n' +
+        'var5 >= var7: '  + (var5 >= var7)
+    );
+
+    var7 = !true;
+    alert('var7 = !true → var7: ' + var7);
+
+}
+
+function gestionarArray() {
+
+    let array = [];
+    let continuar = true;
+    /*while(continuar){
+        let numero = parseInt(prompt("Introduce un número (positivo, negativo o 0). Escribe una cadena de texto para terminar:"));
+        let nombre = prompt("Introduza su nombre");
+
+        if (!Number.isNaN(numero) || numero === null) {
+            console.log("Ejecución terminada. Contenido final del array:");
+            console.log(array);
+            alert("Programa terminado. Revisa la consola para ver el array.");
+            break;
+        }else{
+            
+        }
+    }*/
+    while (true) {
+
+        let numero = parseInt(prompt("Introduce un número (positivo, negativo o 0). Escribe una cadena de texto para terminar:"));
+        
+        if (!Number.isNaN(numero) || numero === null) {
+            console.log("Ejecución terminada. Contenido final del array:");
+            console.log(array);
+            alert("Programa terminado. Revisa la consola para ver el array.");
+            break;
+        }
+
+        numero = Number(numero);
+
+        var nombre = prompt("Introduce un nombre de persona:");
+
+        var confirmacion = confirm("¿Deseas añadir el valor?" + "Número: " + numero + "Nombre: " + nombre);
+
+        if (confirmacion) {
+
+            if (numero >= 0) {
+                array[numero] = nombre;
+                console.log('Añadido "' + nombre + '" en la posición ' + numero);
+            } else {
+                array.push(nombre);
+                console.log('Añadido "' + nombre + '" al final del array');
+            }
+
+        } else {
+
+            if (numero >= 0) {
+                console.log('Eliminado el elemento en la posición ' + numero + ': ' + array[numero]);
+                array.splice(numero, 1);
+            } else {
+                console.log('Eliminado el primer elemento: ' + array[0]);
+                array.shift();
+            }
+        }
+        console.log("Estado actual del array:", array);
+    }
+}
+EJEERCICIO9
+
+function gestionarNombres(){
+    let colores = [];
+    let contadorColores = 0;
+
+    do{
+        let color = prompt("Introduzca un color");
+        contadorColores++;
+        if(color === "rojo")
+            break;      /*De aqui salta directamente a la linea 5 (empieza el bucle de nuevo)*/
+        if (color === "verde")
+            continue;           /*De aqui salta directamente a la linea 16 ( y empieza el bucle de nuevo)*/
+
+        color.push(color);      /*Los guarda en el array (colores) y los añade al contador*/
+    }while(true);
+
+    alert(`Se han introducido ${contadorColores} y se han guardado ${colores}`);
+}
+
+gestionarNombres();
