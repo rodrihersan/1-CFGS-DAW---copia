@@ -1,0 +1,111 @@
+Presentación: Java
+1. Introducción
+
+Java es un lenguaje de programación de alto nivel muy popular que se utiliza para crear aplicaciones de software en diferentes plataformas.
+
+Fue creado en 1995.
+
+Permite desarrollar programas que funcionan en distintos sistemas operativos.
+
+Su lema es: “Write Once, Run Anywhere” (Escribe una vez, ejecútalo en cualquier lugar).
+
+2. Propósito del lenguaje
+
+Java se utiliza para desarrollar muchos tipos de software, por ejemplo:
+
+Aplicaciones empresariales
+
+Aplicaciones móviles
+
+Aplicaciones web
+
+Software para servidores
+
+Sistemas grandes y complejos
+
+Muchas aplicaciones de Android están desarrolladas con Java.
+
+3. Características principales
+1. Programación orientada a objetos (OOP)
+
+Java utiliza el paradigma de programación orientada a objetos, lo que significa que el código se organiza en clases y objetos.
+
+Ventajas:
+
+Código más organizado
+
+Reutilización de código
+
+Más fácil de mantener
+
+2. Lenguaje de alto nivel
+
+Java es más fácil de leer y escribir que los lenguajes de bajo nivel.
+
+3. Portabilidad
+
+Los programas de Java pueden ejecutarse en diferentes sistemas operativos gracias a la Java Virtual Machine (JVM).
+
+4. Seguridad
+
+Java incluye muchas funciones de seguridad para proteger los programas y los datos.
+
+5. Gran comunidad
+
+Es uno de los lenguajes más usados del mundo, por lo que hay mucha documentación y ayuda.
+
+4. Ejemplos de proyectos donde se usa Java
+
+Java se utiliza en muchos proyectos importantes:
+
+Aplicaciones Android
+
+Sistemas bancarios
+
+Aplicaciones empresariales
+
+Plataformas web grandes
+
+Videojuegos
+
+Ejemplos conocidos:
+
+Sistemas de bancos
+
+Aplicaciones de grandes empresas
+
+Servidores web
+
+5. Comparación con otros lenguajes
+Lenguaje	Características	Diferencias con Java
+Python	Muy fácil de aprender	Java es más rápido y más usado en empresas
+C	Lenguaje de bajo nivel	Java es más seguro y más fácil de usar
+JavaScript	Usado principalmente para web	Java se usa más para aplicaciones grandes y backend
+Rust	Muy eficiente y seguro	Java es más antiguo y tiene más librerías
+6. Ventajas y desventajas
+Ventajas
+
+✅ Multiplataforma
+✅ Muy usado en empresas
+✅ Gran comunidad
+✅ Buen rendimiento
+
+Desventajas
+
+❌ Más complejo que Python
+❌ Puede usar más memoria
+❌ El código suele ser más largo
+
+7. Conclusión
+
+Java es uno de los lenguajes de programación más importantes del mundo.
+
+Se utiliza en:
+
+empresas
+
+aplicaciones móviles
+
+sistemas grandes
+
+Gracias a su seguridad, estabilidad y portabilidad, sigue siendo uno de los lenguajes más demandados.

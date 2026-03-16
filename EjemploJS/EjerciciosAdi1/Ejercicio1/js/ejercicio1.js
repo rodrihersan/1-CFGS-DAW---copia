@@ -12,9 +12,7 @@ function bienvenida() {
     }
 }
 
-
 //-------------------------EJERCICIO 2------------------------------------------------
-
 function edad() {
     let dato = prompt("Introduzca su edad por favor"); // prompt() devuelve cadena o null
 
@@ -86,21 +84,21 @@ function crearArray() {
     let numero;
 
     do {
-        numero = prompt("Añade un numero al array: ");
+        numero = prompt("Añade un numero al array (introduce una letra para terminar): ");
 
-        if (numero === null || numero.trim() === "") {
-            console.error("Dato no introducido");
-            alert("No se ha introducido ningun valor");
-        } else if (!isNaN(numero)) {
-            arrayNumeros.push(numero);
+        if (isNaN(numero) || numero === null) {
+            break; // sale si introduce una letra o pulsa Cancelar
+        } else if (numero.trim() === "") {
+            alert("No se ha introducido ningún valor");
+        } else {
+            arrayNumeros.push(Number(numero));
         }
 
-    } while (!isNaN(numero));
+    } while (true);
 
     for (let i = 0; i < arrayNumeros.length; i++) {
         if (arrayNumeros[i] % 2 === 0) {
             console.warn(arrayNumeros[i]);
-            alert("Los numeros pares son: " + arrayNumeros[i]);
         }
     }
 }
@@ -216,5 +214,140 @@ function ciudades(){
             console.log(usuarios[i].nombre);
             alert(usuarios[i].nombre);
         }
+    }
+}
+
+//-------------------------EJERCICIO 10------------------------------------------------
+function calculadora(){
+    
+    let dato1;
+
+    do{
+        dato1 = prompt("Ingrese el valor que usted desee: ");
+
+        if(dato1 === null || dato1.trim() === "" || isNaN(dato1)){
+            console.error("Dato introducido erroneamente");
+            alert("Los datos no cumplen los parametros");
+        }
+    }while(dato1.trim() === "" || isNaN(dato1));
+    dato1 = Number(dato1);
+
+    console.log("Dato 1: " + dato1 +  " introducido correctamente");
+    alert("Dato 1: " + dato1 +  " introducido correctamente");
+
+    let dato2;
+
+    do{
+        dato2 = prompt("Ingrese el segundo valor que usted desee: ");
+        if(dato2 === null || dato2.trim() === "" || isNaN(dato2)){
+            console.error("Dato introducido erroneamente");
+            alert("Los datos no cumplen los parametros");
+        }
+    }while(dato2.trim() === "" || isNaN(dato2));
+    dato2 = Number(dato2);
+
+    console.log("Dato 2: " + dato2 +  " introducido correctamente");
+    alert("Dato 2: " + dato2 +  " introducido correctamente");
+
+    let opcion = Number(prompt("Seleccione una opción:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División"));
+    do{
+        switch(opcion){
+            case 1: 
+            console.log("Ha seleccionado suma, y el resultado es " + (dato1+dato2));
+            alert("Ha seleccionado suma, y el resultado es " + (dato1+dato2));
+            break;
+
+            case 2: 
+            console.log("Ha seleccionado resta, y el resultado es " + (dato1-dato2));
+            alert("Ha seleccionado resta, y el resultado es " + (dato1-dato2));
+            break;
+
+            case 3: 
+            console.log("Ha seleccionado multiplicacion, y el resultado es " + (dato1*dato2));
+            alert("Ha seleccionado multiplicacion, y el resultado es " + (dato1*dato2));
+            break;
+
+            case 4: 
+            if (dato2 === 0) {
+                alert("No se puede dividir entre cero");
+                opcion = null;
+            } else {
+                alert("Resultado de la división: " + (dato1 / dato2));
+            }
+            break;
+
+            default:
+            console.log("Dato invalido");
+            alert("Opcion no disponible");
+        }  
+    }while (opcion === null || Number(opcion) <1 || Number(opcion) > 4);
+}
+
+//-------------------------EJERCICIO 11------------------------------------------------
+function adivinanzas(){
+
+}
+
+//-------------------------EJERCICIO 12------------------------------------------------
+function juego(){
+    
+    let juegoPPT = Math.floor(Math.random() * 3) + 1;
+
+    if(juegoPPT === 1){
+        console.log("La opcion es piedra")
+    }else if (juegoPPT === 2){
+        console.log("La opcion es papel")
+    }else if (juegoPPT === 3){
+        console.log("La opcion es Tijera")
+    }else{
+        console.error("Opcion invalida");
+        alert("Opcion invalida");
+    }
+
+    let opcionJugador;
+    let numeroJugador;
+
+    do{
+        opcionJugador = prompt("Va a jugar al juego de 'Piedra-Papel-Tijera' contra la maquina. Introduzca su opcion: \n1. P para piedra \n2. Pa para papel \n3. T para Tijera");
+        
+        if(opcionJugador.toLowerCase() === "p"){
+            numeroJugador = 1;
+            console.log("El jugador ha elegido piedra");
+            alert("Ha seleccionado piedra");
+        }else if(opcionJugador.toLowerCase() === "pa"){
+            numeroJugador = 2;
+            console.log("El jugador ha elegido papel");
+            alert("Ha seleccionado papel");
+        }else if(opcionJugador.toLowerCase() === "t"){
+            numeroJugador = 3;
+            console.log("El jugador ha elegido tijera");
+            alert("Ha seleccionado tijera");
+        }else{
+            console.error("Opcion invalida");
+            alert("Opcion invalida");
+        }
+    }while(opcionJugador.toLowerCase() !== "p" && opcionJugador.toLowerCase() !== "pa" && opcionJugador.toLowerCase() !== "t");
+
+    if(juegoPPT == 1 && numeroJugador == 1 || juegoPPT == 2 && numeroJugador == 2 || juegoPPT == 3 && numeroJugador == 3){
+        console.log("Mismo movimiento. Empate");
+        alert("Mismo movimiento. Empate");
+    }else if (juegoPPT == 1 && numeroJugador == 2){
+        console.log("La maquina ha sacado piedra y tu papel. Has ganado");
+        alert("La maquina ha sacado piedra y tu papel. Has ganado");
+    }else if (juegoPPT == 1 && numeroJugador == 3){
+        console.log("La maquina ha sacado piedra y tu tijera. Has perdido");
+        alert("La maquina ha sacado piedra y tu tijera. Has perdido");
+    }else if (juegoPPT == 2 && numeroJugador == 1){
+        console.log("La maquina ha sacado papel y tu piedra. Has perdido");
+        alert("La maquina ha sacado papel y tu piedra. Has perdido");
+    }else if(juegoPPT == 2 && numeroJugador == 3){
+        console.log("La maquina ha sacado papel y tu tijera. Has ganado");
+        alert("La maquina ha sacado papel y tu tijera. Has ganado");
+    }else if(juegoPPT == 3 && numeroJugador == 1){
+        console.log("La maquina ha sacado tijera y tu piedra. Has ganado");
+        alert("La maquina ha sacado tijera y tu piedra. Has ganado");
+    }else if(juegoPPT == 3 && numeroJugador == 2){
+        console.log("maquina = tijera / usuario = papel. Usuario = perder Maquina = Ganar");
+        alert("La maquina ha sacado tijera y tu papel. Has perdido");
     }
 }
