@@ -284,70 +284,143 @@ function calculadora(){
 }
 
 //-------------------------EJERCICIO 11------------------------------------------------
-function adivinanzas(){
+function adivinanza(){
 
+    let palabraEscondida;
+    do{
+        palabraEscondida = prompt("Introduce una palabra para que el usuario dos la adivine");
+        if(palabraEscondida === null || palabraEscondida.trim() === "" || !isNaN(palabraEscondida)){
+            console.error("Dato invalido");
+            alert("Dato invalido");
+        }
+    }while(palabraEscondida.trim() === "" || !isNaN(palabraEscondida));
+
+    let arrayEscondido = [];
+    for(let i = 0; i < palabraEscondida.length; i++){
+        arrayEscondido.push("_");
+    }
+
+    let intentos = 10;
+
+    while(intentos > 0){
+
+        let mostrar = "";
+        for(let i = 0; i < arrayEscondido.length; i++){
+            mostrar = mostrar + arrayEscondido[i] + " ";
+        }
+        alert("Palabra: " + mostrar + "\nIntentos restantes: " + intentos);
+
+        let letraUser2 = prompt("Introduce una letra: ");
+
+        for(let i = 0; i < palabraEscondida.length; i++){
+            if(palabraEscondida[i] === letraUser2){
+                arrayEscondido[i] = letraUser2;
+            }
+        }
+
+        let palabraAdivinada = "";
+        for(let i = 0; i < arrayEscondido.length; i++){
+            palabraAdivinada = palabraAdivinada + arrayEscondido[i];
+        }
+
+        if(palabraAdivinada === palabraEscondida){
+            alert("¡Has adivinado la palabra! Era: " + palabraEscondida);
+            return;
+        }
+
+        intentos--;
+    }
+
+    alert("Se acabaron los intentos. La palabra era: " + palabraEscondida);
 }
 
 //-------------------------EJERCICIO 12------------------------------------------------
 function juego(){
-    
-    let juegoPPT = Math.floor(Math.random() * 3) + 1;
 
-    if(juegoPPT === 1){
-        console.log("La opcion es piedra")
-    }else if (juegoPPT === 2){
-        console.log("La opcion es papel")
-    }else if (juegoPPT === 3){
-        console.log("La opcion es Tijera")
-    }else{
-        console.error("Opcion invalida");
-        alert("Opcion invalida");
-    }
+    let victoriaUser = 0;
+    let victoriaPC = 0;
 
-    let opcionJugador;
-    let numeroJugador;
+    for(let i = 1; i <= 3; i++){
 
-    do{
-        opcionJugador = prompt("Va a jugar al juego de 'Piedra-Papel-Tijera' contra la maquina. Introduzca su opcion: \n1. P para piedra \n2. Pa para papel \n3. T para Tijera");
-        
-        if(opcionJugador.toLowerCase() === "p"){
-            numeroJugador = 1;
-            console.log("El jugador ha elegido piedra");
-            alert("Ha seleccionado piedra");
-        }else if(opcionJugador.toLowerCase() === "pa"){
-            numeroJugador = 2;
-            console.log("El jugador ha elegido papel");
-            alert("Ha seleccionado papel");
-        }else if(opcionJugador.toLowerCase() === "t"){
-            numeroJugador = 3;
-            console.log("El jugador ha elegido tijera");
-            alert("Ha seleccionado tijera");
+        let juegoPPT = Math.floor(Math.random() * 3) + 1;
+
+        if(juegoPPT === 1){
+            console.log("La opcion es piedra")
+        }else if (juegoPPT === 2){
+            console.log("La opcion es papel")
+        }else if (juegoPPT === 3){
+            console.log("La opcion es Tijera")
         }else{
             console.error("Opcion invalida");
             alert("Opcion invalida");
         }
-    }while(opcionJugador.toLowerCase() !== "p" && opcionJugador.toLowerCase() !== "pa" && opcionJugador.toLowerCase() !== "t");
 
-    if(juegoPPT == 1 && numeroJugador == 1 || juegoPPT == 2 && numeroJugador == 2 || juegoPPT == 3 && numeroJugador == 3){
-        console.log("Mismo movimiento. Empate");
-        alert("Mismo movimiento. Empate");
-    }else if (juegoPPT == 1 && numeroJugador == 2){
-        console.log("La maquina ha sacado piedra y tu papel. Has ganado");
-        alert("La maquina ha sacado piedra y tu papel. Has ganado");
-    }else if (juegoPPT == 1 && numeroJugador == 3){
-        console.log("La maquina ha sacado piedra y tu tijera. Has perdido");
-        alert("La maquina ha sacado piedra y tu tijera. Has perdido");
-    }else if (juegoPPT == 2 && numeroJugador == 1){
-        console.log("La maquina ha sacado papel y tu piedra. Has perdido");
-        alert("La maquina ha sacado papel y tu piedra. Has perdido");
-    }else if(juegoPPT == 2 && numeroJugador == 3){
-        console.log("La maquina ha sacado papel y tu tijera. Has ganado");
-        alert("La maquina ha sacado papel y tu tijera. Has ganado");
-    }else if(juegoPPT == 3 && numeroJugador == 1){
-        console.log("La maquina ha sacado tijera y tu piedra. Has ganado");
-        alert("La maquina ha sacado tijera y tu piedra. Has ganado");
-    }else if(juegoPPT == 3 && numeroJugador == 2){
-        console.log("maquina = tijera / usuario = papel. Usuario = perder Maquina = Ganar");
-        alert("La maquina ha sacado tijera y tu papel. Has perdido");
+        let opcionJugador;
+        let numeroJugador;
+
+        do{
+            opcionJugador = prompt("Va a jugar al juego de 'Piedra-Papel-Tijera' contra la maquina. Introduzca su opcion: \n1. P para piedra \n2. Pa para papel \n3. T para Tijera");
+            
+            if(opcionJugador.toLowerCase() === "p"){
+                numeroJugador = 1;
+                console.log("El jugador ha elegido piedra");
+                alert("Ha seleccionado piedra");
+            }else if(opcionJugador.toLowerCase() === "pa"){
+                numeroJugador = 2;
+                console.log("El jugador ha elegido papel");
+                alert("Ha seleccionado papel");
+            }else if(opcionJugador.toLowerCase() === "t"){
+                numeroJugador = 3;
+                console.log("El jugador ha elegido tijera");
+                alert("Ha seleccionado tijera");
+            }else{
+                console.error("Opcion invalida");
+                alert("Opcion invalida");
+            }
+        }while(opcionJugador.toLowerCase() !== "p" && opcionJugador.toLowerCase() !== "pa" && opcionJugador.toLowerCase() !== "t");
+
+
+        if(juegoPPT == 1 && numeroJugador == 1 || juegoPPT == 2 && numeroJugador == 2 || juegoPPT == 3 && numeroJugador == 3){
+            console.log("Mismo movimiento. Empate");
+            alert("Mismo movimiento. Empate");
+            victoriaPC++;
+            victoriaUser++;
+        }else if (juegoPPT == 1 && numeroJugador == 2){
+            console.log("La maquina ha sacado piedra y tu papel. Has ganado");
+            alert("La maquina ha sacado piedra y tu papel. Has ganado");
+            victoriaUser++;
+        }else if (juegoPPT == 1 && numeroJugador == 3){
+            console.log("La maquina ha sacado piedra y tu tijera. Has perdido");
+            alert("La maquina ha sacado piedra y tu tijera. Has perdido");
+            victoriaPC++;
+        }else if (juegoPPT == 2 && numeroJugador == 1){
+            console.log("La maquina ha sacado papel y tu piedra. Has perdido");
+            alert("La maquina ha sacado papel y tu piedra. Has perdido");
+            victoriaPC++;
+        }else if(juegoPPT == 2 && numeroJugador == 3){
+            console.log("La maquina ha sacado papel y tu tijera. Has ganado");
+            alert("La maquina ha sacado papel y tu tijera. Has ganado");
+            victoriaUser++;
+        }else if(juegoPPT == 3 && numeroJugador == 1){
+            console.log("La maquina ha sacado tijera y tu piedra. Has ganado");
+            alert("La maquina ha sacado tijera y tu piedra. Has ganado");
+            victoriaUser++;
+        }else if(juegoPPT == 3 && numeroJugador == 2){
+            console.log("maquina = tijera / usuario = papel. Usuario = perder Maquina = Ganar");
+            alert("La maquina ha sacado tijera y tu papel. Has perdido");
+            victoriaPC++;
+        }
+
+        if (victoriaUser == 2 ){
+            console.log("User ganador");
+            alert("Eres el ganador");
+            break;
+        }else if (victoriaPC == 2){
+            console.log("PC ganador");
+            alert("Eres el perdedor");
+            break;
+        }
     }
+
+    alert("Se acabo el juego");
 }
