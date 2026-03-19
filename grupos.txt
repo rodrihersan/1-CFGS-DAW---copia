@@ -1,0 +1,21 @@
+# Permisos de la carpeta PracticasIndividuales (cada alumno accede a la suya)
+sudo chmod 700 /home/alumno1/PracticasIndividuales
+sudo chmod 700 /home/alumno2/PracticasIndividuales
+sudo chmod 700 /home/alumno3/PracticasIndividuales
+sudo chmod 700 /home/alumno4/PracticasIndividuales
+
+# ejercicio1 → profesor: rw, alumno: rw, otros: nada
+sudo chown alumno1:profesor /home/alumno1/PracticasIndividuales/ejercicio1
+sudo chmod 660 /home/alumno1/PracticasIndividuales/ejercicio1
+
+# notasEjercicio1 → profesor: r, alumno: rw, otros: nada
+sudo chown alumno1:profesor /home/alumno1/PracticasIndividuales/notasEjercicio1
+sudo chmod 640 /home/alumno1/PracticasIndividuales/notasEjercicio1
+
+# alumno2
+sudo chown alumno2:profesor /home/alumno2/PracticasIndividuales/ejercicio1
+sudo chmod 660 /home/alumno2/PracticasIndividuales/ejercicio1
+sudo chown alumno2:profesor /home/alumno2/PracticasIndividuales/notasEjercicio1
+sudo chmod 640 /home/alumno2/PracticasIndividuales/notasEjercicio1
+
+etc
