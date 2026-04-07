@@ -88,6 +88,34 @@ on c.id = p.cliente_id;
 select * from v_informe;
 
 delete from t_clientes where id = 3;
+
+
+delimiter // 
+create procedure sp_mostrar_numero(in p_numero int)
+begin 
+select concat ('El numero que has introducido es: ' p_numero) as mensaje;
+end//
+delimiter ;
+
+call sp_mostrar_numero(5);
+
+
+-- procedimineto para que un numero diga si es par o impar 
+
+delimiter //
+create procedure sp_es_par(in p_numero int, out p_es_par bit)
+begin
+	if p_es_par % 2 = 0 then 
+		set p_es_par = 1;
+	else
+		set p_es_par = 0;
+	end if;
+end//
+delimiter ;
+
+call sp_es_par(@resultado, 5);
+select @resultado;
+
 DROP TABLE IF EXISTS t_pedidos_detalles;
 DROP TABLE IF EXISTS t_pedidos;
 DROP TABLE IF EXISTS t_productos;
