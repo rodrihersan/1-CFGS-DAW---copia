@@ -1,0 +1,94 @@
+-- ejercicio pratico
+
+-- drop database if exists ejercicio_practico ;
+
+-- create database ejercicio_practico;
+
+-- use ejercicio_practico;
+
+-- creacion tablas
+create table t_clientes(
+	id int auto_increment primary key,
+	nombre varchar(100) not null,
+	email varchar(100),
+    ciudad varchar(100)
+);
+
+create table t_productos(
+	id int auto_increment primary key,
+    nombre varchar (100),
+    precio decimal(10,2),
+    stock int
+);
+
+create table t_pedidos(
+	id int auto_increment primary key,
+    cliente_id int,
+    fecha date,
+    total decimal(10,2),
+    foreign key (cliente_id) references t_clientes(id)
+);
+
+create table t_pedidos_detalles (
+	id int auto_increment primary key,
+    pedido_id int,
+    producto_id int,
+    cantidad int,
+    precio_unitario decimal (10,2),
+    foreign key (pedido_id) references t_pedidos(id),
+    foreign key (producto_id) references t_productos(id)
+);
+
+
+
+-- indice tabla productos (nombre) y clientes (email)
+create index clientes_email on t_clientes (email);
+create index productos_nombre on t_productos(nombre);
+
+
+
+-- insert de datos
+insert into t_clientes (nombre, email, ciudad) values ('juan','juan@dominio.com','Salamanca');
+insert into t_clientes (nombre, email, ciudad) values ('pepe', 'pepe@dominio.com','Madrid');
+insert into t_clientes (nombre, email, ciudad) values ('ana','ana@dominio.com','Salamanca');
+
+insert into t_productos (nombre, precio, stock) values ('Teclado',10.50,5);
+insert into t_productos (nombre, precio, stock) values ('Raton',20.50,7);
+insert into t_productos (nombre, precio, stock) values ('Ipad',399,3);
+
+insert into t_pedidos (cliente_id, fecha) values (1, current_date());
+insert into t_pedidos (cliente_id, fecha) values (2, current_date());
+
+
+-- primer usuario (juan) registremos su pedido que ha hecho compra de teclado raton ipad 
+
+insert into t_pedidos_detalles (pedido_id, producto_id, cantidad, precio_unitario) values (1, 1, 1, 10.50); 
+insert into t_pedidos_detalles (pedido_id, producto_id, cantidad, precio_unitario) values (1, 2, 1, 20.50); 
+insert into t_pedidos_detalles (pedido_id, producto_id, cantidad, precio_unitario) values (1, 3, 1, 399); 
+
+insert into t_pedidos_detalles (pedido_id, producto_id, cantidad, precio_unitario) values (2, 3, 2, 399); 
+
+
+-- actualizar el total del pedido (con la linea pedido detalles)
+update t_pedidos pe SET total = (
+	select SUM(cantidad * precio_unitario) from t_pedidos_detalles 
+    where pedido_id = 1
+)
+where id = 1;
+
+update t_productos set stock = stock - 1 where id = 1;
+update t_productos set stock = stock - 1 where id = 2;
+update t_productos set stock = stock - 1 where id = 3;
+
+-- nombre cliente fecha pedido total pedido 
+create view v_informe as select c.nombre, p.fecha, p.total from t_clientes as c
+inner join t_pedidos as p
+on c.id = p.cliente_id;
+
+select * from v_informe;
+
+delete from t_clientes where id = 3;
+DROP TABLE IF EXISTS t_pedidos_detalles;
+DROP TABLE IF EXISTS t_pedidos;
+DROP TABLE IF EXISTS t_productos;
+DROP TABLE IF EXISTS t_clientes;
