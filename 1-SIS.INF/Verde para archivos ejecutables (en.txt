@@ -1,0 +1,40 @@
+  Verde para archivos ejecutables (en el ejemplo, "Bienvenida.sh").
+
+  Negro (o su color predeterminado equivalente) para archivo normal.
+
+  Azul o morado para directorios.
+
+  Celeste para enlaces simbólicos.
+
+  Rojo para archivos comprimidos (.tar, .gz, .zip, .rpm).
+
+  Magenta para archivos de imagen (.jpg, gif, bmp, png, tif).
+
+------------------------------------------------------------------------------------------------------------
+
+5.lsmod
+
+Detalles clave del comando lsmod:
+
+Salida: Proporciona tres columnas:
+	Module: Nombre del módulo.
+	Size: Tamaño del módulo en bytes.
+	Used by: Contador y lista de quién utiliza el módulo.
+
+Función: Muestra los controladores de dispositivos y sistemas de archivos que están activos sin necesidad de reiniciar el equipo.
+
+Utilidad: Ayuda a los administradores a identificar problemas de dispositivos.
+
+Relación: Muestra información basada en el archivo /proc/modules.
+
+Comandos relacionados: modprobe (para añadir/quitar), insmod (insertar), rmmod (remover), y modinfo (mostrar información).
+
+----------------------------------------------------------------------------------------------------------
+
+cups-filters.conf modules.conf
+
+nombres de módulos del kernel (controladores/drivers).
+
+----------------------------------------------------------------------------------------------------------
+
+

@@ -1,0 +1,19 @@
+SCRIPT PELICULAS
+
+
+EJERCICIO 2:
+
+#!/bin/bash
+
+mkdir ~/dirPrueba
+cd ~/dirPrueba
+touch prueba1.txt prueba2.txt
+mv ./prueba1.txt ~/Documents/
+mv ./prueba2.txt ~/Documents/
+ls -la
+
+
+sudo chmod 744 ejercicio2.sh (pedirá permisos el archivos, ya que solo tiene de lectura y no de ejecución)
+
+sudo ./ejercicio2.sh
+

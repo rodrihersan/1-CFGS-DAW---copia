@@ -1,0 +1,56 @@
+# Permisos de la carpeta PracticasIndividuales (cada alumno accede a la suya)
+sudo chmod 700 /home/alumno1/PracticasIndividuales
+sudo chmod 700 /home/alumno2/PracticasIndividuales
+sudo chmod 700 /home/alumno3/PracticasIndividuales
+sudo chmod 700 /home/alumno4/PracticasIndividuales
+
+# ejercicio1 → profesor: rw, alumno: rw, otros: nada
+sudo chown alumno1:profesor /home/alumno1/PracticasIndividuales/ejercicio1
+sudo chmod 660 /home/alumno1/PracticasIndividuales/ejercicio1
+
+# notasEjercicio1 → profesor: r, alumno: rw, otros: nada
+sudo chown alumno1:profesor /home/alumno1/PracticasIndividuales/notasEjercicio1
+sudo chmod 640 /home/alumno1/PracticasIndividuales/notasEjercicio1
+
+# alumno2
+sudo chown alumno2:profesor /home/alumno2/PracticasIndividuales/ejercicio1
+sudo chmod 660 /home/alumno2/PracticasIndividuales/ejercicio1
+sudo chown alumno2:profesor /home/alumno2/PracticasIndividuales/notasEjercicio1
+sudo chmod 640 /home/alumno2/PracticasIndividuales/notasEjercicio1
+
+etc
+
+touch /home/alumno1/PracticasIndividuales/notasEjercicio1
+touch /home/alumno2/PracticasIndividuales/notasEjercicio1
+touch /home/alumno3/PracticasIndividuales/notasEjercicio1
+touch /home/alumno4/PracticasIndividuales/notasEJercicio1
+
+sudo chmod  060 /home/alumno1/PracticasIndividuales/ejercicio1
+sudo chmod  060 /home/alumno2/PracticasIndividuales/ejercicio1
+sudo chmod  060 /home/alumno3/PracticasIndividuales/ejercicio1
+sudo chmod  060 /home/alumno4/PracticasIndividuales/ejercicio1
+
+sudo chmod  040 /home/alumno1/PracticasIndividuales/notasEjercicio1
+sudo chmod  040 /home/alumno2/PracticasIndividuales/notasEjercicio1
+sudo chmod  040 /home/alumno3/PracticasIndividuales/notasEjercicio1
+sudo chmod  040 /home/alumno4/PracticasIndividuales/notasEjercicio1
+
+mkdir  /home/grupo_mañana/Trabajo_Equipo
+mkdir /home/grupo_tarde/Trabajo_Equipo
+
+
+
+sudo chmod 700 /home/alumno1/PracticasIndividuales
+sudo chmod 700 /home/alumno2/PracticasIndividuales
+sudo chmod 700 /home/alumno3/PracticasIndividuales
+sudo chmod 700 /home/alumno4/PracticasIndividuales
+
+touch /home/alumno1/PracticasIndividuales/ejercicio1
+touch /home/alumno2/PracticasIndividuales/ejercicio1
+touch /home/alumno3/PracticasIndividuales/ejercicio1
+touch /home/alumno4/PracticasIndividuales/ejercicio1
+
+touch /home/alumno1/PracticasIndividuales/notasEjercicio1
+touch /home/alumno2/PracticasIndividuales/notasEjercicio1
+touch /home/alumno3/PracticasIndividuales/notasEjercicio1
+touch /home/alumno4/PracticasIndividuales/notasEJercicio1

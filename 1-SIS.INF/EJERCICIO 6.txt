@@ -1,0 +1,27 @@
+EJERCICIO 6
+➢ Siendo la dirección de red 172.18.0.0, indica:
+o Clase de la dirección de red. TIPO B
+o Máscara de red. 255.255.0.0
+o Dirección de broadcast. 172.18.255.255
+o Rango de direcciones asignables. 172.18.0.1 hasta 172.18.255.254 
+o Una dirección para la puerta de enlace. 172.18.0.1
+
+➢ Hay que configurar una red con 165 ordenadores usando dirección de red privada.
+Indica:
+o Dirección de red. CLASE C: 192.168.2.0. 
+o Máscara de red. 255.255.255.0
+o Dirección de broadcast.192.168.2.255
+o Dirección de puerta de enlace. 192.168.2.1
+o Rango de direcciones IP.  Desde 192.168.2.1 hasta 192.168.2.254
+
+
+Completa la siguiente información:
+
+Dirección IP de un equipo	Dirección de red/Máscara de red		Dirección de broadcast		Dirección de puerta de enlace	Rango de direcciones IP asignables
+
+  192.168.240.120 			255.255.255.0			  192.168.240.255			192.168.240.1			192.168.240.1 hasta 192.168.240.254
+
+   172.16.12.34 			255.255.0.0			  172.16.255.255			 172.16.0.1			  172.16.0.1 hasta 172.16.255.254
+
+     10.1.1.1 				255.0.0.0			  10.255.255.255			  10.0.0.1			   10.0.0.1 hasta 10.255.255.254
+																		
