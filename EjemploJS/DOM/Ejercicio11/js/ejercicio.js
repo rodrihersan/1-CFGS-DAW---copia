@@ -36,13 +36,29 @@ function cambiarContenidoH1(){
 
 function primerBoton(){
     let parrafo = document.getElementById("parrafoNuevo"); // es el unico que devuelve el elemento en si, los demas devuelven coleccion de datos
-    parrafo.setAttribute("class","textoRojoNegrita");
-
+    parrafo.setAttribute("class","parrafoBoton1");
     //parrafo.classList.add("textoRojoNegrita"); otra forma de hacerlo, igual que arriba
+
+    let elementosLista = document.getElementsByTagName("li");
+    for (let i = 0; i < elementosLista.length; i++) {
+        elementosLista[i].setAttribute("class", "listaBoton1");
+    }
+
+    let encabezadoPrincipal = document.getElementsByTagName("h1")[0];
+    encabezadoPrincipal.setAttribute("class","tituloBoton1");
 }
 
 function segundoBoton(){
+    let parrafo = document.getElementById("parrafoNuevo");
+    parrafo.setAttribute("class","parrafoBoton2");
 
+    let elementosLista = document.getElementsByTagName("li");
+    for (let i = 0; i < elementosLista.length; i++) {
+        elementosLista[i].setAttribute("class", "listaBoton2");
+    }
+
+    let encabezadoPrincipal = document.getElementsByTagName("h1")[0];
+    encabezadoPrincipal.setAttribute("class","tituloBoton2");
 }
 
 function tercerBoton(){

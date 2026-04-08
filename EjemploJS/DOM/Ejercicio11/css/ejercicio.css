@@ -1,4 +1,29 @@
-.textoRojoNegrita{
+.parrafoBoton1{
     color: red;
     font-weight: bold;
+}
+
+.listaBoton1{
+    color: blue;
+    background-color: yellow;
+}
+
+.tituloBoton1{
+    color: orange;
+}
+
+.parrafoBoton2{
+    color: yellow;
+    background-color: black;
+    border: 2px dotted red;
+}
+
+.listaBoton2{
+    background-color: palevioletred;
+    font-size: 25px;
+}
+
+.tituloBoton2{
+    color: lightblue;
+    font-style: italic;
 }
