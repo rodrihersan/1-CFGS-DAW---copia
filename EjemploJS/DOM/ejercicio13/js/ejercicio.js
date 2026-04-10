@@ -72,4 +72,44 @@ function tercerBoton(){
 
     let encabezadoPrincipal = document.getElementsByTagName("h1")[0];
     encabezadoPrincipal.removeAttribute("class");
+}   
+
+function ejecutarBucle() {
+    let lista = document.getElementsByTagName("ol")[0];
+    
+    if (!lista) {
+        alert("Primero debes crear la lista");
+        return;
+    }
+
+    for (let i = 1; i <= 5; i++) {
+        let elementos = lista.getElementsByTagName("li");
+
+        if (i === 1) {
+            let texto = prompt("Iteración 1: Introduce texto para la primera posición:");
+            let nuevoLi = document.createElement("li");
+            nuevoLi.innerText = texto;
+            
+            lista.prepend(nuevoLi);
+
+        } else if (i % 2 === 0) {
+            let texto = prompt(`Iteración (par): Texto para la tercera posición:`);
+            let nuevoLi = document.createElement("li");
+            nuevoLi.innerText = texto;
+
+            if (elementos.length >= 2) {
+                lista.insertBefore(nuevoLi, elementos[2]);
+            } else {
+                lista.appendChild(nuevoLi); // Si no hay suficientes, al final
+            }
+
+        } else {
+            if (elementos.length >= 2) {
+                let primero = elementos[0];
+                let segundo = elementos[1];
+                lista.insertBefore(primero, segundo.nextSibling);
+                console.log(`Iteración ${i} (impar): Movido el primero a la segunda posición`);
+            }
+        }
+    }
 }
