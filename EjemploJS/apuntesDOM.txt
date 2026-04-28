@@ -1,0 +1,84 @@
+------------------------------------
+Seleccionar elementos:
+------------------------------------
+getElementById("id") → devuelve el elemento que tenga ese id. Es el más usado y devuelve un solo elemento.
+getElementsByTagName("h1") → devuelve una colección de todos los elementos con esa etiqueta. Se accede a uno concreto con [0], [1], etc.
+getElementsByClassName("clase") → igual que el anterior pero buscando por clase.
+
+
+------------------------------------
+Modificar:
+------------------------------------
+innerHTML → accede o cambia todo el contenido HTML de un elemento, incluyendo etiquetas. Si asignas algo nuevo sustituye todo lo anterior.
+innerText → igual que innerHTML pero solo texto, sin etiquetas HTML.
+setAttribute("atributo", "valor") → añade o modifica un atributo de un elemento. Si el atributo no existía lo crea.
+getAttribute("atributo") → devuelve el valor de un atributo del elemento.
+removeAttribute("atributo") → elimina el atributo indicado del elemento.
+
+------------------------------------
+Clases:
+------------------------------------
+classList.add("clase") → añade una clase al elemento sin eliminar las que ya tiene.
+classList.remove("clase") → elimina una clase concreta sin tocar las demás.
+Crear y eliminar elementos:
+createElement("etiqueta") → crea un nuevo elemento HTML pero no lo añade al documento todavía.
+appendChild(elemento) → añade el elemento como último hijo del padre.
+insertBefore(nuevo, referencia) → añade el nuevo elemento antes del elemento de referencia. Se llama sobre el padre.
+removeChild(elemento) → elimina un hijo del elemento sobre el que se llama. También se llama sobre el padre.
+replaceChild(nuevo, viejo) → sustituye un elemento por otro. También se llama sobre el padre.
+
+------------------------------------
+Navegar:
+------------------------------------
+parentNode → devuelve el elemento padre del elemento en cuestión.
+firstChild → devuelve el primer hijo del elemento.
+lastChild → devuelve el último hijo del elemento.
+nextSibling → devuelve el siguiente hermano del elemento, es decir el siguiente elemento al mismo nivel.
+childNodes[n] → devuelve el hijo que esté en la posición indicada.
+nodeValue → devuelve el valor de un nodo de texto.
+createTextNode("texto") → crea un nodo de tipo texto que luego se puede añadir a cualquier elemento con appendChild.
+
+------------------------------------
+Crear elemento → darle atributos → añadirlo al DOM:
+------------------------------------
+Este es el patrón más repetido. Siempre se hace en ese orden, nunca al revés:
+let input = document.createElement("input"); // 1. crear
+input.setAttribute("type", "text"); // 2. dar atributos
+input.setAttribute("placeholder", "Escribe algo");
+form.appendChild(input); // 3. añadir al DOM
+
+En caso de que se tenga que usar un get el create se descarta porque ya existe por lo que seria:
+let input = document.getElementById("miInput"); // 1. seleccionar elemento existente
+input.setAttribute("placeholder", "Escribe algo"); // 2. modificarlo
+
+------------------------------------
+Cambiar estilos siempre con clases, nunca con style:
+------------------------------------
+elemento.classList.add("textoRojo"); // añade la clase
+elemento.classList.remove("textoRojo"); // quita la clase
+elemento.setAttribute("class", "textoRojo"); // asigna la clase
+elemento.removeAttribute("class"); // quita todas las clases
+
+
+------------------------------------
+Eventos que se ejecutan una sola vez con removeAttribute:
+------------------------------------
+Cuando el enunciado dice "no se volverá a capturar el evento", dentro de la propia función que se ejecuta se elimina el evento:
+
+function cambiarEstilos() {
+    // hacer cosas...
+    let h1 = document.getElementsByTagName("h1")[0];
+    h1.removeAttribute("onclick"); // ya no se puede volver a pulsar
+}
+
+
+------------------------------------
+Limpiar contenedor con innerHTML = "":
+------------------------------------
+
+Cuando hay un div que puede tener distintos contenidos según lo que pulse el usuario, antes de meter contenido nuevo se borra todo lo que había:
+
+function limpiarContenedor() {
+    let contenedor = document.getElementById("contenedor");
+    contenedor.innerHTML = ""; // borra todo el contenido del div
+}
