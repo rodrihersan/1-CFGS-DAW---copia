@@ -1,0 +1,86 @@
+h2{
+    background-color: crimson;
+    color: white;
+    margin: 0;
+}
+
+.info1{
+    background-color: lightblue;
+}
+
+.total{
+    width: 80%;
+    border: 2px solid crimson;
+    background-color: lightgray; 
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.ladoIzquierdo{
+    width: 619px;
+    float: left;
+    margin-right: 25px;
+
+}
+
+.PeliculasCartelera{
+    background-color: crimson;
+    color: white;
+    width: 617px;
+    text-align: center;
+    height: 25px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.pie{
+    background-color: crimson;
+    color: white;
+    margin: 0;
+}
+
+.ladoDerecho{
+    width: 40%;
+    float: left;
+}
+
+.masInformacion{
+    width: 89%;
+    margin-top: 2px;
+
+}
+
+.azul{
+    width: 89%;
+    background-color: lightblue;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.colorMorado{
+    color: purple;
+}
+
+.imagenCiudades{
+    width: 84%;
+    text-align: right;
+}
+
+/*JS AÑADIDO*/
+.centrado {
+    text-align: center;
+}
+
+.h1Paris {
+    background-color: pink;
+    color: black;
+    font-style: italic;
+}
+
+.h1Azul {
+    background-color: blue;
+    color: yellow;
+    font-weight: bold;
+}

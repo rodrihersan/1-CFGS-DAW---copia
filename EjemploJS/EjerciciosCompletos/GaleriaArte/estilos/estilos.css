@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    background: url(../img/fondo.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#titulo {
+    color: blue;
+    text-align: center;
+    animation: entradaTitulo 5s ease-out;
+}
+
+@keyframes entradaTitulo {
+    from {
+        color: white;
+        margin-left: -100%;
+    }
+    to {
+        color: blue;
+        margin-left: 0;
+    }
+}
+
+#contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+#seccionIzq {
+    background-color: rgba(50, 50, 50, 0.85);
+    color: white;
+    width: 20%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#seccionCentro {
+    background-color: white;
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#seccionCentro input {
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+
+#seccionDer {
+    background-color: rgba(100, 100, 200, 0.3);
+    color: white;
+    width: 35%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#btnRegistro {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#btnEntrar {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#pie {
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    width: 50%;
+    padding: 10px;
+    text-align: right;
+    color: red;
+    font-size: larger;
+    animation: fondoPie 15s ease-out forwards;
+    animation-delay: 10s;
+    opacity: 0;
+}
+
+@keyframes fondoPie {
+    0%   { background-color: green; opacity: 1; }
+    50%  { background-color: pink; }
+    75%  { background-color: yellow; }
+    100% { background-color: transparent; opacity: 1; }
+}
+
+/*js*/
+#seccionIzq.izquierdaJS {
+    background-color: rgba(100, 100, 200, 0.3);
+}
+
+#seccionDer.derechaJS {
+    background-color: rgba(50, 50, 50, 0.85);
+}
+
+.pFormJs{
+    color: red;
+}
+
+#tablaFinal {
+    width: 50%;
+    background-color: lightgrey;
+    border-collapse: collapse;
+}
+
+#tablaFinal td {
+    border: 1px solid grey;
+    padding: 8px;
+}

@@ -1,13 +1,13 @@
 function crearLista(){
     let arrayDatos = ["Uno", "Dos", "Tres"];
-    let lista = document.createElement("ol");
+    let lista = document.createElement("ol"); // Crea un <ol> pero aún no está en la página
     for (let index = 0; index < arrayDatos.length; index++) {
-        let entrada = document.createElement("li");
-        entrada.innerText = arrayDatos[index];
-        lista.appendChild(entrada);
+        let entrada = document.createElement("li"); // Crea un <li> pero tampoco está en la página
+        entrada.innerText = arrayDatos[index];  // Le pone el texto (Uno, Dos o Tres)
+        lista.appendChild(entrada); // Mete el <li> dentro del <ol>
     }
 
-    document.body.appendChild(lista);
+    document.body.appendChild(lista); // Ahora SÍ añade el <ol> a la página
 }
 
 function cambiarElementoTres(){
@@ -89,27 +89,18 @@ function ejecutarBucle() {
             let texto = prompt("Iteración 1: Introduce texto para la primera posición:");
             let nuevoLi = document.createElement("li");
             nuevoLi.innerText = texto;
-            
-            lista.prepend(nuevoLi);
+            lista.insertBefore(nuevoLi, elementos[0]);
 
         } else if (i % 2 === 0) {
-            let texto = prompt(`Iteración (par): Texto para la tercera posición:`);
+            let texto = prompt("Iteración " + i + " (par): Texto para la tercera posición:");
             let nuevoLi = document.createElement("li");
             nuevoLi.innerText = texto;
-
-            if (elementos.length >= 2) {
-                lista.insertBefore(nuevoLi, elementos[2]);
-            } else {
-                lista.appendChild(nuevoLi); // Si no hay suficientes, al final
-            }
-
+            lista.insertBefore(nuevoLi, elementos[2]);
+            
         } else {
-            if (elementos.length >= 2) {
-                let primero = elementos[0];
-                let segundo = elementos[1];
-                lista.insertBefore(primero, segundo.nextSibling);
-                console.log(`Iteración ${i} (impar): Movido el primero a la segunda posición`);
-            }
+            let primero = elementos[0];
+            let segundo = elementos[1];
+            lista.insertBefore(primero, segundo.nextSibling); // mueve el primero tras el segundo
         }
     }
 }
