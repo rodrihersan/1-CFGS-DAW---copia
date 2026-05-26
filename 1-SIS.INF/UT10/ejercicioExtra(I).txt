@@ -1,0 +1,67 @@
+CONFIGURACIÓN DE DIRECCIONAMIENTO IP
+1. Se quiere configurar una red LAN en una habitación para que 4 ordenadores están en red compartiendo
+un router que tiene un puerto RJ45, de IP privada 192.168.0.1/24 e IP pública 80.36.45.3/8.
+
+a. ¿Qué direcciones IP podríamos poner a los 4 equipos? 192.168.0.2/3/4/5
+
+b. ¿Qué máscara de red les pondríamos? 255.255.255.0
+
+c. ¿A qué red pertenecería? IP de red 192.168.0.0
+
+d. ¿cuál sería la dirección de broadcast de esta red? 192.168.0.255
+
+
+
+2. Un equipo tiene instalado un servidor web ¿Con que IP especial podríamos acceder desde la propia
+máquina a la página de inicio del servidor?
+127.0.0.1
+
+
+3. Un equipo de dirección 192.168.6.3 utiliza una máscara de red de 24 bits, ¿A qué red pertenece? ¿Cuál es
+la dirección de broadcast de dicha red?
+
+¿A qué red pertenece?: 192.168.6.0
+
+¿Cuál es la dirección de broadcast de dicha red?: 192.168.6.255
+
+
+
+4. Se quiere hacer el diseño lógico de una LAN en una oficina. La oficina tiene:
+a. 4 estaciones de trabajo (PC1, PC2, etc..) 
+	192.168.255.101	255.255.255.0
+	192.168.255.102	255.255.255.0
+	192.168.255.103	255.255.255.0
+	192.168.255.104	255.255.255.0
+
+b. un servidor (PCServer)
+	 192.168.255.1	255.255.255.0
+c. una impresora conectable directamente a la red (HP1300)
+	192.168.255.10
+d. un disco duro con un puerto RJ45 (Iomega750)
+	192.168.255.20
+e. un router ADSL 3Com configurable para la conexión a Internet
+	192.168.254.1
+f. un switch (no gestionable) de 16 puertos para interconectar todos los dispositivos de red.
+	No requiere
+Se aconseja no cambiar la dirección IP del servidor, que es 192.168.255.1 con una máscara de red de 24
+bits.
+a. Asigna a cada dispositivo de red una dirección IP y máscara de red.
+b. ¿Cuál será la dirección de red y la dirección de broadcast?
+192.168.255.0
+
+192.168.255.255
+
+
+
+5. Si al ver la configuración IP de un equipo se ve que la máscara de red es 255.255.255.255, ¿Estará bien
+configurado? Investiga que puede estar pasando.
+
+La máscara 255.255.255.255 (conocida como máscara /32 o de un solo host) indica que la red está compuesta por una única dirección IP.
+Específicamente, esto provoca que:
+
+	Sin red local: El equipo se aísla de otros dispositivos de su entorno. No puede comunicarse directamente con otras computadoras ni impresoras en la misma red física.
+	Todo es externo: Cualquier intento de comunicación se envía a través de la puerta de enlace (router), ya que el equipo asume que cualquier otra dirección IP pertenece a una red remota.
+
+¿Estará bien configurado?
+Es una configuración válida pero no sirve para los equipos de red estándar o usuarios.
+Se utiliza principalmente en configuraciones de software, como reglas de firewall, balanceadores de carga o servidores VPN dedicados a clientes individuales.
