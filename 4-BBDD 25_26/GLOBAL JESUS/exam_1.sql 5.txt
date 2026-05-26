@@ -1,0 +1,162 @@
+-- tabla clientes
+
+create table exam_clientes
+(
+	id int auto_increment primary key,
+    nombre varchar (100),
+    email varchar (100),
+    ciudad varchar (100),
+    telefono varchar (100),
+	esBorrado bit default 0,
+    fecha_creacion timestamp default current_timestamp,
+    fecha_actualizacion timestamp,
+    fecha_borrado timestamp
+);
+
+-- tabla trabajadores
+
+create table exam_trabajadores
+(
+	id int auto_increment primary key,
+	nombre varchar (100),
+    dni varchar (100),
+	telefono varchar (100),
+    tipoVehiculo varchar (100),
+    disponibilidad bit,
+    valoracion int,
+    fecha_creacion timestamp default current_timestamp
+);
+
+-- tabla restaurantes
+
+create table exam_restaurantes(
+	id int auto_increment primary key,
+    nombre varchar (100),
+    tipo_restaurante varchar (100),
+    ciudad varchar (100),
+    direccion varchar (100),
+    cp varchar (100),
+    esBorrado bit default 0,
+	valoracion int,
+	fecha_creacion timestamp default current_timestamp
+);
+
+
+-- tabla productos
+
+create table exam_productos(
+    id int auto_increment primary key,
+    restaurante_id int,
+    nombre varchar (100),
+    precio decimal (10,2),
+    stock int,
+    esDisponible bit default 1,
+    fecha_creacion timestamp default current_timestamp,
+    foreign key (restaurante_id) references exam_restaurantes(id)
+);
+
+-- tabla pediddos
+
+create table exam_pedidos
+(
+	id int auto_increment primary key,
+    cliente_id int,
+    trabajador_id int,
+    restaurante_id int,
+    fecha date,
+    total decimal(10,2),
+	fecha_creacion timestamp default current_timestamp,
+    foreign key (cliente_id) references exam_clientes(id),
+    foreign key (trabajador_id) references exam_trabajadores(id),
+    foreign key (restaurante_id) references exam_restaurantes(id)
+);
+
+-- tabla detalle_pedidos
+
+create table exam_detalle_pedidos
+(
+	id int auto_increment primary key,
+    pedido_id int,
+    producto_id int,
+    cantidad int,
+    precio_unitario decimal (10,2),
+    foreign key (pedido_id) references exam_pedidos(id) on delete cascade,
+    foreign key (producto_id) references exam_productos(id) on delete cascade
+);
+
+-- Crear procedimiento que cree 20 clientes, 10 trabajadores, 5 restaurantes, 20 productos por restaurante, 10 pedidos por restaurante con 5 detalles
+
+DELIMITER //
+CREATE PROCEDURE seed_database()
+BEGIN
+	DECLARE c_contador INT DEFAULT 1;
+    DECLARE p_contador INT DEFAULT 1;
+	DECLARE d_contador INT DEFAULT 1;
+    
+	WHILE c_contador <= 20 DO
+		INSERT INTO exam_clientes(nombre, email, ciudad) values (CONCAT('cliente', c_contador), CONCAT('email',c_contador, '@dominio.com'), CONCAT('ciudad', c_contador));
+        SET c_contador = c_contador + 1;
+    END WHILE;
+    
+    SET c_contador = 1;
+    
+    WHILE c_contador <= 10 DO
+		INSERT INTO exam_trabajadores(nombre, dni, tipoVehiculo) values (CONCAT('trabajador', c_contador), CONCAT('dni',c_contador), CONCAT('vehiculo', c_contador));
+        SET c_contador = c_contador + 1;
+    END WHILE;
+    
+    SET c_contador = 1;
+    
+	WHILE c_contador <= 5 DO
+		INSERT INTO exam_restaurantes(nombre, ciudad, direccion) values (CONCAT('restaurante', c_contador), CONCAT('ciudad',c_contador), CONCAT('direccion', c_contador));
+        
+        WHILE p_contador <= 20 DO
+			INSERT INTO exam_productos(restaurante_id, precio, stock) values (c_contador, round(100 * rand(), 2), round(100 * rand(), 0));
+			SET p_contador = p_contador + 1;
+		END WHILE;
+        
+        SET p_contador = 1;
+        
+		WHILE p_contador <= 10 DO
+			INSERT INTO exam_pedidos(cliente_id, trabajador_id, restaurante_id) values (round(1 + 19 * rand(), 0), round(1 + 9 * rand(), 0), c_contador);
+
+			set d_contador = 1;
+
+            WHILE d_contador <= 5 DO
+				INSERT INTO exam_detalle_pedidos(pedido_id, producto_id, cantidad) values (p_contador, round(1 + 19 * rand(), 0), round(1 + 5 * rand(), 0));
+				SET d_contador = d_contador + 1;
+			END WHILE;
+            
+			SET p_contador = p_contador + 1;
+		END WHILE;
+        
+        SET p_contador = 1;
+        
+        SET c_contador = c_contador + 1;
+
+    END WHILE;
+    
+    SET c_contador = 1;
+    
+END//
+DELIMITER ;
+
+CALL seed_database();
+
+truncate table exam_detalle_pedidos;
+truncate table exam_pedidos;
+truncate table exam_productos;
+truncate table exam_restaurantes;
+truncate table exam_trabajadores;
+truncate table exam_clientes;
+
+select * from exam_clientes;
+select * from exam_trabajadores;
+select * from exam_restaurantes;
+select * from exam_productos;
+select * from exam_pedidos;
+select * from exam_detalle_pedidos;
+
+
+
+
