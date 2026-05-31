@@ -1,4 +1,5 @@
 SUBNETTING
+----------------------------------------------------------------------------------------------------------------
 
 EJERCICIO 1
 
@@ -72,3 +73,56 @@ IP DE BROADCAST: 192.168.54.255
 1100 0000  /  1010 1000  / 0011 0110  / 0010 0001
 
 PRIMERA IP/ULTIMA IP ASIGNAR EQUIPOS: 192.168.54.225 - 192.168.54.254
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EJERCICIO 2
+
+
+a. Clase de la IP. Clase C al empezar por 192 y a mayores porque la mascara de red es /24 mas el subneting
+b. Número de bits destinados a hosts. 6 bits destinados a host, debido a que el ultimo octeto de la m.red (192) seria 1100 0000 por lo que los 6 ceros son de host y los otros dos de red que seria /26
+c. Dirección de subred. 192.168.2.128
+d. Posibles IPs que pueden tomar los hosts y dispositivos que componen esta red. 192.168.2.129 - 192.168.2.190 (128 seria red y 191 broadcast)
+e. Número máximo de hosts. 2^n - 2. N en este caso es 6 entonces será 64-2 = 62. 62 dispositivos/IPs disponibles
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EJERCICIO 3
+
+172.25.0.0 tipo B (ya que va de 128 a 191) con mascara de /16 (255.255.0.0)
+
+Necesitamos 3 subredes, una para los primeros 150 equipos, otra para 40 y otra para 90.
+
+Para los 150 equipos hacemos 2^n, en este caso seria 2^8 que da 256 (2^7 da 128 y nos quedamos cortos)
+Entonces necesitamos 8 bits para host de la mascara de red, por lo que quedaría la mascara como 255.255.255.0 (/24)
+La ip de red para estos 150 equipos quedaría como 172.25.0.0/24, la de broadcast 172.25.0.255 y las de host asignables 172.25.0.1-172.25.0.254
+
+Para los 90 equipos hacemos 2^n, seria 7 que da 128
+Se necesitan 7 bits para host. La ip seria entonces 172.25.1.0/25 (25 porque se resta 32-n  (7)) La ip se modifica (el 1) porque la anterior red esta destinada a los 150 equipos
+De esta red, la ip seria 172.25.1.0, la de broadcast 172.25.1.127 (no es 255 porque no tenemos mascara /24, tenemos mascara /25, entonces la ip de la mascara sria /24 y luego 1000 0000. y las que se puede dar a dispositivos 172.25.1.1-172.25.1.126
+
+Para los 40 equipos restantes hacemos 2^n que seria n=6 que serian 64 IPs disponibles. Necesitamos 6 de host, asi que sería 32-6 que son 26, la dirección ip red seria 172.25.1.128/26 que llegaría hasta 172.25.1.191 (broadcaste) y las ip asignables 172.25.1.129-172.25.1.190
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EJERCICIO 4
+
+172.30.0.0. ¿Cuántas subredes se podrían definir como máximo, si cada una tiene que alojar 130 dispositivos ? Razona la respuesta.
+Ip tipo B. mascara 255.255.0.0 = 172.30.0.0/16
+
+Queremos 130 dispositivos, asi que necesitamos saber cuantos bits de host debemos asignar, para ello hacemos 2^n que >= a 130 dispositivos, en este caso n=8 que seria 256. Para saber la mascara de subred hacemos 32-n en este caso 24
+
+Sabiendo esto, tenemos que la red original es 16, y la subred es 24, asi que restamos esto y nos da 8, que haciendo 2^8 son las subredes que podemos tener. Que serian 256.
+
+16 bits de red + 8 bits de subred + 8 bits de host = 32
+Esos 8 bits del medio son los que puedes usar para numerar subredes distintas. 
+Como cada bit puede ser 0 o 1, con 8 bits puedes hacer 2⁸ = 256 combinaciones distintas, es decir 256 subredes.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EJERCICIO 5
+
+Siendo la dirección de subred 172.23.96.0/19, indica:
+Tipo B, mascara de red 255.255.0.0 lo que sería /16. Tenemos 13 bits asignados a host, y 3 a subred. Quedaria 1111 1111 - 1111 1111 - 1110 0000 0000 0000
+a. Máscara de subred: 255.255.224.0
+b. ¿Cuántos equipos, impresoras, etc. se puede conectar a esta red? 2^n -2 siendo n= 13 asi que 8192-2 = 8190 equipos.
+c. Dirección de puerta de enlace: 172.23.96.1
+d. Dirección de broadcast: 172.23.127.255
+
