@@ -1,4 +1,4 @@
-SUBNETTING
+192SUBNETTING
 ----------------------------------------------------------------------------------------------------------------
 
 EJERCICIO 1
@@ -88,19 +88,11 @@ e. Número máximo de hosts. 2^n - 2. N en este caso es 6 entonces será 64-2 = 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 EJERCICIO 3
 
-172.25.0.0 tipo B (ya que va de 128 a 191) con mascara de /16 (255.255.0.0)
+CLASE TIPO B 172.25.0.0. MASCARA RED /16 255.255.0.0
 
-Necesitamos 3 subredes, una para los primeros 150 equipos, otra para 40 y otra para 90.
-
-Para los 150 equipos hacemos 2^n, en este caso seria 2^8 que da 256 (2^7 da 128 y nos quedamos cortos)
-Entonces necesitamos 8 bits para host de la mascara de red, por lo que quedaría la mascara como 255.255.255.0 (/24)
-La ip de red para estos 150 equipos quedaría como 172.25.0.0/24, la de broadcast 172.25.0.255 y las de host asignables 172.25.0.1-172.25.0.254
-
-Para los 90 equipos hacemos 2^n, seria 7 que da 128
-Se necesitan 7 bits para host. La ip seria entonces 172.25.1.0/25 (25 porque se resta 32-n  (7)) La ip se modifica (el 1) porque la anterior red esta destinada a los 150 equipos
-De esta red, la ip seria 172.25.1.0, la de broadcast 172.25.1.127 (no es 255 porque no tenemos mascara /24, tenemos mascara /25, entonces la ip de la mascara sria /24 y luego 1000 0000. y las que se puede dar a dispositivos 172.25.1.1-172.25.1.126
-
-Para los 40 equipos restantes hacemos 2^n que seria n=6 que serian 64 IPs disponibles. Necesitamos 6 de host, asi que sería 32-6 que son 26, la dirección ip red seria 172.25.1.128/26 que llegaría hasta 172.25.1.191 (broadcaste) y las ip asignables 172.25.1.129-172.25.1.190
+Necesitamos 3 subredes, por lo que será 2^2 = 4  así que de los últimos 16 dígitos 2 son destinados a subred, asi que será /18(1111 1111 1111 1111 1100 0000 0000 0000 y 14 para host.
+Lo que dará un total de 16.384
+Salto de subred 256 - 192 (que es 18 pasado a binario)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 EJERCICIO 4
