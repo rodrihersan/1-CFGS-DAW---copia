@@ -1,0 +1,11 @@
+un supermercado quiero desarrollar tarjeta de fidelización
+
+define modelado de datos crear todas las tablas que considere necesarias 5p
+
+recomendaciones
+se deberá explicar los motivos de poner las cosas.
+Todo en enunciado
+No se sobre entiende nada
+Las decisiones hay que argumentarlas
+pensar las funcionalidades de la bbdd
+cupones descuentos
