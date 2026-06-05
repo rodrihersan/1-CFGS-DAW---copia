@@ -1,0 +1,35 @@
+4. Selección de módulos a implantar
+
+Después de analizar las distintas soluciones ERP disponibles en el mercado, SportZone Pro ha decidido implantar Odoo.
+
+La empresa ha elegido este software por su buena relación calidad-precio, su facilidad de adaptación y la posibilidad de integrar distintos módulos según las necesidades del negocio.
+
+Además, Odoo resulta muy útil para empresas comerciales porque permite conectar ventas, almacén y facturación dentro de un mismo sistema.
+
+Software Elegido
+
+Odoo
+
+Módulo 1: Ventas
+
+Este módulo permite gestionar presupuestos, pedidos, clientes y promociones.
+
+Su principal función es agilizar el proceso de venta y mejorar la atención al cliente.
+
+Módulo 2: Inventario
+
+Este módulo controla el stock disponible, las entradas y salidas de productos y la organización del almacén.
+
+Gracias a él, la empresa puede evitar errores de inventario y optimizar la gestión logística.
+
+Módulo 3: CRM
+
+Este módulo permite generar facturas automáticas, controlar pagos y registrar todas las las operaciones económicas de la empresa.
+
+Su función principal es facilitar la gestión administrativa y reducir errores contables.Conclusión
+
+La implantación de un ERP en SportZone Pro permitiría mejorar la coordinación entre departamentos, automatizar tareas y optimizar la gestión empresarial.
+
+Tras comparar diferentes soluciones ERP, Odoo se presenta como la opción más adecuada para una empresa de venta de material deportivo gracias a su flexibilidad, coste asequible y facilidad de integración.
+
+La utilización de módulos como ventas, inventario y CRM ayudaría a mejorar la organización interna y a ofrecer un servicio más rápido y eficiente a los clientes.
